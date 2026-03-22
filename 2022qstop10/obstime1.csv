@@ -1,0 +1,1491 @@
+obs20,obs21,obs22,det20,det21,det22,allyears,alldets
+ledge,gap,gap,bench,bump to bar,,ledge,bench
+ledge,pad,ledge,,,,ledge,
+hubba,gap,curb,,flat gap,curved ledge,hubba,
+gap,ledge,gap,,ledge to drop,gap to pad to gap,gap,
+ledge,ledge,ledge,,,bench,ledge,
+stairs,hubba,flat rail,,up hubba,rail to rail,stairs,
+ledge,stairs,ledge,ledge to gap,,ledge to rail,ledge,ledge to gap
+ledge,gap,wall,,over rail,into bank,ledge,
+gap,handrail,ledge,,,out ledge,gap,
+gap,flat rail,stairs,bank to bank,curved rail,stairs to disaster,gap,bank to bank
+curb,wall,pad,,wallride down stairs,pad to chain,curb,
+pole,gap,pad,basketball hoop pole,over trash can,,pole,basketball hoop pole
+stairs,pad,ledge,up stairs,,barrier,stairs,up stairs
+ledge,hubba,flat rail,ledge gap ledge,,,ledge,ledge gap ledge
+ledge,ledge,ledge,up ledge,gap to ledge into bank,ledge to ledge,ledge,up ledge
+ledge,stairs,stairs,,,,ledge,
+ledge,ledge,pole jam,,curved bench,pole jam flat pole jam,ledge,
+ledge,wall,ledge,,,into bank,ledge,
+ledge,ledge,gap,out ledge,,flat gap,ledge,out ledge
+ledge,gap,ledge,out ledge,big drop,gap to ledge,ledge,out ledge
+stairs,stairs,ledge,,,bank to ledge,stairs,
+handrail,curb,pad,knobbed rail,,ledge to pad,handrail,knobbed rail
+pad,flat,handrail,manual drop manual,into bank,up rail to gap,pad,manual drop manual
+pad,flat,transition,up stairs,,street transition,pad,up stairs
+stairs,flat rail,hubba,,pole to flat rail to into bank,,stairs,
+handrail,pad,handrail,cannon,,,handrail,cannon
+ledge,pad,ledge,,,out ledge,ledge,
+handrail,ledge,stairs,,out ledge,,handrail,
+transition,ledge,ledge,quarterpipe,ledge to flat rail,,transition,quarterpipe
+ledge,ledge,ledge,gap to ledge,,ledge to gap,ledge,gap to ledge
+curb,wall,flat rail,,,keyhole,curb,
+hubba,ledge,flat rail,,ledge to ledge,into bank,hubba,
+ledge,ledge,handrail,ledge to ledge,,into bank,ledge,ledge to ledge
+ledge,transition,transition,,concrete park,on chains,ledge,
+gap,ledge,ledge,over rail,out ledge,out ledge,gap,over rail
+ledge,ledge,pad,ride on,out ledge,pad to ledge to pad,ledge,ride on
+flat rail,stairs,ledge,,,,flat rail,
+pad,pad,handrail,,,,pad,
+gap,ledge,ledge,flat gap,,,gap,flat gap
+ledge,gap,ledge,ledge to ledge,launch ramp,into bank,ledge,ledge to ledge
+gap,ledge,curb,,,bump to curb,gap,
+transition,ledge,flat rail,quarterpipe,out ledge,out rail,transition,quarterpipe
+ledge,flat,flat,gap to ledge,into bank,over can,ledge,gap to ledge
+hubba,stairs,curb,,,gap to curb,hubba,
+hubba,gap,gap,,over rail into bank,into bank,hubba,
+ledge to ledge,ledge,hubba,gap to gap to ledge,ledge to ledge,curved hubba,ledge,gap to gap to ledge
+stairs,bank,bank,,Drop in,bank to bank to bank,stairs,
+gap to ledge,handrail,handrail,,,,ledge,
+flat,ledge,handrail,,,,flat,
+flat rail,ledge,gap,into bank,out ledge,flat gap,flat rail,into bank
+ledge,ledge,ledge,,,,ledge,
+wall,ledge,flat,,,over ledge,wall,
+gap,ledge,handrail,,,,gap,
+gap,gap,pad,over rail,flat gap,,gap,over rail
+handrail,gap,ledge,,over rail into bank,wall to ledge,handrail,
+ledge,gap,pad,,over rail into bank,flat,ledge,
+gap,flat rail,handrail,over hydrant,,,gap,over hydrant
+ledge,ledge,ledge,,,out ledge,ledge,hubba
+stairs,flat rail,pad,up stairs,,into bank,stairs,up stairs
+curb,gap,pad,,over rail into bank,,curb,
+stairs,gap,stairs,,over bench,sign on stairs,stairs,
+ledge,ledge,ledge,wall to ledge,,,ledge,wall to ledge
+curb,ledge,ledge,,,out ledge,curb,
+pad,stairs,ledge,,,,pad,
+gap,gap,pad,roof,flat gap,,gap,roof
+stairs,ledge,stairs,up stairs,curved ledge,,stairs,up stairs
+gap,gap,flat rail,over rail,wallie to gap,bump to bar,gap,over rail
+stairs,stairs,handrail,,,handrail to ledge,stairs,
+hubba,wall,ledge,,wallie to gap,table,hubba,
+flat rail,bank,stairs,rail to gap,into bank,,flat rail,rail to gap
+flat,curb,ledge,curb cut,gap to curb,benches,flat,curb cut
+flat,transition,ledge,over bench,pool,,flat,over bench
+pad,gap,ledge,,,ledge to wall,pad,
+ledge,gap,ledge,,over wall,,ledge,
+flat,transition,flat rail,over rail,street quarter,,flat,over rail
+bank,stairs,gap,over rail,stairs to pad to wall,over rail,bank,over rail
+handrail,curb,ledge,,,out ledge,handrail,
+gap,pad,handrail,up gap,,,gap,up gap
+ledge,ledge,gap,gap to ledge,ledge to pad,,ledge,gap to ledge
+gap,ledge,ledge,bump to bar,,into bank,gap,bump to bar
+gap,ledge,flat rail,hip,gap to ledge,,gap,hip
+bank,ledge,stairs,,,,bank,
+gap,pad,curb,hip,pad to gap to bank,over fence,gap,
+gap,ledge,gap,,ledge to wall,,gap,
+pad,ledge,ledge,,out ledge,out ledge,pad,
+flat rail,flat,hubba,gap to rail,onto ledge,,flat rail,gap to rail
+gap,hubba,ledge,flat gap,ledge to gap,bump to dumpster,gap,flat gap
+flat rail,stairs,flat rail,,over chain,bank to rail,flat rail,flat rail
+gap,gap,gap,,onto loading dock,,gap,
+transition,ledge,transition,quarterpipe,,street transition,transition,quarterpipe
+handrail,gap,ledge,rail to curb,curb cut,,handrail,rail to curb
+ledge,ledge,ledge,banked ledge,,,ledge,banked ledge
+gap,wall,ledge,,transition to wall,,gap,
+ledge,flat,flat rail,bank to ledge,,bench,ledge,bank to ledge
+transition,stairs,ledge,quarterpipe,,,transition,quarterpipe
+stairs,ledge,ledge,,out ledge,triple drop,stairs,
+ledge,handrail,ledge,,,bump to ledge,ledge,
+flat rail,ledge,wall,,out ledge,,flat rail,flat rail
+ledge,ledge,gap,out ledge,out ledge,,ledge,out ledge
+gap,gap,flat rail,over rail,big drop,gap to rail,gap,over rail
+curb,ledge,pad,,on hydrant,pad to ledge,curb,
+ledge,flat,curb,,over barrier,gap to curb,ledge,
+ledge,ledge,ledge,pad to ledge,,curved ledge,ledge,pad to ledge
+wall,ledge,flat rail,,curved ledge,into bank,wall,
+stairs,gap,ledge,up stairs,,into bank,stairs,up stairs
+flat rail,gap,stairs,,,,flat rail,
+ledge,flat,ledge,ledge to gap,,to pad to ledge,ledge,ledge to gap
+ledge,pad,ledge,,pad to pad,hubba,ledge,
+handrail,gap,ledge,,big drop,into bank,handrail,
+ledge,stairs,stairs,ledge to wall to ledge,up stairs,,ledge,ledge to wall to ledge
+ledge,flat,ledge,,,,ledge,
+curb,ledge,bank,,gap to ledge,,curb,
+hubba,ledge,ledge,,ledge to bank,,hubba,
+wall,ledge,flat,bank to wall,,into bank,wall,bank to wall
+handrail,pad,gap,,,bump to gap,handrail,
+ledge,hubba,gap,,,bump to gap,ledge,
+gap,stairs,gap,gap to bank,up stairs,into bank,gap,gap to bank
+ledge,ledge,ledge,,,,ledge,
+pad,handrail,gap,,handrail to handrail,,pad,
+flat,gap,ledge,,launch ramp,,flat,
+pad,pad,ledge,,,,pad,
+wall,gap,ledge,,hip,,wall,
+bank,flat,gap,,,over can,bank,
+stairs,ledge,stairs,up stairs,,,stairs,up stairs
+ledge,ledge,gap,,curved ledge,,ledge,
+ledge,pad,ledge,ledge to gap,pad to stairs,bump to ledge,ledge,ledge to gap
+handrail,flat rail,bank,,,escalator,handrail,
+flat,transition,ledge,,street quarter,,flat,
+hubba,gap,stairs,,into bank,,hubba,
+transition,stairs,handrail,pool,up stairs,,transition,pool
+pad,ledge,ledge,,gap to ledge,out ledge,pad,
+flat,gap,ledge,into bank,bump to bar,,flat,into bank
+gap,hubba,ledge,,,banked ledge,gap,
+gap,ledge,gap,bump to bar,,into bank to drop,gap,bump to bar
+handrail,stairs,stairs,,up stairs,,handrail,
+bank,gap,ledge,over rail into bank,,curb,bank,over rail into bank
+ledge,ledge,pad,,,,ledge,
+ledge,wall,gap,,,into bank,ledge,
+wall,ledge,hubba,down stairs,gap to ledge into bank,up hubba,wall,down stairs
+ledge,flat,ledge,,over trash can,,ledge,
+ledge,ledge,pad,,,pad to bank,ledge,
+ledge,stairs,bank,ledge to ledge,,,ledge,ledge to ledge
+ledge,curb,hubba,,,hubba to ledge,ledge,
+gap,gap,curb,over rail,over rail,gap to curb,gap,over rail
+stairs,flat rail,flat rail,,into bank,bank to rail,stairs,
+ledge,ledge,stairs,,banked ledge,,ledge,
+gap,ledge,ledge,roof,ledge to wall,out ledge,gap,roof
+gap,ledge,ledge,,gap to hubba,,gap,
+stairs,stairs,handrail,up stairs,up stairs,,stairs,up stairs
+hubba,flat rail,gap,,curved rail,stairs,hubba,
+ledge,ledge,stairs,out ledge,curved ledge,,ledge,out ledge
+ledge,stairs,ledge,,,,ledge,
+transition,ledge,stairs,bowl,curb to ledge,,transition,bowl
+gap,wall,ledge,gap to curb,gap to wall,bank to wall to ledge,gap,gap to curb
+handrail,ledge,ledge,,gap to ledge,,handrail,
+handrail,ledge,gap,,,,handrail,
+gap,gap,ledge,into bank,,escalator,gap,into bank
+ledge,wall,gap,gap to ledge,bank to wall,,ledge,gap to ledge
+gap,ledge,ledge,over fence,wall to ledge,curved ledge,gap,over fence
+pad,ledge,ledge,,,curved ledge,pad,
+handrail,ledge,curb,,wall to banked ledge,,handrail,
+ledge,transition,pad,out ledge,fly out,pad to ledge,ledge,out ledge
+ledge,gap,ledge,gap to ledge,into bank,,ledge,gap to ledge
+ledge,bank,curb,ledge to gap,flat bank to curb,curb to curb,ledge,ledge to gap
+gap,stairs,gap,over rail,,over block,gap,over rail
+gap,ledge,ledge,,launch to ledge,bump to ledge,gap,
+pad,wall,hubba,,wall to gap,,pad,
+gap,ledge,handrail,gap to bank,,,gap,gap to bank
+flat rail,pad,handrail,rail to gap,pad to bank,double kink,flat rail,rail to gap
+gap,stairs,gap,flat gap,,bank,gap,flat gap
+gap,gap,curb,,,,gap,
+ledge,ledge,ledge,,,,ledge,
+ledge,flat,pad,ledge to wall,,pad to drop,ledge,ledge to wall
+ledge,handrail,flat rail,,rail to gap,,ledge,
+wall,handrail,ledge,down stairs,handrail to ledge,out ledge,wall,down stairs
+stairs,wall,gap,,on tree,flat gap,stairs,
+gap,ledge,gap,over rail into bank,,,gap,over rail into bank
+gap,gap,flat rail,over rail,,out rail,gap,over rail
+flat rail,gap,hubba,,flat gap,,flat rail,
+ledge,ledge,stairs,,,,ledge,
+transition,ledge,transition,street transition,,street transition,transition,street transition
+wall,ledge,ledge,,,ledge to drop,wall,
+handrail,pad,ledge,,,banked ledge,handrail,
+pad,gap,gap,,,over can,pad,
+wall,gap,bank,bank to wall,over rail,,wall,bank to wall
+gap,ledge,ledge,,ledge to gap,,gap,
+ledge,handrail,ledge,,,,ledge,
+gap,flat,curb,over rail into bank,ledge to gap,gap to curb,gap,over rail into bank
+gap,hubba,gap,over rail into bank,up hubba,over pad,gap,over rail into bank
+flat rail,gap,flat,rail to curb,,over can,flat rail,rail to curb
+pad,curb,stairs,,,,pad,
+curb,gap,ledge,,,curved ledge,curb,
+flat,flat,pad,,into bank,playground ,flat,
+transition,ledge,gap,,gap to ledge,bump to gap,transition,
+pole,ledge,ledge,bank to pole,,drop,pole,bank to pole
+gap,handrail,gap,over rail,,duck under pole,gap,over rail
+ledge,handrail,ledge,,handrail to ledge,,ledge,
+gap,stairs,pad,bump to bar,over rail,,gap,bump to over bar
+ledge,stairs,gap,,,flat gap,ledge,
+ledge,transition,ledge,out ledge,concrete park,out ledge,ledge,out ledge
+wall,ledge,ledge,,,,wall,
+handrail,ledge,wall,,,,handrail,
+gap,flat,flat rail,over rail,into bank,,gap,over rail
+ledge,stairs,ledge,ledge to ledge,over rail,bank to ledge,ledge,ledge to ledge
+transition,stairs,ledge,bowl,,ledge to gap,transition,bowl
+wall,ledge,ledge,wall to bank,,ledge to gap,wall,wall to bank
+gap,gap,bank,over bench,off egg,channel,gap,over bench
+gap,hubba,ledge,,wall to hubba,,gap,
+flat,stairs,stairs,over trash can,over rail,,flat,over trash can
+ledge,ledge,handrail,ledge to ledge,,,ledge,ledge to ledge
+gap,pad,gap,flat gap,,over rail,gap,flat gap
+gap,ledge,ledge,flat gap,,,gap,flat gap
+ledge,flat,flat rail,,over bench,,ledge,
+ledge,handrail,gap,,curved rail,over can,ledge,
+hubba,gap,gap,,,to drop to drop to drop,hubba,
+bank,handrail,ledge,into bank,curved rail,gap to ledge,bank,into bank
+flat,gap,gap,over trash can,bump to bar,over rail into bank,flat,over trash can
+gap,wall,handrail,flat gap,,wall to handrail,gap,flat gap
+flat,gap,stairs,,,,flat,
+ledge,flat,handrail,gap to ledge,bump to bar,,ledge,gap to ledge
+ledge,flat rail,gap,,into bank,escalator,ledge,
+ledge,curb,hubba,,gap to curb,kinked hubba,ledge,
+handrail,flat,gap,,into bank,over rail,handrail,
+ledge,gap,pad,,,into bank,ledge,
+gap,flat rail,flat rail,over rail,,pole to gap to rail,gap,over rail
+gap,flat,wall,flat gap,,wall to stairs,gap,flat gap
+gap,flat rail,stairs,,wall to gap to rail to bank,,gap,
+hubba,stairs,stairs,,over rail,over rail,hubba,
+ledge,gap,ledge,,over barrier,curved ledge,ledge,
+gap,ledge,ledge,,,gap to ledge to gap,gap,
+ledge,stairs,ledge,,,,ledge,
+hubba,stairs,ledge,,,,hubba,
+gap,ledge,flat rail,over fence,banked ledge,pipes,gap,over fence
+ledge,flat rail,curb,ledge to gap,bank to rail,,ledge,ledge to gap
+gap,flat rail,ledge,over rail,,over bike,gap,over rail
+stairs,wall,transition,,,street transition,stairs,
+flat,flat rail,curb,over hydrant,into bank,,flat,over hydrant
+gap,gap,curb,into bank,over rail,drop to curb,gap,into bank
+pad,gap,handrail,into bank,over car hood,handrail to hubba,pad,into bank
+pad,ledge,pad,,gap to ledge,chain to pad,pad,
+gap,ledge,curb,flat gap,,,gap,flat gap
+ledge,ledge,ledge,,,,ledge,
+stairs,gap,wall,,hip,,stairs,
+stairs,pad,stairs,,gap to pad,,stairs,
+flat rail,ledge,curb,,rail to ledge,gap to curb to gap,flat rail,
+pad,bank,gap,,into bank,flat gap to bank,pad,
+ledge,ledge,ledge,ledge to wall to ledge,,curved ledge,ledge,ledge to wall to ledge
+ledge,stairs,ledge,gap to ledge,,,ledge,gap to ledge
+pad,gap,gap,gap to pad,,flat gap,pad,gap to pad
+handrail,stairs,stairs,,,,handrail,
+stairs,ledge,ledge,,,gap to ledge,stairs,
+stairs,flat,stairs,gap and stairs,,,stairs,gap and stairs
+transition,ledge,ledge,,,out ledge,transition,
+hubba,hubba,transition,,,hip,hubba,
+handrail,ledge,gap,,ledge to pad to gap,bump to bar,handrail,
+flat rail,wall,ledge,,wall to gap,out ledge,flat rail,
+ledge,handrail,ledge,,,,ledge,
+ledge,handrail,ledge,,,,ledge,
+gap,handrail,pad,gap to bank,flat rail to handrail,,gap,gap to bank
+ledge,ledge,gap,,,over wall,ledge,
+flat,transition,stairs,into bank,miniramp,,flat,into bank
+transition,ledge,ledge,quarterpipe,ledge to curb,out ledge,transition,quarterpipe
+gap,ledge,ledge,,ledge to drop,,gap,hip
+ledge,gap,stairs,banked ledge,bump to bar,,ledge,banked ledge
+gap,handrail,pad,,,,gap,
+gap,ledge,stairs,over rail into bank,,,gap,over rail into bank
+stairs,hubba,stairs,,,,stairs,
+ledge,handrail,wall,,,gap to wall,ledge,
+ledge,ledge,ledge,,,,ledge,
+handrail,ledge,ledge,,,,handrail,
+ledge,ledge,gap,,sphere,over rail,ledge,
+pad,pad,transition,,,,pad,
+gap,gap,gap,over trash can,kicker to kicker,over can,gap,over trash can
+ledge,gap,stairs,,,,ledge,
+flat rail,ledge,hubba,,banked ledge,hubba to ledge,flat rail,
+gap,stairs,ledge,over rail,,out ledge,gap,over rail
+gap,pad,wall,over wall,pad to ledge,wall to bank,gap,over wall
+hubba,ledge,flat rail,,,into bank,hubba,
+ledge,hubba,hubba,bank to ledge,,,ledge,bank to ledge
+ledge,hubba,ledge,ledge to ledge,,ledge to rail to handrail,ledge,ledge to ledge
+ledge,curb,pad,,,pad to handrail,ledge,
+gap,ledge,gap,over rail,,,gap,over rail
+wall,gap,ledge,,over rail into bank,out ledge,wall,
+wall,pad,pad,bank to wall,,pad to wall to pad,wall,bank to wall
+wall,pad,ledge,bank to wall,,bump to can,wall,bank to wall
+transition,ledge,gap,street transition,ledge to pad,into bank,transition,street transition
+pad,ledge,ledge,into bank,,,pad,into bank
+ledge,handrail,ledge,,,,ledge,
+handrail,ledge,stairs,,ledge to gap,,handrail,
+stairs,handrail,ledge,up stairs,,,stairs,up stairs
+ledge,flat,wall,,,,ledge,
+pad,wall,flat rail,,wall to gap,drop to rail,pad,
+pad,pad,ledge,,,,pad,
+stairs,ledge,gap,,curved ledge,into bank,stairs,
+transition,ledge,stairs,quarterpipe,,,transition,quarterpipe
+stairs,gap,ledge,,launch,gap to ledge,stairs,
+hubba,pad,ledge,,pad to flat,ledge to gap,hubba,
+ledge,gap,wall,ledge to gap,bump to bar,on mailbox,ledge,ledge to gap
+gap,ledge,gap,over barrier,out ledge,over trash can,gap,over barrier
+ledge,handrail,flat rail,,into bank,rail to stump to rail,ledge,
+flat,ledge,ledge,,out ledge,ledge to stairs,flat,
+ledge,ledge,ledge,,out ledge,,ledge,
+bank,flat rail,flat rail,,ride on,glass barrier to drop,bank,
+ledge,gap,stairs,,gap,,ledge,
+hubba,flat,stairs,,flat gap,,hubba,
+gap,flat,handrail,over rail into bank,over bench,,gap,over rail into bank
+gap,stairs,flat,over trash can,,into bank,gap,over trash can
+gap,flat rail,flat rail,gap to pad,street pole,into bank,gap,gap to pad
+gap,handrail,flat rail,over barrier,,into bank,gap,over barrier
+hubba,hubba,gap,,,bump to bar,hubba,
+gap,transition,transition,flat gap,street quarter,street transition,gap,flat gap
+ledge,ledge,gap,banked ledge,,,ledge,banked ledge
+gap,ledge,stairs,gap to bank,,,gap,gap to bank
+curb,gap,gap,,over pad,flat gap,curb,
+ledge,wall,ledge,,,ledge to gap,ledge,
+ledge,pad,ledge,,pad to stairs,ledge to gap,ledge,
+ledge,stairs,gap,,,over can,ledge,
+ledge,stairs,ledge,,,,ledge,
+gap,wall,ledge,over rail,down stairs,curved ledge,gap,over rail
+flat,pad,bank,into bank,,over hip and rail,flat,into bank
+ledge,bank,wall,,,,ledge,
+ledge,ledge,flat,,flat to ledge,bump to bar,ledge,
+handrail,gap,ledge,,over rail,,handrail,
+transition,gap,flat,bowl,over bin,,transition,bowl
+transition,gap,gap,quarterpipe,over pad,into bank,transition,quarterpipe
+handrail,ledge,gap,,curved ledge,bump to bar,handrail,
+ledge,transition,handrail,,bowl,into bank,ledge,
+handrail,ledge,ledge,,out ledge,bank to ledge,handrail,
+ledge,ledge,hubba,over trash can,,to handrail,ledge,over trash can
+pad,hubba,wall,pad to stairs,,,pad,pad to stairs
+flat rail,gap,ledge,rail to gap,kicker,out ledge,flat rail,rail to gap
+transition,ledge,stairs,quarterpipe,gap in gap out,into hill,transition,quarterpipe
+pad,ledge,transition,,curved ledge,quarterpipe,pad,
+wall,handrail,gap,,,,wall,
+ledge,ledge,pad,ledge to gap,,to wall,ledge,ledge to gap
+ledge,hubba,wall,wall to ledge to wall,,wall to gap,ledge,wall to ledge to wall
+hubba,handrail,gap,,,bump to bar,hubba,
+stairs,gap,handrail,,over rail,,stairs,
+ledge,flat rail,gap,ledge to ledge,,flat gap,ledge,ledge to ledge
+hubba,gap,wall,,,,hubba,
+gap,pad,ledge,,,out ledge,gap,
+ledge,gap,transition,,,concrete skatepark,ledge,
+pad,transition,ledge,,,,pad,
+gap,ledge,ledge,over barrier,banked ledge,,gap,over barrier
+gap,stairs,stairs,over trash can,,,gap,over trash can
+pad,hubba,ledge,,,,pad,
+hubba,wall,ledge,,bank to wall,to wall,hubba,
+stairs,hubba,handrail,,,,stairs,
+transition,flat,gap,street transition,flat gap,into bank,transition,street transition
+ledge,transition,gap,out ledge,,bump to can,ledge,out ledge
+wall,ledge,stairs,,,,wall,
+transition,pad,ledge,street transition,,to ledge,transition,street transition
+gap,ledge,ledge,over bench,,,gap,over bench
+gap,gap,gap,over wall,over trash can,into bank,gap,over wall
+gap,gap,flat rail,over barrier,,,gap,over barrier
+stairs,ledge,stairs,up stairs,,double set,stairs,up stairs
+ledge,pad,flat rail,,pad to gap,up and down,ledge,
+flat rail,flat,ledge,,,out ledge,flat rail,
+ledge,ledge,gap,,bank to ledge,flat gap,ledge,
+ledge,ledge,gap,gap to ledge,,bump to bar,ledge,gap to ledge
+wall,hubba,handrail,,hubba to pad to stairs,quad kink,wall,
+pad,ledge,stairs,,ledge to gap,double set,pad,
+wall,gap,pad,down stairs,over barrier,to stairs,wall,down stairs
+curb,flat,pad,,over bench,to wall,curb,
+flat rail,wall,hubba,,wall to curb to bank,to can,flat rail,
+gap,ledge,ledge,over rail,,,gap,over rail
+hubba,wall,hubba,,wall gap wall,,hubba,
+flat rail,ledge,ledge,,ledge into bank,,flat rail,
+gap,ledge,gap,over rail into bank,,channel,gap,over rail into bank
+gap,hubba,handrail,over barrier,,around corner,gap,over barrier
+ledge,pad,wall,bench,pad to drop,to stairs,ledge,bench
+stairs,flat rail,ledge,,curved rail,,stairs,
+flat,ledge,ledge,into bank,bank to ledge,,flat,into bank
+ledge,wall,ledge,,,,ledge,
+ledge,hubba,pad,,,pad to flat gap,ledge,
+stairs,ledge,gap,up stairs,,concrete skatepark,stairs,up stairs
+gap,ledge,wall,into bank,,,gap,into bank
+flat,ledge,gap,into bank,out ledge,into pole jam,flat,into bank
+hubba,hubba,flat rail,,,into hill,hubba,
+handrail,hubba,flat rail,,wavy hubba,into hill,handrail,
+gap,ledge,ledge,,curved ledge,,gap,
+flat rail,ledge,stairs,gap to rail,,,flat rail,gap to rail
+pad,wall,pad,,,,pad,
+ledge,ledge,gap,,ledge to gap,,ledge,
+pad,gap,flat rail,,,curved rail,pad,
+transition,ledge,ledge,street transition,out ledge,,transition,street transition
+hubba,flat,gap,,,over table,hubba,
+stairs,ledge,gap,,out ledge,bump to bar,stairs,
+ledge,gap,pad,,,,ledge,
+wall,ledge,pad,wall to rail,,into bank,wall,wall to rail
+handrail,ledge,gap,,,,handrail,
+ledge,flat,flat,bank to ledge to bank,into bank,into bank,ledge,bank to ledge to bank
+flat rail,pad,wall,,,to ledge,flat rail,
+pad,ledge,handrail,,,,pad,
+gap,handrail,pad,,,concrete skatepark,gap,
+ledge,ledge,pad,,,,ledge,
+pad,ledge,wall,over rail,out ledge,to ledge,pad,over rail
+curb,gap,handrail,gap to curb,into bank,handrail to hubba,curb,gap to curb
+flat rail,ledge,stairs,,out ledge,,flat rail,
+gap,ledge,gap,curb cut,curved up ledge,onto ball,gap,curb cut
+ledge,flat,flat rail,,into bank,into bank,ledge,
+gap,hubba,pad,over trash can,,,gap,over trash can
+ledge,gap,hubba,ledge to gap,channel,,ledge,ledge to gap
+transition,gap,ledge,street transition,into bank,ledge to ledge,transition,street transition
+ledge,ledge,ledge,,curved ledge,ledge to pad to stairs,ledge,
+flat,gap,gap,into bank,over ledge,flat gap,flat,into bank
+gap,ledge,pole jam,over barrier,out ledge,,gap,over barrier
+stairs,stairs,ledge,,,,stairs,
+ledge,flat rail,flat rail,ledge to gap,rail to gap,,ledge,ledge to gap
+gap,stairs,gap,gap to wall,over rail,bump to bar to ledge,gap,gap to wall
+ledge,gap,curb,ledge to gap,bump to bump,,ledge,ledge to gap
+curb,ledge,transition,,bump to ledge,street transition,curb,
+hubba,pad,transition,,,street transition,hubba,
+gap,gap,ledge,,,to stairs,gap,
+ledge,gap,ledge,,into fountain,,ledge,
+handrail,ledge,pad,,ledge to ledge,gap to pad,handrail,
+gap,gap,ledge,over rail,huge gap,curved ledge,gap,over rail
+ledge,ledge,gap,ledge to gap,,over rail into bank,ledge,ledge to gap
+stairs,flat rail,flat rail,up stairs,curved rail,curved rail,stairs,up stairs
+stairs,flat,gap,,over trash can,over rail into double bank,stairs,
+ledge,pad,ledge,ledge to rail,bump to pad,,ledge,ledge to rail
+stairs,ledge,ledge,,banked ledge,,stairs,
+flat rail,flat,gap,into bank,over rail,,flat rail,into bank
+ledge,ledge,ledge,,ledge to bank,,ledge,
+transition,hubba,ledge,bowl,curved hubba,,transition,bowl
+flat rail,ledge,gap,rail to rail,,over hydrant,flat rail,rail to gap
+curb,ledge,gap,gap to curb,ledge to hubba,into bank,curb,gap to curb
+gap,pad,gap,over rail,,bump to gap,gap,over rail
+stairs,ledge,ledge,,bank to ledge,out ledge,stairs,
+gap,stairs,gap,gap to curb,,up gap,gap,gap to curb
+gap,stairs,pad,,,,gap,
+flat,flat rail,flat,rock,middle rail,,flat,rock
+wall,ledge,ledge,down stairs,,gap to ledge to ledge,wall,down stairs
+stairs,ledge,hubba,,,,stairs,
+pad,gap,stairs,upwards pad,bump to gap,,pad,upwards pad
+handrail,pad,gap,,,,handrail,
+ledge,flat rail,ledge,ledge to gap,bench to rail to bench,,ledge,ledge to gap
+gap,flat rail,ledge,over rail into bank,,into bank,gap,over rail into bank
+stairs,stairs,flat,up stairs,,over block,stairs,up stairs
+stairs,flat,gap,,over hydrant,over wall,stairs,
+wall,pad,transition,bank to wall,pad to ledge,miniramp,wall,bank to wall
+stairs,pad,gap,,pad to stairs,bump to gap,stairs,
+gap,ledge,ledge,,,,gap,
+pole,wall,pad,,gap to wall,pad to pad,pole,
+stairs,gap,gap,,flat gap,into hill,stairs,
+wall,hubba,ledge,,,into bank,wall,
+hubba,flat,flat rail,,over like 20 boards,up rail,hubba,
+pad,stairs,ledge,,over gate,,pad,
+flat rail,stairs,flat rail,,up stairs,bump to rail,flat rail,
+gap,handrail,wall,gap to curb,,bank to wall,gap,gap to curb
+wall,ledge,flat rail,,bank to ledge,tram tracks,wall,
+flat,ledge,ledge,flat to wall,,curved ledge,flat,flat to wall
+flat rail,ledge,pad,,up ledge,into bank,flat rail,
+gap,ledge,pad,over rail,into bank,,gap,over rail
+gap,ledge,stairs,into bank,gap to ledge,,gap,into bank
+pad,ledge,ledge,,,,pad,
+handrail,ledge,ledge,,,into bank,handrail,
+flat rail,gap,stairs,rail to gap,into bank,,flat rail,rail to gap
+flat rail,ledge,transition,rail to rail,,concrete skatepark,flat rail,rail to rail
+gap,gap,flat,,,into bank,gap,
+gap,ledge,ledge,thread the needle,,out ledge,gap,Thread the needle
+ledge,gap,gap,,,,ledge,
+gap,flat rail,wall,over rail,uprail,kicker to wall,gap,over rail
+transition,ledge,ledge,street transition,,,transition,street transition
+gap,gap,flat rail,flat gap,bump to car,rail to gap,gap,flat gap
+stairs,flat rail,ledge,,rail into bank,up ledge,stairs,
+ledge,ledge,gap,out ledge,into halfpipe,rooftop,ledge,out ledge
+curb,ledge,stairs,,,,curb,
+gap,gap,pad,over barrier,over rail into bank,pad to hubba,gap,over barrier
+handrail,flat,gap,,,over picnic table,handrail,
+ledge,ledge,wall,,,,ledge,
+curb,ledge,ledge,gap to curb,ledge to ledge,into bank,curb,gap to curb
+ledge,curb,stairs,,gap to curb,,ledge,
+ledge,gap,ledge,,over rail into bank,into bank,ledge,
+gap,ledge,ledge,over barrier,out ledge,,gap,over barrier
+gap,gap,flat rail,over barrier,bump to gap,rail to rail,gap,over barrier
+flat rail,wall,ledge,ledge to rail,quarter to wall,,flat rail,ledge to rail
+gap,gap,ledge,,flat gap,into bank,gap,
+pad,pad,hubba,pad to stairs,,,pad,pad to stairs
+hubba,handrail,ledge,,,out ledge,hubba,
+gap,gap,curb,flat gap,bump to gap,around corner,gap,flat gap
+pad,stairs,ledge,,,,pad,
+stairs,ledge,handrail,,ledge to ledge,,stairs,
+handrail,gap,stairs,,,,handrail,
+gap,pad,handrail,hip,,knobbed,gap,
+pad,flat rail,gap,,rail to rail to rail,over rail,pad,
+flat rail,handrail,pad,into bank,,,flat rail,into bank
+flat rail,gap,stairs,gap to rail,,up stairs,flat rail,gap to rail
+gap,gap,gap,over barrier,flat gap,into bank,gap,over barrier
+pad,gap,gap,into bank,stairs to flat gap,flat gap,pad,into bank
+,stairs,gap,,,,gap,over barrier
+,flat rail,gap,,uprail,,pad,
+,flat rail,ledge,,,bump to bar to ledge,gap,flat gap
+,pad,gap,,,,ledge,ledge to drop
+,transition,ledge,,,,ledge,
+,flat,handrail,,into bank,,hubba,up hubba
+,ledge,flat rail,,over rail to ledge,into bank,stairs,
+,gap,hubba,,bump to bar,up hubba,gap,over rail
+,hubba,ledge,,hubba to curb,out ledge,handrail,
+,gap,gap,,gap to hubba,over handrail,flat rail,curved rail
+,,,,,,wall,wallride down stairs
+,,,,,,gap,over trash can
+,,,,,,pad,
+,,,,,,hubba,
+,,,,,,ledge,gap to ledge into bank
+,,,,,,stairs,
+,,,,,,ledge,curved bench
+,,,,,,wall,
+,,,,,,ledge,
+,,,,,,gap,big drop
+,,,,,,stairs,
+,,,,,,curb,
+,,,,,,flat,into bank
+,,,,,,flat,
+,,,,,,flat rail,pole to flat rail to into bank
+,,,,,,pad,
+,,,,,,pad,
+,,,,,,ledge,out ledge
+,,,,,,ledge,ledge to flat rail
+,,,,,,ledge,
+,,,,,,wall,
+,,,,,,ledge,ledge to ledge
+,,,,,,ledge,
+,,,,,,transition,concrete park
+,,,,,,ledge,out ledge
+,,,,,,ledge,out ledge
+,,,,,,stairs,
+,,,,,,pad,
+,,,,,,ledge,
+,,,,,,gap,launch ramp
+,,,,,,ledge,
+,,,,,,ledge,out ledge
+,,,,,,flat,into bank
+,,,,,,stairs,
+,,,,,,gap,over rail into bank
+,,,,,,ledge,ledge to ledge
+,,,,,,bank,Drop in
+,,,,,,handrail,
+,,,,,,ledge,
+,,,,,,ledge,out ledge
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,gap,flat gap
+,,,,,,gap,over rail into bank
+,,,,,,gap,over rail into bank
+,,,,,,flat rail,
+,,,,,,ledge,
+,,,,,,flat rail,
+,,,,,,gap,over rail into bank
+,,,,,,gap,over bench
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,stairs,
+,,,,,,gap,flat gap
+,,,,,,ledge,curved ledge
+,,,,,,gap,wallie to gap
+,,,,,,stairs,
+,,,,,,wall,wallie to gap
+,,,,,,bank,into bank
+,,,,,,curb,gap to curb
+,,,,,,transition,pool
+,,,,,,gap,
+,,,,,,gap,over wall
+,,,,,,transition,street quarter
+,,,,,,stairs,stairs to pad to wall
+,,,,,,curb,
+,,,,,,pad,
+,,,,,,ledge,ledge to pad
+,,,,,,ledge,
+,,,,,,ledge,gap to ledge
+,,,,,,ledge,
+,,,,,,pad,pad to gap to bank
+,,,,,,ledge,ledge to wall
+,,,,,,ledge,out ledge
+,,,,,,flat,onto ledge
+,,,,,,hubba,ledge to gap
+,,,,,,stairs,over chain
+,,,,,,gap,onto loading dock
+,,,,,,ledge,
+,,,,,,gap,curb cut
+,,,,,,ledge,
+,,,,,,wall,Transition to wall
+,,,,,,flat,
+,,,,,,stairs,
+,,,,,,ledge,out ledge
+,,,,,,handrail,
+,,,,,,ledge,out ledge
+,,,,,,ledge,out ledge
+,,,,,,gap,big drop
+,,,,,,ledge,on hydrant
+,,,,,,flat,over barrier
+,,,,,,ledge,
+,,,,,,ledge,curved ledge
+,,,,,,gap,
+,,,,,,gap,
+,,,,,,flat,
+,,,,,,pad,pad to pad
+,,,,,,gap,big drop
+,,,,,,stairs,up stairs
+,,,,,,flat,
+,,,,,,ledge,gap to ledge
+,,,,,,ledge,ledge to bank
+,,,,,,ledge,
+,,,,,,pad,
+,,,,,,hubba,
+,,,,,,stairs,up stairs
+,,,,,,ledge,
+,,,,,,handrail,handrail to handrail
+,,,,,,gap,launch ramp
+,,,,,,pad,
+,,,,,,gap,street hip
+,,,,,,flat,
+,,,,,,ledge,
+,,,,,,ledge,curved ledge
+,,,,,,pad,pad to stairs
+,,,,,,flat rail,
+,,,,,,transition,street quarter
+,,,,,,gap,into bank
+,,,,,,stairs,up stairs
+,,,,,,ledge,gap to ledge
+,,,,,,gap,bump to bar
+,,,,,,hubba,
+,,,,,,ledge,
+,,,,,,stairs,up stairs
+,,,,,,gap,
+,,,,,,ledge,
+,,,,,,wall,
+,,,,,,ledge,gap to ledge into bank
+,,,,,,flat,over trash can
+,,,,,,ledge,
+,,,,,,stairs,
+,,,,,,curb,
+,,,,,,gap,over rail
+,,,,,,flat rail,into bank
+,,,,,,ledge,banked ledge
+,,,,,,ledge,ledge to wall
+,,,,,,ledge,gap to hubba
+,,,,,,stairs,up stairs
+,,,,,,flat rail,curved rail
+,,,,,,ledge,curved ledge
+,,,,,,stairs,
+,,,,,,ledge,curb to ledge
+,,,,,,wall,gap to wall
+,,,,,,ledge,gap to ledge
+,,,,,,ledge,
+,,,,,,gap,
+,,,,,,wall,bank to wall
+,,,,,,ledge,wall to ledge
+,,,,,,ledge,
+,,,,,,ledge,wall to banked ledge
+,,,,,,transition,fly out
+,,,,,,gap,into bank
+,,,,,,bank,flat bank to curb
+,,,,,,stairs,
+,,,,,,ledge,launch to ledge
+,,,,,,wall,wall to gap
+,,,,,,ledge,
+,,,,,,pad,pad to bank
+,,,,,,stairs,
+,,,,,,gap,
+,,,,,,ledge,
+,,,,,,flat,
+,,,,,,handrail,rail to gap
+,,,,,,handrail,handrail to ledge
+,,,,,,wall,on tree
+,,,,,,ledge,
+,,,,,,gap,
+,,,,,,gap,flat gap
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,pad,
+,,,,,,gap,
+,,,,,,gap,over rail
+,,,,,,ledge,ledge to gap
+,,,,,,handrail,
+,,,,,,flat,over trash can
+,,,,,,hubba,up hubba
+,,,,,,gap,
+,,,,,,curb,
+,,,,,,gap,
+,,,,,,flat,into bank
+,,,,,,ledge,gap to ledge
+,,,,,,ledge,
+,,,,,,handrail,
+,,,,,,handrail,handrail to ledge
+,,,,,,stairs,over rail
+,,,,,,stairs,
+,,,,,,transition,concrete park
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,flat,into bank
+,,,,,,stairs,over rail
+,,,,,,stairs,
+,,,,,,ledge,
+,,,,,,gap,off egg
+,,,,,,hubba,wall to hubba
+,,,,,,stairs,over rail
+,,,,,,ledge,
+,,,,,,pad,
+,,,,,,ledge,
+,,,,,,flat,over bench
+,,,,,,handrail,curved rail
+,,,,,,gap,
+,,,,,,handrail,curved rail
+,,,,,,gap,bump to bar
+,,,,,,wall,
+,,,,,,gap,
+,,,,,,flat,over barrier
+,,,,,,flat rail,into bank
+,,,,,,curb,gap to curb
+,,,,,,flat,into bank
+,,,,,,gap,
+,,,,,,flat rail,
+,,,,,,flat,
+,,,,,,flat rail,wall to gap to rail to bank
+,,,,,,stairs,over rail
+,,,,,,gap,over barrier
+,,,,,,ledge,
+,,,,,,stairs,
+,,,,,,stairs,
+,,,,,,ledge,banked ledge
+,,,,,,flat rail,bank to rail
+,,,,,,flat rail,
+,,,,,,wall,
+,,,,,,flat rail,into bank
+,,,,,,gap,over rail
+,,,,,,gap,over car hood
+,,,,,,ledge,gap to ledge
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,gap,
+,,,,,,pad,gap to pad
+,,,,,,ledge,rail to ledge
+,,,,,,bank,into bank
+,,,,,,ledge,
+,,,,,,stairs,
+,,,,,,gap,
+,,,,,,stairs,
+,,,,,,ledge,
+,,,,,,flat,
+,,,,,,ledge,
+,,,,,,hubba,
+,,,,,,ledge,ledge to pad to gap
+,,,,,,wall,wall to gap
+,,,,,,handrail,
+,,,,,,handrail,
+,,,,,,handrail,flat rail to handrail
+,,,,,,ledge,
+,,,,,,transition,miniramp
+,,,,,,ledge,ledge to curb
+,,,,,,ledge,ledge to drop
+,,,,,,gap,bump to bar
+,,,,,,handrail,
+,,,,,,ledge,
+,,,,,,hubba,
+,,,,,,handrail,
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,ledge,sphere
+,,,,,,pad,
+,,,,,,gap,kicker to kicker
+,,,,,,gap,
+,,,,,,ledge,banked ledge
+,,,,,,stairs,
+,,,,,,pad,pad to ledge
+,,,,,,ledge,
+,,,,,,hubba,
+,,,,,,hubba,
+,,,,,,curb,
+,,,,,,ledge,
+,,,,,,gap,over rail into bank
+,,,,,,pad,
+,,,,,,pad,
+,,,,,,ledge,ledge to pad
+,,,,,,ledge,
+,,,,,,handrail,
+,,,,,,ledge,ledge to gap
+,,,,,,handrail,
+,,,,,,flat,
+,,,,,,wall,wall to gap
+,,,,,,pad,
+,,,,,,ledge,curved ledge
+,,,,,,ledge,
+,,,,,,gap,launch
+,,,,,,pad,pad to flat
+,,,,,,gap,bump to bar
+,,,,,,ledge,out ledge
+,,,,,,handrail,into bank
+,,,,,,ledge,out ledge
+,,,,,,ledge,out ledge
+,,,,,,flat rail,ride on
+,,,,,,gap,gap
+,,,,,,flat,flat gap
+,,,,,,flat,over bench
+,,,,,,stairs,
+,,,,,,flat rail,street pole
+,,,,,,handrail,
+,,,,,,hubba,
+,,,,,,transition,street quarter
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,gap,over pad
+,,,,,,wall,
+,,,,,,pad,pad to stairs
+,,,,,,stairs,
+,,,,,,stairs,
+,,,,,,wall,down stairs
+,,,,,,pad,
+,,,,,,bank,
+,,,,,,ledge,flat to ledge
+,,,,,,gap,over rail
+,,,,,,gap,over bin
+,,,,,,gap,over pad
+,,,,,,ledge,curved ledge
+,,,,,,transition,bowl
+,,,,,,ledge,out ledge
+,,,,,,ledge,
+,,,,,,hubba,
+,,,,,,gap,kicker
+,,,,,,ledge,gap in gap out
+,,,,,,ledge,curved ledge
+,,,,,,handrail,
+,,,,,,ledge,
+,,,,,,hubba,
+,,,,,,handrail,
+,,,,,,gap,over rail
+,,,,,,flat rail,
+,,,,,,gap,
+,,,,,,pad,
+,,,,,,gap,
+,,,,,,transition,
+,,,,,,ledge,banked ledge
+,,,,,,stairs,
+,,,,,,hubba,
+,,,,,,wall,bank to wall
+,,,,,,hubba,
+,,,,,,flat,flat gap
+,,,,,,transition,
+,,,,,,ledge,
+,,,,,,pad,
+,,,,,,ledge,
+,,,,,,gap,over trash can
+,,,,,,gap,
+,,,,,,ledge,
+,,,,,,pad,pad to gap
+,,,,,,flat,
+,,,,,,ledge,bank to ledge
+,,,,,,ledge,
+,,,,,,hubba,hubba to pad to stairs
+,,,,,,ledge,ledge to gap
+,,,,,,gap,over barrier
+,,,,,,flat,over bench
+,,,,,,wall,wall to curb to bank
+,,,,,,ledge,
+,,,,,,wall,wall gap wall
+,,,,,,ledge,ledge into bank
+,,,,,,ledge,
+,,,,,,hubba,
+,,,,,,pad,pad to drop
+,,,,,,flat rail,curved rail
+,,,,,,ledge,bank to ledge
+,,,,,,wall,
+,,,,,,hubba,
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,ledge,out ledge
+,,,,,,hubba,
+,,,,,,hubba,wavy hubba
+,,,,,,ledge,curved ledge
+,,,,,,ledge,
+,,,,,,wall,
+,,,,,,ledge,ledge to gap
+,,,,,,gap,
+,,,,,,ledge,out ledge
+,,,,,,flat,
+,,,,,,ledge,out ledge
+,,,,,,gap,
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,flat,into bank
+,,,,,,pad,
+,,,,,,ledge,
+,,,,,,handrail,
+,,,,,,ledge,
+,,,,,,ledge,out ledge
+,,,,,,gap,into bank
+,,,,,,ledge,out ledge
+,,,,,,ledge,curved up ledge
+,,,,,,flat,into bank
+,,,,,,hubba,
+,,,,,,gap,channel
+,,,,,,gap,into bank
+,,,,,,ledge,curved ledge
+,,,,,,gap,over ledge
+,,,,,,ledge,out ledge
+,,,,,,stairs,
+,,,,,,flat rail,rail to gap
+,,,,,,stairs,over rail
+,,,,,,gap,bump to bump
+,,,,,,ledge,bump to ledge
+,,,,,,pad,
+,,,,,,gap,
+,,,,,,gap,into fountain
+,,,,,,ledge,ledge to ledge
+,,,,,,gap,huge gap
+,,,,,,ledge,
+,,,,,,flat rail,curved rail
+,,,,,,flat,over trash can
+,,,,,,pad,bump to pad
+,,,,,,ledge,banked ledge
+,,,,,,flat,over rail
+,,,,,,ledge,ledge to bank
+,,,,,,hubba,curved hubba
+,,,,,,ledge,
+,,,,,,ledge,ledge to hubba
+,,,,,,pad,
+,,,,,,ledge,bank to ledge
+,,,,,,stairs,
+,,,,,,stairs,
+,,,,,,flat rail,middle rail
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,gap,bump to gap
+,,,,,,pad,
+,,,,,,flat rail,bench to rail to bench
+,,,,,,flat rail,
+,,,,,,stairs,
+,,,,,,flat,over hydrant
+,,,,,,pad,pad to ledge
+,,,,,,pad,pad to stairs
+,,,,,,ledge,
+,,,,,,wall,gap to wall
+,,,,,,gap,flat gap
+,,,,,,hubba,
+,,,,,,flat,over like 20 boards
+,,,,,,stairs,over gate
+,,,,,,stairs,up stairs
+,,,,,,handrail,
+,,,,,,ledge,bank to ledge
+,,,,,,ledge,
+,,,,,,ledge,up ledge
+,,,,,,ledge,into bank
+,,,,,,ledge,gap to ledge
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,gap,into bank
+,,,,,,ledge,
+,,,,,,gap,
+,,,,,,ledge,
+,,,,,,gap,
+,,,,,,flat rail,uprail
+,,,,,,ledge,
+,,,,,,gap,bump to car
+,,,,,,flat rail,rail into bank
+,,,,,,ledge,into halfpipe
+,,,,,,ledge,
+,,,,,,gap,over rail into bank
+,,,,,,flat,
+,,,,,,ledge,
+,,,,,,ledge,ledge to ledge
+,,,,,,curb,gap to curb
+,,,,,,gap,over rail into bank
+,,,,,,ledge,out ledge
+,,,,,,gap,bump to gap
+,,,,,,wall,quarter to wall
+,,,,,,gap,flat gap
+,,,,,,pad,
+,,,,,,handrail,
+,,,,,,gap,bump to gap
+,,,,,,stairs,
+,,,,,,ledge,ledge to ledge
+,,,,,,gap,
+,,,,,,pad,
+,,,,,,flat rail,rail to rail to rail
+,,,,,,handrail,
+,,,,,,gap,
+,,,,,,gap,flat gap
+,,,,,,gap,stairs to flat gap
+,,,,,,stairs,
+,,,,,,flat rail,uprail
+,,,,,,flat rail,
+,,,,,,pad,
+,,,,,,transition,
+,,,,,,flat,into bank
+,,,,,,ledge,over rail to ledge
+,,,,,,gap,bump to bar
+,,,,,,hubba,hubba to curb
+,,,,,,gap,gap to hubba
+,,,,,,ledge,barrier
+,,,,,,ledge,
+,,,,,,curb,curved ledge
+,,,,,,gap,gap to pad to gap
+,,,,,,ledge,bench
+,,,,,,flat rail,rail to rail
+,,,,,,ledge,ledge to rail
+,,,,,,wall,into bank
+,,,,,,ledge,out ledge
+,,,,,,stairs,stairs to disaster
+,,,,,,pad,pad to chain
+,,,,,,pad,
+,,,,,,gap,
+,,,,,,flat rail,
+,,,,,,ledge,ledge to ledge
+,,,,,,stairs,
+,,,,,,pole jam,pole jam flat pole jam
+,,,,,,ledge,into bank
+,,,,,,gap,flat gap
+,,,,,,ledge,gap to ledge
+,,,,,,ledge,bank to ledge
+,,,,,,pad,ledge to pad
+,,,,,,handrail,up rail to gap
+,,,,,,transition,street transition
+,,,,,,hubba,hubba
+,,,,,,handrail,
+,,,,,,ledge,out ledge
+,,,,,,stairs,
+,,,,,,ledge,
+,,,,,,ledge,ledge to gap
+,,,,,,flat rail,keyhole
+,,,,,,flat rail,into bank
+,,,,,,handrail,into bank
+,,,,,,transition,on chains
+,,,,,,ledge,out ledge
+,,,,,,pad,pad to ledge to pad
+,,,,,,ledge,
+,,,,,,handrail,
+,,,,,,ledge,
+,,,,,,ledge,into bank
+,,,,,,curb,bump to curb
+,,,,,,flat rail,out rail
+,,,,,,flat,over can
+,,,,,,curb,gap to curb
+,,,,,,gap,into bank
+,,,,,,hubba,curved hubba
+,,,,,,bank,bank to bank to bank
+,,,,,,handrail,
+,,,,,,handrail,
+,,,,,,gap,flat gap
+,,,,,,ledge,
+,,,,,,flat,over ledge
+,,,,,,handrail,
+,,,,,,pad,
+,,,,,,ledge,wall to ledge
+,,,,,,pad,flat
+,,,,,,handrail,
+,,,,,,ledge,out ledge
+,,,,,,pad,into bank
+,,,,,,pad,
+,,,,,,stairs,sign on stairs
+,,,,,,ledge,
+,,,,,,ledge,out ledge
+,,,,,,ledge,
+,,,,,,pad,
+,,,,,,stairs,
+,,,,,,flat rail,bump to bar
+,,,,,,handrail,handrail to ledge
+,,,,,,ledge,table
+,,,,,,stairs,
+,,,,,,ledge,benches
+,,,,,,ledge,
+,,,,,,ledge,ledge to wall
+,,,,,,ledge,
+,,,,,,flat rail,
+,,,,,,gap,over rail
+,,,,,,ledge,out ledge
+,,,,,,handrail,
+,,,,,,gap,
+,,,,,,ledge,into bank
+,,,,,,flat rail,
+,,,,,,stairs,
+,,,,,,curb,over fence
+,,,,,,gap,
+,,,,,,ledge,out ledge
+,,,,,,hubba,
+,,,,,,ledge,bump to dumpster
+,,,,,,flat rail,bank to rail
+,,,,,,gap,
+,,,,,,transition,street transition
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,flat rail,bench
+,,,,,,ledge,
+,,,,,,ledge,triple drop
+,,,,,,ledge,bump to ledge
+,,,,,,wall,
+,,,,,,gap,
+,,,,,,flat rail,gap to rail
+,,,,,,pad,pad to ledge
+,,,,,,curb,gap to curb
+,,,,,,ledge,curved ledge
+,,,,,,flat rail,into bank
+,,,,,,ledge,into bank
+,,,,,,stairs,
+,,,,,,ledge,to pad to ledge
+,,,,,,ledge,to hubba
+,,,,,,ledge,into bank
+,,,,,,stairs,
+,,,,,,ledge,
+,,,,,,bank,
+,,,,,,ledge, 
+,,,,,,flat,into bank
+,,,,,,gap,bump to gap
+,,,,,,gap,bump to gap
+,,,,,,gap,into bank
+,,,,,,ledge,
+,,,,,,gap,
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,gap,over can
+,,,,,,stairs,
+,,,,,,gap,
+,,,,,,ledge,bump to ledge
+,,,,,,bank,escalator
+,,,,,,ledge,
+,,,,,,stairs,
+,,,,,,handrail,
+,,,,,,ledge,out ledge
+,,,,,,ledge,
+,,,,,,ledge,banked ledge
+,,,,,,gap,into bank to drop
+,,,,,,stairs, 
+,,,,,,ledge,curb
+,,,,,,pad,
+,,,,,,gap,into bank
+,,,,,,hubba,up hubba
+,,,,,,ledge,
+,,,,,,pad,pad to bank
+,,,,,,bank,
+,,,,,,hubba,hubba to ledge
+,,,,,,curb,gap to curb
+,,,,,,flat rail,bank to rail
+,,,,,,stairs,
+,,,,,,ledge,out ledge
+,,,,,,ledge,
+,,,,,,handrail,
+,,,,,,gap,stairs
+,,,,,,stairs,
+,,,,,,ledge,
+,,,,,,stairs,
+,,,,,,ledge,bank to wall to ledge
+,,,,,,ledge,
+,,,,,,gap,
+,,,,,,ledge,escalator
+,,,,,,gap,
+,,,,,,ledge,curved ledge
+,,,,,,ledge,curved ledge
+,,,,,,curb,
+,,,,,,pad,pad to ledge
+,,,,,,ledge,
+,,,,,,curb,curb to curb
+,,,,,,gap,over block
+,,,,,,ledge,bump to ledge
+,,,,,,hubba, 
+,,,,,,handrail,
+,,,,,,handrail,double kink
+,,,,,,gap,bank
+,,,,,,curb,
+,,,,,,ledge,
+,,,,,,pad,pad to drop
+,,,,,,flat rail,
+,,,,,,ledge,out ledge
+,,,,,,gap,flat gap
+,,,,,,gap,
+,,,,,,flat rail,out rail
+,,,,,,hubba,
+,,,,,,stairs,
+,,,,,,transition,street transition
+,,,,,,ledge,ledge to drop
+,,,,,,ledge,banked ledge
+,,,,,,gap,over can
+,,,,,,bank,
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,curb,gap to curb
+,,,,,,gap,over pad
+,,,,,,flat,over can
+,,,,,,stairs,
+,,,,,,ledge,curved ledge
+,,,,,,pad,playground 
+,,,,,,gap,bump to gap
+,,,,,,ledge,drop
+,,,,,,gap,duck under pole
+,,,,,,ledge,
+,,,,,,pad,
+,,,,,,gap,flat gap
+,,,,,,ledge,out ledge
+,,,,,,ledge,
+,,,,,,wall,
+,,,,,,flat rail,
+,,,,,,ledge,bank to ledge
+,,,,,,ledge,ledge to gap
+,,,,,,ledge,ledge to gap
+,,,,,,bank,channel
+,,,,,,ledge,
+,,,,,,stairs,
+,,,,,,handrail,
+,,,,,,gap,over rail
+,,,,,,ledge,
+,,,,,,flat rail,
+,,,,,,gap,over can
+,,,,,,gap,to drop to drop to drop
+,,,,,,ledge,gap to ledge
+,,,,,,gap,over rail into bank
+,,,,,,handrail,wall to handrail
+,,,,,,stairs,
+,,,,,,handrail,
+,,,,,,gap,escalator
+,,,,,,hubba,kinked hubba
+,,,,,,gap,over rail
+,,,,,,pad,into bank
+,,,,,,flat rail,pole to gap to rail
+,,,,,,wall,wall to stairs
+,,,,,,stairs,
+,,,,,,stairs,over rail
+,,,,,,ledge,curved ledge
+,,,,,,ledge,gap to ledge to gap
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,flat rail,pipes
+,,,,,,curb,
+,,,,,,ledge,over bike
+,,,,,,transition,street transition
+,,,,,,curb,
+,,,,,,curb,drop to curb
+,,,,,,handrail,handrail to hubba
+,,,,,,pad,chain to pad
+,,,,,,curb,
+,,,,,,ledge,
+,,,,,,wall,
+,,,,,,stairs,
+,,,,,,curb,gap to curb to gap
+,,,,,,gap,flat gap to bank
+,,,,,,ledge,curved ledge
+,,,,,,ledge,
+,,,,,,gap,flat gap
+,,,,,,stairs,
+,,,,,,ledge,gap to ledge
+,,,,,,stairs,
+,,,,,,ledge,out ledge
+,,,,,,transition,hip
+,,,,,,gap,bump to bar
+,,,,,,ledge,out ledge
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,pad,
+,,,,,,gap,over wall
+,,,,,,stairs,
+,,,,,,ledge,out ledge
+,,,,,,ledge,
+,,,,,,stairs,
+,,,,,,pad,
+,,,,,,stairs,
+,,,,,,stairs,
+,,,,,,wall,gap to wall
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,gap,over rail
+,,,,,,transition,
+,,,,,,gap,over can
+,,,,,,stairs,
+,,,,,,hubba,hubba to ledge
+,,,,,,ledge,out ledge
+,,,,,,wall,wall to bank
+,,,,,,flat rail,into bank
+,,,,,,hubba,
+,,,,,,ledge,ledge to rail to handrail
+,,,,,,pad,pad to handrail
+,,,,,,gap,
+,,,,,,ledge,out ledge
+,,,,,,pad,pad to wall to pad
+,,,,,,ledge,bump to can
+,,,,,,gap,into bank
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,stairs, 
+,,,,,,ledge,
+,,,,,,wall,
+,,,,,,flat rail,drop to rail
+,,,,,,ledge,
+,,,,,,gap,into bank
+,,,,,,stairs,
+,,,,,,ledge,gap to ledge
+,,,,,,ledge,ledge to gap
+,,,,,,wall,on mailbox
+,,,,,,gap,over trash can
+,,,,,,flat rail,rail to stump to rail
+,,,,,,ledge,ledge to stairs
+,,,,,,ledge,
+,,,,,,flat rail,glass barrier to drop
+,,,,,,stairs,
+,,,,,,stairs,
+,,,,,,handrail,
+,,,,,,flat,into bank
+,,,,,,flat rail,into bank
+,,,,,,flat rail,into bank
+,,,,,,gap,bump to bar
+,,,,,,transition,street transition
+,,,,,,gap,
+,,,,,,stairs,
+,,,,,,gap,flat gap
+,,,,,,ledge,ledge to gap
+,,,,,,ledge,ledge to gap
+,,,,,,gap,over can
+,,,,,,ledge,
+,,,,,,ledge,curved ledge
+,,,,,,bank,over hip and rail
+,,,,,,wall,
+,,,,,,flat,bump to bar
+,,,,,,ledge,
+,,,,,,flat,
+,,,,,,gap,into bank
+,,,,,,gap,bump to bar
+,,,,,,handrail,into bank
+,,,,,,ledge,bank to ledge
+,,,,,,hubba,to handrail
+,,,,,,wall,
+,,,,,,ledge,out ledge
+,,,,,,stairs,into hill
+,,,,,,transition,quarterpipe
+,,,,,,gap,
+,,,,,,pad,to wall
+,,,,,,wall,wall to gap
+,,,,,,gap,bump to bar
+,,,,,,handrail,
+,,,,,,gap,flat gap
+,,,,,,wall,
+,,,,,,ledge,out ledge
+,,,,,,transition,concrete skatepark
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,stairs,
+,,,,,,ledge,
+,,,,,,ledge,to wall
+,,,,,,handrail,
+,,,,,,gap,into bank
+,,,,,,gap,bump to can
+,,,,,,stairs,
+,,,,,,ledge,to ledge
+,,,,,,ledge,
+,,,,,,gap,into bank
+,,,,,,flat rail, 
+,,,,,,stairs,double set
+,,,,,,flat rail,up and down
+,,,,,,ledge,out ledge
+,,,,,,gap,flat gap
+,,,,,,gap,bump to bar
+,,,,,,handrail,quad kink
+,,,,,,stairs,double set
+,,,,,,pad,to stairs
+,,,,,,pad,to wall
+,,,,,,hubba,to can
+,,,,,,ledge,
+,,,,,,hubba,
+,,,,,,ledge,
+,,,,,,gap,channel
+,,,,,,handrail,around corner
+,,,,,,wall,to stairs
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,pad,pad to flat gap
+,,,,,,gap,concrete skatepark
+,,,,,,wall,
+,,,,,,gap,into pole jam
+,,,,,,flat rail,into hill
+,,,,,,flat rail,into hill
+,,,,,,ledge,
+,,,,,,stairs,
+,,,,,,pad,
+,,,,,,gap,
+,,,,,,flat rail,curved rail
+,,,,,,ledge,
+,,,,,,gap,over table
+,,,,,,gap,bump to bar
+,,,,,,pad,
+,,,,,,pad,into bank
+,,,,,,gap,
+,,,,,,flat,into bank
+,,,,,,wall,to ledge
+,,,,,,handrail,
+,,,,,,pad,concrete skatepark
+,,,,,,pad,
+,,,,,,wall,to ledge
+,,,,,,handrail,handrail to hubba
+,,,,,,stairs,
+,,,,,,gap,onto ball
+,,,,,,flat rail,into bank
+,,,,,,pad,
+,,,,,,hubba,
+,,,,,,ledge,ledge to ledge
+,,,,,,ledge,ledge to pad to stairs
+,,,,,,gap,flat gap
+,,,,,,pole jam,
+,,,,,,ledge,
+,,,,,,flat rail,
+,,,,,,gap,bump to bar to ledge
+,,,,,,curb,
+,,,,,,transition,street transition
+,,,,,,transition,street transition
+,,,,,,ledge,to stairs
+,,,,,,ledge,
+,,,,,,pad,gap to pad
+,,,,,,ledge,curved ledge
+,,,,,,gap,over rail into bank
+,,,,,,flat rail,curved rail
+,,,,,,gap,over rail into double bank
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,gap,
+,,,,,,ledge,
+,,,,,,ledge,
+,,,,,,gap,over hydrant
+,,,,,,gap,into bank
+,,,,,,gap,bump to gap
+,,,,,,ledge,out ledge
+,,,,,,gap,up gap
+,,,,,,pad,
+,,,,,,flat,
+,,,,,,ledge,gap to ledge to ledge
+,,,,,,hubba,
+,,,,,,stairs,
+,,,,,,gap,
+,,,,,,ledge,
+,,,,,,ledge,into bank
+,,,,,,flat,over block
+,,,,,,gap,over wall
+,,,,,,transition,miniramp
+,,,,,,gap,bump to gap
+,,,,,,ledge,
+,,,,,,pad,pad to pad
+,,,,,,gap,into hill
+,,,,,,ledge,into bank
+,,,,,,flat rail,up rail
+,,,,,,ledge,
+,,,,,,flat rail,bump to rail
+,,,,,,wall,bank to wall
+,,,,,,flat rail,tram tracks
+,,,,,,ledge,curved ledge
+,,,,,,pad,into bank
+,,,,,,pad,
+,,,,,,stairs,
+,,,,,,ledge,
+,,,,,,ledge,into bank
+,,,,,,stairs,
+,,,,,,transition,concrete skatepark
+,,,,,,flat,into bank
+,,,,,,ledge,out ledge
+,,,,,,gap,
+,,,,,,wall,kicker to wall
+,,,,,,ledge,
+,,,,,,flat rail,rail to gap
+,,,,,,ledge,up ledge
+,,,,,,gap,rooftop
+,,,,,,stairs,
+,,,,,,pad,pad to hubba
+,,,,,,gap,over picnic table
+,,,,,,wall,
+,,,,,,ledge,into bank
+,,,,,,stairs,
+,,,,,,ledge,into bank
+,,,,,,ledge,
+,,,,,,flat rail,rail to rail
+,,,,,,ledge,
+,,,,,,ledge,into bank
+,,,,,,hubba,
+,,,,,,ledge,out ledge
+,,,,,,curb,around corner
+,,,,,,ledge,
+,,,,,,handrail,
+,,,,,,stairs,
+,,,,,,handrail,knobbed
+,,,,,,gap,over rail
+,,,,,,pad,
+,,,,,,stairs,up stairs
+,,,,,,gap,into bank
+,,,,,,gap,flat gap
+,,,,,,gap,
+,,,,,,gap,
+,,,,,,ledge,bump to bar to ledge
+,,,,,,gap,
+,,,,,,ledge,
+,,,,,,handrail,
+,,,,,,flat rail,into bank
+,,,,,,hubba,up hubba
+,,,,,,ledge,out ledge
+,,,,,,gap,over handrail

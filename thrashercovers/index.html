@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84472984-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-84472984-4');
+    </script>
+    <script src="https://cdn.anychart.com/releases/8.10.0/js/anychart-base.min.js"></script>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <div id="whiteflannelbg">
+        <title>Thrasher Covers</title>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+        <link rel="stylesheet" href="style/style.css" type="text/css" media="screen" />
+        <script src="assets/d3.v4.min.js"></script>
+        <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="assets/d3-interpolate-path.min.js"></script>
+        <script src="assets/textures.js"></script>
+        <script>
+        function toggle() {
+            // toggle gallery
+            var x = document.getElementById("barplot");
+            if (x.style.display != "none") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+
+            // toggle grid
+            var y = document.getElementById("linechart");
+            if (x.style.display === "block") {
+                y.style.display = "none";
+
+
+            } else {
+                y.style.display = "block";
+
+            }
+        }
+        </script>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <header>
+            <section class='section-intro'>
+                <center>
+                    <h1>
+                        <a href="/" class="homepage">4PLY MAG</a>
+                    </h1>
+                </center>
+            </section>
+        </header>
+
+<body>
+    <br>
+    <h2>Thrasher Covers Analysis</h2>
+    <h3>A brief overview of Thrasher covers from 1981 to present</h3>
+    <h3>March 2024</h3>
+    <!-- <img src="images/thrasherlogo.jpeg"/ class="face2"><br> -->
+    <h4><br>
+        Words by <a href="https://www.instagram.com/warmupzone/">Pete Glover</a> //
+        Charts & Code by <a href="https://www.instagram.com/fosterschild/">Harrison Lisewski</a>
+        <!-- <br>March 2024 -->
+    </h4>
+    <br><br>
+    <p>
+        “Don’t judge a book by its cover” is terrible advice. The covers of books, or in this case magazines, literally exist to persuade you to make the judgment call on whether the contents within justify your time and money.
+        When it comes to skateboarding periodicals, the cover has come to represent even more than a preview of the contents. The cover expresses the quintessence of what skateboarding has achieved since the previous month: Culturally, artistically, aesthetically, stylistically. and, more often than not, trick progression. <br><br>
+        Appearing on the cover of Thrasher is one of the highest achievements in skateboarding. It means that what you did mattered. It encapsulates the pinnacle skateboarding culture (at least for the next 4 weeks). And not just for skaters… Photographers, teams, sponsors, tricks, moments, and even spots enter the cannon of cultural significance with a cover appearance. <br><br>
+        It is with this understanding that 4PLY decided to catalog the entirety of Thrasher’s covers. You can peruse the entire database of covers over on 4PLY’s <a href="/thrashersearch">Thrasher Cover Archive</a> where you can search, sort, and compile the covers by year, trick, skater, spot, and even a few surprise easter egg phrases. The archive currently covers 539 covers of Thrasher, from January 1981 to March of 2024, and we’ll be occasionally updating it with new issues (and any corrections you point out).<br><br>
+        <!--  The cover of Thrasher has always seemed like a pretty good measure of what the big dogs are up to, and assuming skate 'milestones' (like Jaws' 25 stair ollie) are covered by covers, it seems like you could get a pretty clean picture of the progression of skating by looking at whatever tricks made it for any given month/year. If you want to have a closer look at any of the covers you can go to our <a href="/thrashersearch">Thrasher Cover Archive</a> where you can search covers by skater, trick, spot, issue etc.<br><br> -->
+    </p>
+    <hr><br><br>
+    <div id="linechart">
+        <h3>obstacle frequency</h3>
+    </div>
+    <div>
+        <p>
+            The chart above tracks the annual sums of obstacle types over the past 4 plus decades. The dashed linear trend lines show rates of increase or decrease. <br><br>
+            Transition went from 80s domination to a steady release of 2 to 4 covers per year starting in the mid 90s. Meanwhile handrail skating trended upward from not existing to the prevailing cover staple it is today. Ledges and hubbas, once becoming a standard obstacle along with the popularity of street skating in the early 90s, has held steady through the eras.
+            <br><br></p>
+
+        </p>
+    </div><br>
+    <hr><br><br>
+    <h3 id="chartTitle">Top Tricks</h3>
+<div id="my_datavis">
+</div>
+<!-- Buttons for toggling between datasets -->
+<div id="buttonContainer">
+    <button onclick="updateTopTricks()">Tricks</button>
+    <button onclick="updateTopSpots()">Spots</button>
+    <button onclick="updateTopSkaters()">Skaters</button>
+    <button onclick="updateTopObstacles()">Obstacles</button>
+</div><br>
+    <div class="obstaclechart">
+        <p>
+            The obstacles bar chart breaks all the obstacles down into more detailed groupings. Those with a count of 9 covers or more are included. “Pools” denotes backyard swimming pools not constructed for skating, whereas “Bowls” are enclosed skatepark bowls and pools (and “Park” represents other transition skatepark obstacles that aren’t bowls). Want to get even deeper in the weeds? <a href="/thrashersearch">Search the archive</a> for more obstacle details.<br><br>
+    </p></div>
+
+    <div class="trickchart">
+        <p>
+            Nothing beats a good ollie. From Rodney Mullen’s cover of a stationary flat ground “ollie pop” in October of 1982 (he invented the world-changing trick earlier that summer) to present-day Tom Knox’s 2023 needle-threader, the ollie is king.<br><br>
+            The kickflip is the only flip trick in the top 10. Backside crooks is your top grind. The old standby, frontside air, is your top transition cover trick. 
+            In the history of thrasher covers there have been 19 flip-in tricks to grinds/slides, 18 kickflips and 1 heelflip
+           <a href="covers/july1993.jpg" target="_blank">(and the heelflip is rather questionable).</a>
+
+            <a href="/thrashersearch">Search the archive</a> by trick names to see all the covers for any given trick.
+            <br><br>
+        </p>
+    </div>
+
+    <div class="spotchart">
+        <p>
+            Even with an obvious bias towards California, It's nice to see Muni getting some play. Reminder that our data currently stops at March 2024, but if we were to include April's cover, (which feels like too much work this morning) Hollywood High would be tied for first with Muni and Clipper. <a href="/thrashersearch">Search the archive</a> by spot names to see all the covers on any given spot.
+            <br><br><br>
+        </p>
+    </div>
+
+    <div class="skaterschart">
+        <p>
+            There have been over 340 unique skaters appearing on the cover of Thrasher.<br>
+
+            104 skaters have appeared more than once. <br>
+            <a href="/thrashersearch">Search the archive</a> by typing a skater's name to check out their covers.
+<br><br>
+    </p></div>
+
+
+    <br>
+    <section class='section2'>
+        <!-- <select id="metric-select" style='margin-left: 30%;'></select> -->
+        <center>
+            <!-- <div id="linechart" div></div> -->
+        </center>
+    </section>
+    <div id="popup" class="popup">
+    </div>
+    <div id="tooltip2">
+    </div><hr><br><br>
+    <div id="stairchart">
+        <h3>Covers by Staircount</h3><p>
+        </p>
+    </div>
+    <div><center><p class="quote">Touch a plot point to see the corresponding cover.</p></center><br>
+        <p>There are fewer yardsticks in skateboarding more readily quantifiable than counts of stairs. We took the time to count steps (and even estimate some equivalents) for handrails, big drops, and hubbas/out ledges. The chart below shows the high water marks for each year, plus linear trend lines. <br><br>
+
+            With both handrails and gap tricks down stair sets there are clear apexes in the timeline. Jaw’s drop down the Lyon 25 and Steve Nesser’s 51-stair grind illustrate the maxing out of the stair count concept in terms of what is possible and what is interesting. Moderns stair counts, while still large, are usually accompanied by the additional challenge of a gap, curve, kink, drop, or other unexpected element. The days of adding a couple more stairs to get a cover are over.
+            <br><br>
+
+            <b>Rails</b><br>
+            The stair count for handrails plateaus around the start of the 2000's. That's how long ago people got tired of regular handrail skating.
+            People traded out bigger rails for better rails and I guess it got harder to get a rail cover without a kink, curve, gap or drop. No one cares about a 15 rail anymore (But two 50's down two 9's is gangster).
+            Felipe Nunes' cover is the only rail outlier noticably under the trendline, but he's lightyears above the trendline for people with no legs.
+        
+            <br><br>
+            <b>Stairs</b><br>
+            Couldn't imagine a more understandable plateau.
+            If people keep trying to skate bigger stairs there's going to be a point where the impact will give everyone flamingo knees like Jaws. I guess there aren't that many tricks that look good down stairs in a photo, so until some freak ollies a 30 I doubt we'll see much stair coverage.
+            <br>
+        </p>
+    </div>
+    <div class="qna">
+    <p><br>
+   <!--      <br>
+        <b>Switch Tricks:</b><br>
+        There were 32 switch tricks total<br>
+        The top switch trick was a switch 360flip, with 3 counts<br>
+        Switch tricks by decade:<br>
+        1980s - 0<br>
+        1990s - 8<br>
+        2000s - 8<br>
+        2010s - 11<br>
+        2020s (so far) - 5<br>
+        <br> -->
+        
+        <hr><br><br>
+
+
+        <h3>Firsts</h3>
+<div id="firsts-list">
+    <p>Click to see each cover.</p><br><u>
+    <b><p data-month="January" data-year="1981">First Cover Featuring Art:</b> January 1981 (the First Issue)</p>
+    <b><p data-month="April" data-year="1982">First Street Trick:</b> Street Scott - driveway drop - April 1982 ("Gnarly Street Issue”)</p>
+    <b><p data-month="June" data-year="1982">First Missed Issue:</b> June 1982 (“…the only mag we ever missed...we were too fucked up on drugs." - Fausto Vitello)</p>
+    <b><p data-month="June" data-year="1983">First New York Cover:</b> Andy Kessler - fandangler - June 1983</p>
+    <b><p data-month="July" data-year="1984">First Recognizable SF Spot Cover:</b> Tommy Guerrero at Ft. Miley - July 1984</p>
+    <b><p data-month="November" data-year="1987">First Ledge Trick:</b> Steve Caballero - fs boardslide a bench - November 1987</p>
+    <b><p data-month="Winter" data-year="1988">First 'Bonus' 13th Issue:</b> Winter 1988</p>
+    <b><p data-month="July" data-year="1989">First Rail Trick:</b> Ron Allen - fs boardslide at Oak Tech - July 1989</p>
+    <b><p data-month="August" data-year="1989">First Woman:</b> Cara Beth Burnside - August 1989</p>
+    <b><p data-month="May" data-year="1990">First Handrail (Down Stairs):</b> Frankie Hill - bs boardslide - May 1990</p>
+    <b><p data-month="October" data-year="1991">First Flip Trick:</b> Ray Barbee - frontside kickflip - October 1991</p>
+    <b><p data-month="February" data-year="1992">First Handrail Grind:</b> Eric Britton - frontside nosegrind - February 1992</p>
+    <b><p data-month="July" data-year="1993">First Flip In:</b> Henry Sanchez - heelflip to frontside noseslide - July 1993</p>
+    <b><p data-month="November" data-year="1993">First Switch Trick:</b> Rick Howard - switch 360 flip Beryl Banks - November 1993</p>
+    <b><p data-month="November" data-year="1999">First Nollie Trick:</b> Richard Paez - alley-oop nollie in a halfpipe - November 1999</p></u>
+</div>
+
+
+<div id="cover-popup">
+    <img id="cover-popup-image" src="" alt="Cover Image">
+    <span id="popup-close-btn">Close</span>
+</div>
+    <div class="qna"><p>
+        <br><hr><br><br>
+        <h3>Additional Observations</h3><br>
+        Flip-out tricks: 0<br>
+        Wall ride tricks (all variations included): 14<br>
+        Nollie tricks: 6<br>
+        Fakie tricks: 12<br>
+        Tricks ‘to fakie’: 18<br>
+        Bertleman carves: 4<br>
+        Manual tricks: 3<br>
+        Kickflip to Heelflip ratio: 56 to 7 (doesn’t include 360 flips)<br>
+        Percentage of covers featuring a woman skater: 1.3%<br>
+        King of the Road covers: 9<br>
+        Bonus ‘13th’ issues: 8<br>
+        Official ‘Skate of the Year’ covers: 29<br>
+        Months that had multiple covers: 4<br>
+        Percentage of covers that are in SF: at least 32%<br>
+        Portrait covers: 13<br>
+        Music covers: 4<br>
+        Illustration art covers: 20<br>
+        Longboarding covers: 2<br>
+        Snowboarding covers: 1<br>
+        Futuristic jet-powered hoverboarding covers: 1<br>
+        Data visualization related covers: 0<br>
+        <br></p>
+
+
+
+
+        <center><p class="quote"><b>
+        Make sure to explore the <a href="/thrashersearch">Thrasher Cover Archive</a> and hit us up on <a href="https://www.instagram.com/4plymag">Instagram</a> to let us know of all the cover data we screwed up on.</b></p><br></center>
+    </p>
+</div>
+
+    <br>
+   <br>
+    <br><br><br>
+    <script id="field_details">
+    var field_details = {
+        "perc_switch": { desc: "Switch Tricks" },
+        "perc_fs": { desc: "FS Tricks" },
+        "perc_bs": { desc: "BS Tricks" },
+        "perc_manual": { desc: "Manual Tricks" },
+        "perc_ledge": { desc: "Ledge Tricks" },
+        "perc_stair": { desc: "Stair/Gap Tricks" },
+        // "perc_transition": { desc: "Transition Tricks" },
+        "perc_flat": { desc: "Flatground Tricks" },
+        "perc_handrail": { desc: "Handrails Tricks" },
+        "perc_distinct": { desc: "Distinct Tricks" }
+    };
+    </script>
+    <script type="text/javascript" src="js/Barplot.js"></script>
+    <!-- <script type="text/javascript" src="js/areaplot.js"></script> -->
+    <script type="text/javascript" src="js/LineChart.js"></script>
+    <script type="text/javascript" src="js/Scatterplot.js"></script>
+    <script type="text/javascript" src="js/Trickbar.js"></script>

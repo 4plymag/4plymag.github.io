@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Outline');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline');
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+@import url('https://fonts.googleapis.com/css?family=Helvetica');
+
+* {
+    box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+    font-family: "Helvetica";
+    /*font-weight: 100;*/
+    background-color: black;
+    color: white;
+}
+
+th {
+    text-align: left;
+}
+
+td img {
+    max-width: 100%;
+}
+
+tr {
+    width: 1%;
+
+    /*white-space: nowrap;*/
+}
+
+table td:last-child {
+    /*width: 15%;*/
+}
+
+table {
+    width: 100%;
+       border: 1px solid black;
+    cellpadding: 8px;
+    table-layout: fixed;
+}
+
+#tableid{
+  border: 1px;
+    cellpadding: 8px;
+    /*padding-left: 20%;*/
+    /*width: auto;*/
+    max-width: 70%;
+}
+
+#info{
+    width: auto;
+    text-transform: capitalize;
+}
+
+#covercol{
+    width: auto;
+    text-transform: capitalize;
+}
+
+th#coverth {
+    width: 30%;
+}
+
+.table
+{   border: 1px;
+    cellpadding: 8px;
+    white-space: nowrap;
+  }
+
+
+#innertooltip {
+    width: 50%;
+    height: 100%;
+    float: left;
+    pointer-events: none;
+}
+
+#innertooltip img {
+    /*max-height: 40%;*/
+    /*height: 10%;*/
+    max-width: 100%;
+    max-height: 90%;
+    margin: 5%;
+
+}
+
+.footer-side {
+    display: none;
+}
+
+h1 {
+    font-family: "Helvetica";
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+}
+
+h2 {
+    font-family: "Helvetica";
+    font-size: 1rem;
+    font-weight: normal;
+    color: white;
+}
+
+#tooltipright {
+    width: 50%;
+    float: right;
+    padding-left: 5%;
+    padding-bottom: 5%;
+
+
+}
+
+#skater{
+    text-transform: capitalize;
+}
+
+#issue{
+    text-transform: capitalize;
+}
+
+
+#tooltiptext {
+    /*width: 100%;*/
+    float: left;
+    text-align: left;
+
+
+
+}
+
+
+#tooltip {
+    z-index: 1;
+    position: fixed;
+    background-color: white;
+    border: 2px solid black;
+    display: none;
+    top: 5%;
+    left: 25%;
+    height: auto;
+    /*width: auto;*/
+    width: 50%;
+    /*height: 80%;*/
+    margin: 5% auto;
+    overflow: visible;
+    text-align: center;
+}
+
+#close {
+    float: right;
+    font-size: 1.5rem;
+    font-family: "Bungee";
+}
+
+/* Style the navigation bar links */
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
+    max-width: 90%;
+    padding-left: 15%;
+}
+
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {}
+
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {}
+
+@media screen and (max-width: 900px) {
+
+
+#tableid{
+  border: 1px;
+    cellpadding: 8px;
+    padding-left: 0%;
+    /*width: auto;*/
+    width: 97%;
+    max-width: 100%;
+}
+
+.row {
+    display: flex;
+    /*flex-wrap: wrap;*/
+    max-width: 99%;
+    margin-left: 0%;
+    margin-right: 0%;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-top: 3%;
+}
+
+.table{
+    white-space: normal;
+}
+
+th#coverth {
+    width: 30%;
+}
+
+table {
+    width: 100%;
+}
+
+#tooltipright {
+    width: 80%;
+    float: left;
+    padding-left: 5%;
+    padding-bottom: 5%;
+
+
+
+}
+
+
+#tooltiptext {
+    /*width: 100%;*/
+    float: left;
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+#innertooltip {
+    width: 90%;
+    height: 100%;
+    float: left;
+    pointer-events: none;
+}
+
+#innertooltip img {
+    /*max-height: 40%;*/
+    /*height: 10%;*/
+    max-width: 100%;
+    max-height: 90%;
+    margin: 5%;
+}
+
+
+#tooltip {
+    z-index: 1;
+    position: fixed;
+    background-color: white;
+    border: 2px solid black;
+    display: none;
+    top: 5%;
+    left: 15%;
+    height: auto;
+    /*width: auto;*/
+    width: 70%;
+    /*height: 80%;*/
+    margin: 5% auto;
+    overflow: visible;
+    text-align: center;
+}
+
+
+
+
+
+
+}

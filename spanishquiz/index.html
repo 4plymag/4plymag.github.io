@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SISTEMA 2.6 - ARCADE</title>
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --amber: #ffb000;
+            --dark-amber: #c48000;
+            --subdued-amber: #8b5a00;
+            --orange-red: #ff3300;
+            --bright-orange: #ffcc00;
+            --red: #ff3333;
+            --retro-font: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--amber);
+            font-family: var(--retro-font);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-transform: uppercase;
+            overflow: hidden;
+            transition: background-color 0.1s;
+        }
+
+        .flash-red { background-color: #330000 !important; }
+        .flash-gold { background-color: #332200 !important; }
+        .flash-bright { background-color: #331a00 !important; }
+
+        @keyframes pulse {
+            0% { color: #ff8800; text-shadow: 0 0 5px #ff4400; }
+            50% { color: #ffcc00; text-shadow: 0 0 20px var(--orange-red), 0 0 30px var(--orange-red); }
+            100% { color: #ff8800; text-shadow: 0 0 5px #ff4400; }
+        }
+        
+        .title-pulse {
+            animation: pulse 2s infinite;
+            text-align: center;
+            border-bottom: 1px solid var(--orange-red);
+            padding-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            20% { transform: translate(-2px, 2px) rotate(-1deg); }
+            40% { transform: translate(2px, -2px) rotate(1deg); }
+            60% { transform: translate(-2px, -2px) rotate(-1deg); }
+            80% { transform: translate(2px, 2px) rotate(1deg); }
+        }
+        .shake-active { animation: shake 0.3s; }
+
+        @keyframes pop { 
+            0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; } 
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 1; } 
+        }
+        .streak-anim { animation: pop 0.3s ease-out; }
+
+        #setup-menu, #quiz-container, #data-port, #summary-screen, #leaderboard-screen {
+            border: 4px double var(--orange-red);
+            padding: 20px;
+            width: 85%;
+            max-width: 450px;
+            background: #111;
+            box-shadow: 0 0 20px rgba(255, 51, 0, 0.15);
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .hidden { display: none !important; }
+        .setting-group { margin-bottom: 12px; }
+        label { display: block; font-size: 0.65rem; margin-bottom: 4px; color: var(--dark-amber); }
+
+        select, input, textarea {
+            background: #000;
+            border: 1px solid var(--amber);
+            color: var(--amber);
+            font-family: var(--retro-font);
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .big-btn {
+            background: var(--amber);
+            color: black;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-family: var(--retro-font);
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #prompt-word { font-size: 2.2rem; margin: 20px 0; text-align: center; min-height: 2.5rem; text-shadow: 2px 2px 0px #440000; }
+        #patin-display { font-size: 1.8rem; text-align: center; color: #1a1a1a; margin-bottom: 15px; letter-spacing: 15px; font-weight: bold;}
+        .lit { color: var(--red) !important; text-shadow: 0 0 15px var(--red); }
+
+        .input-row { display: flex; gap: 8px; }
+        #submit-btn { width: 60px; background: var(--dark-amber); color: black; border: none; font-weight: bold; cursor: pointer; }
+
+        .stats-bar { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; margin-top: 12px; color: var(--dark-amber); }
+        .big-stat { font-size: 1.2rem; color: var(--amber); font-weight: bold; }
+        
+        .toggle-btn { background:#1a1a1a; color:var(--dark-amber); border:1px solid; padding:4px 8px; font-family:inherit; font-size:0.6rem; cursor:pointer; }
+        .active-toggle { color: var(--amber); border-color: var(--amber); }
+
+        .study-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.75rem; text-transform: none; }
+        .study-table th { border-bottom: 1px dashed var(--dark-amber); padding-bottom: 5px; color: var(--dark-amber); text-align: left; text-transform: uppercase;}
+        .study-table td { padding: 4px 0; border-bottom: 1px solid #222; }
+        .study-wrong { color: var(--red); text-decoration: line-through; margin-left: 5px; font-size: 0.65rem;}
+        
+        #record-entry-box { border: 1px solid var(--bright-orange); padding: 10px; margin-bottom: 15px; background: #222; text-align: center; }
+        .record-bright { color: var(--bright-orange) !important; text-shadow: 0 0 5px var(--bright-orange); }
+
+        #streak-overlay {
+            position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
+            font-size: 1.5rem; color: var(--bright-orange); text-shadow: 0 0 10px var(--bright-orange);
+            text-align: center; z-index: 10; pointer-events: none;
+            background: rgba(0,0,0,0.9); padding: 15px; border: 2px dashed var(--bright-orange);
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+<div id="data-port" class="hidden">
+    <h2 class="title-pulse">PUERTA DE DATOS</h2>
+    <label>PEGAR DATOS CSV ABAJO (ESTO BORRARÁ LOS RÉCORDS ACTUALES):</label>
+    <textarea id="csv-input" style="height: 200px; font-size: 0.7rem;" placeholder="Word,Translation,Category,Difficulty..."></textarea>
+    <button class="big-btn" onclick="importData()">GUARDAR Y CARGAR</button>
+    <button onclick="hideDataPort()" style="background:none; border:none; color:var(--dark-amber); width:100%; font-size:0.6rem; margin-top:10px;">CANCELAR</button>
+</div>
+
+<div id="leaderboard-screen" class="hidden">
+    <h2 class="title-pulse">TABLA DE CLASIFICACIÓN</h2>
+    <div id="leaderboard-content" style="margin-bottom: 20px;"></div>
+    <button class="big-btn" style="background: var(--subdued-amber);" onclick="hideLeaderboard()">VOLVER AL MENÚ</button>
+</div>
+
+<div id="setup-menu">
+    <h2 id="system-status" class="title-pulse">SISTEMA DE CONTROL ESPAÑOL</h2>
+    
+    <div class="setting-group">
+        <label>CATEGORÍA</label>
+        <select id="select-category"><option value="All">SIN DATOS</option></select>
+    </div>
+
+    <div class="setting-group">
+        <label>DIFICULTAD</label>
+        <select id="select-diff">
+            <option value="All">TODOS LOS NIVELES</option>
+            <option value="Easy">FÁCIL</option>
+            <option value="Medium">MEDIO</option>
+            <option value="Hard">DIFÍCIL</option>
+        </select>
+    </div>
+
+    <div class="setting-group">
+        <label>MODO</label>
+        <select id="select-mode">
+            <option value="sprint">ESPRINT</option>
+            <option value="patin">PATÍN</option>
+            <option value="death">MUERTE SÚBITA</option>
+            <option value="clasico25">CLÁSICO 25</option>
+            <option value="estudiar">ESTUDIAR (REPASO)</option>
+        </select>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+        <div><label>VISTA</label><button id="lang-toggle" class="toggle-btn active-toggle" onclick="toggleLang()">ENG > ESP</button></div>
+        <div><label>SONIDO</label><button id="sound-toggle" class="toggle-btn active-toggle" onclick="toggleSound()">ON</button></div>
+    </div>
+
+    <button id="init-btn" class="big-btn" onclick="startGame()">INICIAR</button>
+    <button onclick="showLeaderboard()" class="big-btn" style="background:var(--subdued-amber); margin-top:15px; font-size: 0.8rem;">TABLA DE CLASIFICACIÓN</button>
+    
+    <div style="display: flex; justify-content: space-between; margin-top:20px;">
+        <button onclick="showDataPort()" style="background:none; border:none; color:var(--dark-amber); font-family:inherit; font-size:0.6rem; cursor:pointer;">[ ACTUALIZAR CSV ]</button>
+        <button onclick="resetHighScores()" style="background:none; border:none; color:var(--red); font-family:inherit; font-size:0.6rem; cursor:pointer;">[ BORRAR RÉCORDS ]</button>
+    </div>
+</div>
+
+<div id="quiz-container" class="hidden">
+    <div id="streak-overlay" class="hidden"></div>
+    <div id="patin-display" class="hidden"><span id="L0">P</span><span id="L1">A</span><span id="L2">T</span><span id="L3">I</span><span id="L4">N</span></div>
+    
+    <div style="text-align: center; font-size: 0.65rem; color: var(--dark-amber); margin-bottom: 5px;" id="record-tracker-container">
+        RÉCORD GLOBAL: <span id="in-game-high">0 (-)</span>
+    </div>
+
+    <div class="stats-bar">
+        <span><span id="display-mode" style="color:var(--dark-amber)"></span></span>
+        <span class="big-stat" id="display-timer">00:00</span>
+    </div>
+    
+    <div id="prompt-word">---</div>
+    
+    <div class="input-row">
+        <input type="text" id="user-input" placeholder="LISTO..." autocomplete="off" spellcheck="false">
+        <button id="submit-btn" onclick="checkAnswer()">IR</button>
+    </div>
+    
+    <div id="feedback" style="margin-top:10px; height: 1.2rem; font-size: 0.9rem; text-align: center; font-weight: bold;"></div>
+    
+    <div class="stats-bar" style="margin-top: 20px; border-top: 1px solid #333; padding-top: 10px;">
+        <span>PUNTAJE: <span id="score" class="big-stat">0</span></span>
+        <span>RESTAN: <span id="remaining" class="big-stat">0</span></span>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; margin-top:20px;">
+        <button onclick="endGame('SALIDA MANUAL')" style="background:none; border:none; color:var(--red); font-family:inherit; font-size:0.6rem; cursor:pointer;">[ SALIR ]</button>
+        <button onclick="location.reload()" style="background:none; border:none; color:var(--dark-amber); font-family:inherit; font-size:0.6rem; cursor:pointer;">[ MENÚ ]</button>
+    </div>
+</div>
+
+<div id="summary-screen" class="hidden">
+    <h2 id="summary-title" style="margin-top:0; text-align:center;">FIN DE LA SESIÓN</h2>
+    <div id="sum-settings" style="text-align: center; font-size: 0.7rem; color: var(--dark-amber); margin-bottom: 15px;"></div>
+    
+    <div id="record-entry-box" class="hidden">
+        <h3 style="margin: 0 0 10px 0; color: var(--bright-orange);">¡NUEVO RÉCORD GLOBAL!</h3>
+        <p id="record-reason" style="font-size: 0.7rem; margin: 0 0 10px 0; color: var(--amber);"></p>
+        <input type="text" id="player-name" placeholder="INGRESA TU NOMBRE" maxlength="15" style="text-align: center; margin-bottom: 10px;">
+        <button class="big-btn" style="padding: 10px;" onclick="saveHighScore()">GUARDAR RÉCORD</button>
+    </div>
+
+    <div style="display:flex; justify-content: space-around; margin: 20px 0; padding: 10px; background: #000; border: 1px solid var(--dark-amber);">
+        <div style="text-align:center;"><label>PRECISIÓN</label><span id="sum-acc" class="big-stat">0%</span></div>
+        <div style="text-align:center;"><label>TIEMPO</label><span id="sum-time" class="big-stat">0s</span></div>
+    </div>
+    
+    <div id="record-display-area" style="text-align: center; font-size: 0.75rem; margin-bottom: 15px; border-bottom: 1px dashed #333; padding-bottom: 10px;">
+        </div>
+
+    <h3 style="color:var(--dark-amber); margin-bottom: 5px; font-size: 0.9rem;">GUÍA DE ESTUDIO</h3>
+    <div id="study-list" style="max-height: 200px; overflow-y:auto; margin-bottom: 15px;"></div>
+
+    <div style="display: flex; gap: 10px;">
+        <button class="big-btn" onclick="location.reload()" style="font-size: 0.8rem;">MENÚ</button>
+        <button id="play-again-btn" class="big-btn" onclick="playAgain()" style="font-size: 0.8rem; background: var(--dark-amber);">JUGAR DE NUEVO</button>
+    </div>
+</div>
+
+<script>
+    let allWords = [];
+    let sessionWords = [];
+    let missedWordsTracker = [];
+    let currentWord = {};
+    
+    let score = 0;
+    let strikes = 0;
+    let totalQuestions = 0;
+    let streak = 0;
+    
+    let soundEnabled = true; 
+    let langMode = 'engToEsp'; 
+    
+    let timerInterval;
+    let startTime;
+    let gameActive = false;
+    
+    let currentSessionRecords = {}; 
+
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function init() {
+        const savedData = localStorage.getItem('vocab_data');
+        if (savedData) {
+            allWords = JSON.parse(savedData);
+            populateCategories();
+            updateEstudiarLabel();
+        } else {
+            showDataPort();
+        }
+    }
+
+    function updateEstudiarLabel() {
+        const bank = JSON.parse(localStorage.getItem('studyBank')) || [];
+        const opt = document.querySelector('option[value="estudiar"]');
+        if (opt) {
+            opt.innerText = `ESTUDIAR (${bank.length} PENDIENTES)`;
+        }
+    }
+
+    function addToStudyBank(wordObj) {
+        let bank = JSON.parse(localStorage.getItem('studyBank')) || [];
+        bank = bank.filter(w => w.esp !== wordObj.esp);
+        bank.push(wordObj); 
+        if (bank.length > 25) bank.shift(); 
+        localStorage.setItem('studyBank', JSON.stringify(bank));
+        updateEstudiarLabel();
+    }
+
+    function removeFromStudyBank(wordObj) {
+        let bank = JSON.parse(localStorage.getItem('studyBank')) || [];
+        bank = bank.filter(w => w.esp !== wordObj.esp);
+        localStorage.setItem('studyBank', JSON.stringify(bank));
+        updateEstudiarLabel();
+    }
+
+    function showDataPort() {
+        document.getElementById('setup-menu').classList.add('hidden');
+        document.getElementById('data-port').classList.remove('hidden');
+    }
+
+    function hideDataPort() {
+        document.getElementById('data-port').classList.add('hidden');
+        document.getElementById('setup-menu').classList.remove('hidden');
+    }
+
+    function showLeaderboard() {
+        document.getElementById('setup-menu').classList.add('hidden');
+        document.getElementById('leaderboard-screen').classList.remove('hidden');
+        
+        const modes = [
+            { id: 'sprint', name: 'ESPRINT' },
+            { id: 'patin', name: 'PATÍN' },
+            { id: 'death', name: 'MUERTE SÚBITA' },
+            { id: 'clasico25', name: 'CLÁSICO 25' }
+        ];
+
+        let html = '<table class="study-table" style="font-size:0.85rem;"><tr><th>MODO</th><th>PUNTOS</th><th>JUGADOR</th></tr>';
+        
+        modes.forEach(m => {
+            let recScore = JSON.parse(localStorage.getItem(`high_score_${m.id}`)) || { score: 0, name: '-' };
+            
+            if (m.id === 'clasico25') {
+                let recAcc = JSON.parse(localStorage.getItem(`high_acc_${m.id}`)) || { acc: 0, name: '-' };
+                let scoreCalc = Math.round(recAcc.acc / 4);
+                html += `<tr><td style="color:var(--amber);">${m.name}</td><td>${scoreCalc} : ${recAcc.acc}%</td><td style="color:var(--dark-amber);">${recAcc.name}</td></tr>`;
+            } else {
+                html += `<tr><td style="color:var(--amber);">${m.name}</td><td>${recScore.score}</td><td style="color:var(--dark-amber);">${recScore.name}</td></tr>`;
+            }
+            
+            if (m.id === 'sprint') {
+                let accRec = JSON.parse(localStorage.getItem(`high_acc_${m.id}`)) || { acc: 0, name: '-' };
+                html += `<tr><td style="color:var(--dark-amber); padding-left:10px; font-size:0.65rem;">↳ PRECISIÓN</td><td style="color:var(--amber);">${accRec.acc}%</td><td style="color:var(--dark-amber);">${accRec.name}</td></tr>`;
+            }
+        });
+
+        html += '</table>';
+        document.getElementById('leaderboard-content').innerHTML = html;
+    }
+
+    function hideLeaderboard() {
+        document.getElementById('leaderboard-screen').classList.add('hidden');
+        document.getElementById('setup-menu').classList.remove('hidden');
+    }
+
+    function wipeRecordsInternal() {
+        ['clasico25', 'patin', 'sprint', 'death'].forEach(m => {
+            localStorage.removeItem(`high_score_${m}`);
+            localStorage.removeItem(`high_acc_${m}`);
+        });
+        localStorage.removeItem('studyBank');
+        updateEstudiarLabel();
+    }
+
+    function resetHighScores() {
+        if(confirm("¿ESTÁS SEGURO DE QUE QUIERES BORRAR TODOS LOS RÉCORDS GLOBALES Y PALABRAS DE ESTUDIO?")) {
+            wipeRecordsInternal();
+            alert("RÉCORDS BORRADOS");
+        }
+    }
+
+    function importData() {
+        const raw = document.getElementById('csv-input').value;
+        const lines = raw.split(/\r?\n/).filter(l => l.trim().length > 0);
+        const tempWords = [];
+
+        for (let i = 0; i < lines.length; i++) {
+            const parts = lines[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+            if (parts.length >= 2) {
+                const word = {
+                    esp: parts[0].replace(/"/g, '').trim(),
+                    eng: parts[1].replace(/"/g, '').trim().toLowerCase(),
+                    cat: (parts[2] || "GENERAL").replace(/"/g, '').trim(),
+                    diff: (parts[3] || "EASY").replace(/"/g, '').trim()
+                };
+                
+                const espLower = word.esp.toLowerCase();
+                const catLower = word.cat.toLowerCase();
+                if (espLower !== 'esp' && espLower !== 'word' && catLower !== 'category' && catLower !== 'categoría') {
+                    tempWords.push(word);
+                }
+            }
+        }
+
+        if (tempWords.length > 0) {
+            allWords = tempWords;
+            localStorage.setItem('vocab_data', JSON.stringify(allWords));
+            wipeRecordsInternal(); 
+            populateCategories();
+            hideDataPort();
+        } else {
+            alert("ERROR: NO SE ENCONTRARON FILAS VÁLIDAS");
+        }
+    }
+
+    function populateCategories() {
+        const select = document.getElementById('select-category');
+        const cats = [...new Set(allWords.map(w => w.cat))].sort();
+        select.innerHTML = '<option value="All">TODAS LAS CATEGORÍAS</option>';
+        cats.forEach(c => {
+            let opt = document.createElement('option');
+            opt.value = c; opt.innerText = c.toUpperCase();
+            select.appendChild(opt);
+        });
+    }
+
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    function startGame() {
+        if (allWords.length === 0) { showDataPort(); return; }
+        
+        const catFilter = document.getElementById('select-category').value;
+        const diffFilter = document.getElementById('select-diff').value;
+        const mode = document.getElementById('select-mode').value;
+        
+        document.getElementById('sum-settings').innerText = `CATEGORÍA: ${catFilter.toUpperCase()} | DIFICULTAD: ${diffFilter === 'All' ? 'TODOS' : diffFilter.toUpperCase()}`;
+
+        if (mode === 'estudiar') {
+            sessionWords = JSON.parse(localStorage.getItem('studyBank')) || [];
+            if (sessionWords.length === 0) {
+                alert("NO HAY PALABRAS GUARDADAS PARA ESTUDIAR. ¡JUEGA OTROS MODOS Y COMETE ERRORES PRIMERO!");
+                return;
+            }
+            document.getElementById('sum-settings').innerText = "MODO DE REPASO ESPECIAL";
+            document.getElementById('record-tracker-container').classList.add('hidden');
+        } else {
+            document.getElementById('record-tracker-container').classList.remove('hidden');
+            sessionWords = allWords.filter(w => 
+                (catFilter === 'All' || w.cat === catFilter) && 
+                (diffFilter === 'All' || w.diff.toLowerCase() === diffFilter.toLowerCase())
+            );
+
+            if (sessionWords.length === 0) { alert("NINGUNA PALABRA COINCIDE CON LOS FILTROS"); return; }
+            sessionWords = shuffle(sessionWords);
+            if (mode === 'clasico25') {
+                sessionWords = sessionWords.slice(0, 25);
+            }
+        }
+
+        score = 0;
+        strikes = 0;
+        streak = 0;
+        totalQuestions = sessionWords.length;
+        missedWordsTracker = [];
+        gameActive = true;
+        startTime = Date.now();
+        
+        if (mode !== 'estudiar') {
+            if (mode === 'clasico25') {
+                let currentRecord = JSON.parse(localStorage.getItem(`high_acc_${mode}`)) || { acc: 0, name: '-' };
+                const inGameHigh = document.getElementById('in-game-high');
+                let scoreCalc = Math.round(currentRecord.acc / 4);
+                inGameHigh.innerText = `${scoreCalc} : ${currentRecord.acc}% (${currentRecord.name})`;
+                inGameHigh.classList.remove('record-bright');
+            } else {
+                let currentRecord = JSON.parse(localStorage.getItem(`high_score_${mode}`)) || { score: 0, name: '-' };
+                const inGameHigh = document.getElementById('in-game-high');
+                inGameHigh.innerText = `${currentRecord.score} (${currentRecord.name})`;
+                inGameHigh.classList.remove('record-bright');
+            }
+        }
+
+        document.getElementById('setup-menu').classList.add('hidden');
+        document.getElementById('summary-screen').classList.add('hidden');
+        document.getElementById('quiz-container').classList.remove('hidden');
+        document.getElementById('display-mode').innerText = document.getElementById('select-mode').options[document.getElementById('select-mode').selectedIndex].text;
+        
+        if (mode === 'patin') {
+            document.getElementById('patin-display').classList.remove('hidden');
+        } else {
+            document.getElementById('patin-display').classList.add('hidden');
+        }
+        
+        for(let i=0; i<5; i++) {
+            let el = document.getElementById(`L${i}`);
+            if(el) el.classList.remove('lit');
+        }
+
+        document.getElementById('score').innerText = "0";
+        startTimer(mode === 'sprint' ? 60 : 0, mode === 'sprint');
+        playBeep(600, 'square', 0.1);
+        nextQuestion();
+    }
+
+    function playAgain() {
+        document.getElementById('summary-screen').classList.add('hidden');
+        startGame();
+    }
+
+    function startTimer(duration, isCountdown) {
+        let t = duration;
+        timerInterval = setInterval(() => {
+            if (!gameActive) { clearInterval(timerInterval); return; }
+            
+            if (isCountdown) {
+                t--;
+                document.getElementById('display-timer').innerText = `00:${t.toString().padStart(2, '0')}`;
+                
+                if (t <= 10 && t > 0) {
+                    playBeep(1000, 'square', 0.05);
+                }
+                
+                if (t <= 0) endGame("TIEMPO AGOTADO");
+            } else {
+                let elapsed = Math.floor((Date.now() - startTime) / 1000);
+                let mins = Math.floor(elapsed / 60).toString().padStart(2, '0');
+                let secs = (elapsed % 60).toString().padStart(2, '0');
+                document.getElementById('display-timer').innerText = `${mins}:${secs}`;
+            }
+        }, 1000);
+    }
+
+    function nextQuestion() {
+        if (sessionWords.length === 0) { endGame("COMPLETADO"); return; }
+        
+        currentWord = sessionWords[0]; 
+        
+        if (langMode === 'random') {
+            currentWord.askDirection = Math.random() < 0.5 ? 'espToEng' : 'engToEsp';
+        } else {
+            currentWord.askDirection = langMode;
+        }
+        
+        const prompt = (currentWord.askDirection === 'espToEng') ? currentWord.esp : currentWord.eng;
+        document.getElementById('prompt-word').innerText = prompt.toUpperCase();
+        document.getElementById('remaining').innerText = sessionWords.length;
+        document.getElementById('user-input').value = "";
+        document.getElementById('user-input').focus();
+    }
+
+    function stripPunctuation(str) {
+        return str.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"']/g,"").replace(/\s{2,}/g," ").trim();
+    }
+
+    function checkAnswer() {
+        if (!gameActive) return;
+        
+        let guess = document.getElementById('user-input').value.trim().toLowerCase();
+        let isCorrect = false;
+        let correctString = "";
+
+        if (currentWord.askDirection === 'espToEng') {
+            correctString = currentWord.eng.toUpperCase();
+            guess = stripPunctuation(guess).replace(/^(to |the |a |an )/g, "");
+            const validAnswers = currentWord.eng.split(/[,/]/).map(a => 
+                stripPunctuation(a.toLowerCase()).replace(/^(to |the |a |an )/g, "").replace(/\(.*?\)/g, "").trim()
+            );
+            isCorrect = validAnswers.includes(guess);
+        } else {
+            correctString = currentWord.esp.toUpperCase();
+            const validAnswers = currentWord.esp.split(/[,/]/).map(a => a.trim().toLowerCase());
+            isCorrect = validAnswers.includes(guess);
+        }
+
+        const mode = document.getElementById('select-mode').value;
+
+        if (isCorrect) {
+            score++;
+            streak++;
+            playBeep(1200, 'square', 0.1);
+            document.getElementById('score').innerText = score;
+            
+            if (streak > 0 && streak % 10 === 0) {
+                triggerStreak(streak);
+            }
+            
+            if (mode !== 'estudiar') {
+                if (mode === 'clasico25') {
+                    let totalAskedSoFar = totalQuestions - sessionWords.length + 1;
+                    let currentAcc = Math.round((score / totalAskedSoFar) * 100);
+                    let currentRecord = JSON.parse(localStorage.getItem(`high_acc_${mode}`)) || { acc: 0, name: '-' };
+                    if (currentAcc > currentRecord.acc) {
+                        const inGameHigh = document.getElementById('in-game-high');
+                        inGameHigh.innerText = `${score} : ${currentAcc}% (TÚ)`;
+                        inGameHigh.classList.add('record-bright');
+                    }
+                } else {
+                    let currentRecord = JSON.parse(localStorage.getItem(`high_score_${mode}`)) || { score: 0, name: '-' };
+                    if (score > currentRecord.score) {
+                        const inGameHigh = document.getElementById('in-game-high');
+                        inGameHigh.innerText = `${score} (TÚ)`;
+                        inGameHigh.classList.add('record-bright');
+                    }
+                }
+            }
+
+            const feedback = document.getElementById('feedback');
+            feedback.innerText = "CORRECTO";
+            feedback.style.color = "var(--bright-orange)";
+            
+            if (mode === 'estudiar') {
+                removeFromStudyBank(currentWord);
+            }
+            
+            sessionWords.shift();
+            setTimeout(() => { feedback.innerText = ""; nextQuestion(); }, 400);
+
+        } else {
+            streak = 0; 
+            playBeep(150, 'sawtooth', 0.4);
+            triggerErrorEffects();
+            
+            if (mode !== 'estudiar') {
+                addToStudyBank(currentWord);
+            }
+            
+            const feedback = document.getElementById('feedback');
+            feedback.innerText = `!! ${correctString} !!`;
+            feedback.style.color = "var(--red)";
+            
+            missedWordsTracker.push({
+                prompt: (currentWord.askDirection === 'espToEng') ? currentWord.esp : currentWord.eng,
+                correct: correctString,
+                guess: document.getElementById('user-input').value || "[BLANK]"
+            });
+
+            if (mode === 'death') {
+                setTimeout(() => endGame("MUERTE SÚBITA"), 2000); 
+            } 
+            else if (mode === 'patin') {
+                if (document.getElementById(`L${strikes}`)) document.getElementById(`L${strikes}`).classList.add('lit');
+                strikes++;
+                sessionWords.shift(); 
+                if (strikes >= 5) {
+                    setTimeout(() => endGame("PATIN'D OUT"), 2500);
+                } else {
+                    setTimeout(() => { feedback.innerText = ""; nextQuestion(); }, 2500);
+                }
+            }
+            else if (mode === 'estudiar') {
+                let missedWord = sessionWords.shift();
+                sessionWords.push(missedWord); 
+                setTimeout(() => { feedback.innerText = ""; nextQuestion(); }, 2500);
+            }
+            else { 
+                sessionWords.shift();
+                setTimeout(() => { feedback.innerText = ""; nextQuestion(); }, 2500);
+            }
+        }
+    }
+
+    function triggerStreak(count) {
+        document.body.classList.add('flash-bright');
+        const overlay = document.getElementById('streak-overlay');
+        overlay.innerText = `¡RACHA DE ${count} PALABRAS!`;
+        overlay.classList.remove('hidden');
+        overlay.classList.add('streak-anim');
+        
+        playArpeggio();
+        
+        setTimeout(() => {
+            document.body.classList.remove('flash-bright');
+            overlay.classList.add('hidden');
+            overlay.classList.remove('streak-anim');
+        }, 1500);
+    }
+
+    function playArpeggio() {
+        if (!soundEnabled) return;
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        [0, 100, 200, 300].forEach((delay, i) => {
+            setTimeout(() => playBeep(440 * Math.pow(1.05946309, [0, 4, 7, 12][i]), 'square', 0.1), delay);
+        });
+    }
+
+    function triggerErrorEffects() {
+        document.body.classList.add('flash-red');
+        document.getElementById('quiz-container').classList.add('shake-active');
+        
+        setTimeout(() => {
+            document.body.classList.remove('flash-red');
+            document.getElementById('quiz-container').classList.remove('shake-active');
+        }, 400);
+    }
+
+    function endGame(reason) {
+        gameActive = false;
+        clearInterval(timerInterval);
+        
+        document.getElementById('quiz-container').classList.add('hidden');
+        document.getElementById('summary-screen').classList.remove('hidden');
+        document.getElementById('record-entry-box').classList.add('hidden');
+        document.getElementById('play-again-btn').classList.remove('hidden');
+        
+        const mode = document.getElementById('select-mode').value;
+        const totalAsked = (mode === 'estudiar') ? score + missedWordsTracker.length : totalQuestions - sessionWords.length; 
+        const accuracy = totalAsked > 0 ? Math.round((score / totalAsked) * 100) : 0;
+        const elapsedSecs = Math.floor((Date.now() - startTime) / 1000);
+        
+        if (accuracy === 100 && totalAsked > 0 && reason !== 'SALIDA MANUAL' && mode !== 'estudiar') {
+            document.body.classList.add('flash-gold');
+            playBeep(800, 'sine', 0.1); setTimeout(() => playBeep(1200, 'sine', 0.2), 150);
+            document.getElementById('summary-title').innerText = "¡PERFECTO!";
+            document.getElementById('summary-title').style.color = "#ffb000";
+            setTimeout(() => document.body.classList.remove('flash-gold'), 1000);
+        } else {
+            document.getElementById('summary-title').innerText = reason;
+            document.getElementById('summary-title').style.color = "var(--amber)";
+        }
+
+        document.getElementById('sum-acc').innerText = `${accuracy}% (${score}/${totalAsked})`;
+        document.getElementById('sum-time').innerText = `${elapsedSecs}s`;
+
+        currentSessionRecords = { mode, newScore: false, newAcc: false, finalScore: score, finalAcc: accuracy };
+        let recordReasons = [];
+        
+        if (mode !== 'estudiar') {
+            if (mode === 'clasico25') {
+                const keyAcc = `high_acc_${mode}`;
+                let recordAccObj = JSON.parse(localStorage.getItem(keyAcc)) || { acc: 0, name: '-' };
+                if (accuracy > recordAccObj.acc && totalAsked > 0) {
+                    currentSessionRecords.newAcc = true;
+                    recordReasons.push(`PUNTAJE MÁXIMO (${accuracy}%)`);
+                }
+            } else {
+                const keyScore = `high_score_${mode}`;
+                let recordScoreObj = JSON.parse(localStorage.getItem(keyScore)) || { score: 0, name: '-' };
+                if (score > recordScoreObj.score && totalAsked > 0) {
+                    currentSessionRecords.newScore = true;
+                    recordReasons.push(`PUNTAJE MÁXIMO (${score})`);
+                }
+                
+                if (mode === 'sprint') {
+                    const keyAcc = `high_acc_${mode}`;
+                    let recordAccObj = JSON.parse(localStorage.getItem(keyAcc)) || { acc: 0, name: '-' };
+                    if (accuracy > recordAccObj.acc && totalAsked > 0) {
+                        currentSessionRecords.newAcc = true;
+                        recordReasons.push(`MEJOR PRECISIÓN (${accuracy}%)`);
+                    }
+                }
+            }
+        }
+
+        let displayHtml = "";
+        if (mode !== 'estudiar') {
+            if (mode === 'clasico25') {
+                let recAcc = JSON.parse(localStorage.getItem(`high_acc_${mode}`)) || { acc: 0, name: '-' };
+                let scoreCalc = Math.round(recAcc.acc / 4);
+                displayHtml += `<div style="color:var(--amber);">RÉCORD GLOBAL: ${scoreCalc} : ${recAcc.acc}% (${recAcc.name})</div>`;
+            } else {
+                let recScore = JSON.parse(localStorage.getItem(`high_score_${mode}`)) || { score: 0, name: '-' };
+                displayHtml += `<div style="color:var(--amber);">RÉCORD GLOBAL PUNTAJE: ${recScore.score} (${recScore.name})</div>`;
+                if (mode === 'sprint') {
+                    let recAcc = JSON.parse(localStorage.getItem(`high_acc_${mode}`)) || { acc: 0, name: '-' };
+                    displayHtml += `<div style="color:var(--amber);">RÉCORD GLOBAL PRECISIÓN: ${recAcc.acc}% (${recAcc.name})</div>`;
+                }
+            }
+        }
+        document.getElementById('record-display-area').innerHTML = displayHtml;
+
+        if (currentSessionRecords.newScore || currentSessionRecords.newAcc) {
+            document.getElementById('record-entry-box').classList.remove('hidden');
+            document.getElementById('record-reason').innerText = `ROMPISTE: ${recordReasons.join(" Y ")}`;
+            document.getElementById('play-again-btn').classList.add('hidden'); 
+            document.getElementById('player-name').focus();
+        }
+
+        const studyDiv = document.getElementById('study-list');
+        if (missedWordsTracker.length === 0) {
+            studyDiv.innerHTML = "<div style='text-align:center; color:var(--bright-orange);'>NINGÚN ERROR</div>";
+        } else {
+            let html = "<table class='study-table'><tr><th>PREGUNTA</th><th>CORRECTO</th></tr>";
+            missedWordsTracker.forEach(w => {
+                html += `<tr>
+                    <td style="color:var(--dark-amber);">${w.prompt}</td>
+                    <td>${w.correct} <span class="study-wrong">(${w.guess})</span></td>
+                </tr>`;
+            });
+            html += "</table>";
+            studyDiv.innerHTML = html;
+        }
+    }
+
+    function saveHighScore() {
+        let playerName = document.getElementById('player-name').value.trim().toUpperCase() || "ANÓNIMO";
+        const { mode, newScore, newAcc, finalScore, finalAcc } = currentSessionRecords;
+        
+        if (newScore) {
+            const keyScore = `high_score_${mode}`;
+            localStorage.setItem(keyScore, JSON.stringify({ score: finalScore, name: playerName }));
+        }
+        
+        if (newAcc) {
+            const keyAcc = `high_acc_${mode}`;
+            localStorage.setItem(keyAcc, JSON.stringify({ acc: finalAcc, name: playerName }));
+        }
+
+        let displayHtml = "";
+        if (mode === 'clasico25') {
+            let recAcc = JSON.parse(localStorage.getItem(`high_acc_${mode}`)) || { acc: 0, name: '-' };
+            let scoreCalc = Math.round(recAcc.acc / 4);
+            displayHtml += `<div style="color:var(--bright-orange);">RÉCORD GLOBAL: ${scoreCalc} : ${recAcc.acc}% (${recAcc.name})</div>`;
+        } else {
+            let recScore = JSON.parse(localStorage.getItem(`high_score_${mode}`)) || { score: 0, name: '-' };
+            displayHtml += `<div style="color:var(--bright-orange);">RÉCORD GLOBAL PUNTAJE: ${recScore.score} (${recScore.name})</div>`;
+            if (mode === 'sprint') {
+                let recAcc = JSON.parse(localStorage.getItem(`high_acc_${mode}`)) || { acc: 0, name: '-' };
+                displayHtml += `<div style="color:var(--bright-orange);">RÉCORD GLOBAL PRECISIÓN: ${recAcc.acc}% (${recAcc.name})</div>`;
+            }
+        }
+        document.getElementById('record-display-area').innerHTML = displayHtml;
+
+        document.getElementById('record-entry-box').classList.add('hidden');
+        document.getElementById('play-again-btn').classList.remove('hidden');
+    }
+
+    function toggleLang() {
+        playBeep(800, 'sine', 0.05);
+        if (langMode === 'engToEsp') {
+            langMode = 'espToEng';
+            document.getElementById('lang-toggle').innerText = "ESP > ENG";
+        } else if (langMode === 'espToEng') {
+            langMode = 'random';
+            document.getElementById('lang-toggle').innerText = "AL AZAR";
+        } else {
+            langMode = 'engToEsp';
+            document.getElementById('lang-toggle').innerText = "ENG > ESP";
+        }
+    }
+
+    function toggleSound() {
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        soundEnabled = !soundEnabled;
+        if (soundEnabled) playBeep(1200, 'sine', 0.1);
+        document.getElementById('sound-toggle').innerText = soundEnabled ? "ON" : "OFF";
+        document.getElementById('sound-toggle').classList.toggle('active-toggle', soundEnabled);
+    }
+
+    function playBeep(freq, type, duration) {
+        if (!soundEnabled) return;
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+    }
+
+    document.getElementById('user-input').addEventListener('keypress', (e) => { 
+        if (e.key === 'Enter' && gameActive) {
+            checkAnswer(); 
+        }
+    });
+
+    document.getElementById('player-name').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            saveHighScore();
+        }
+    });
+
+    init();
+</script>
+</body>
+</html>

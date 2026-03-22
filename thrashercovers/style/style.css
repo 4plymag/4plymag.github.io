@@ -1,0 +1,971 @@
+/* Fonts */
+/*==============*/
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Outline');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline');
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400, 700');
+@import url('https://fonts.googleapis.com/css?family=Goldman:400,700');
+@import url('https://fonts.googleapis.com/css?family=Changa:400,700');
+@import url('https://fonts.googleapis.com/css?family=Helvetica:400,700');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+#buttonContainer {
+    text-align: center;
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+/* Override user agent stylesheet for favicon */
+link{
+    display: initial; /* or any other display value you want */
+}
+
+
+/* CSS for the buttons */
+#buttonContainer button {
+    background-color: lightgrey; /* Button background color */
+    border: 2px solid #808080; /* Button border */
+    color: #000000; /* Button text color */
+    padding: 6px 10px; /* Button padding */
+    font-size: 18px; /* Button font size */
+    font-family: 'VT323', monospace; /* Use VT323 font family */
+    cursor: pointer; /* Add cursor pointer */
+    margin: 4px; /* Button margin */
+    border-radius: 3px; /* Button border radius */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* CSS for button hover effect */
+#buttonContainer button:hover {
+    background-color: #a0a0a0; /* Button background color on hover */
+    border-color: #606060; /* Button border color on hover */
+    color: #000000; /* Button text color on hover */
+}
+
+
+/* Apply the top value of -10% only on desktop */
+@media screen and (min-width: 768px) {
+    #cover-popup {
+        top: -10%;
+    }
+}
+
+
+/* CSS for the popup container */
+#cover-popup {
+    display: none;
+    position: fixed;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the popup */
+    z-index: 9999;
+    overflow: auto;
+    text-align: center; /* Center the image horizontally */
+}
+
+/* CSS for the image within the popup */
+#cover-popup-image {
+    max-height: 80vh;  Set max height to 90% of viewport height 
+    height: 100%; /* Set max height to 100% of popup container height */
+    display: inline-block;
+    cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+}
+
+/* Media query for desktop */
+@media screen and (max-width: 768px) {
+    #cover-popup {
+        max-height: 90vh; /* Maximum 90% of viewport height */
+        max-width: 90%; /* Maximum 90% of viewport width */
+        width: 90%; /* Set max width to 90% of viewport width */
+
+    }
+}
+
+
+
+#whiteflannelbg {
+    background-color: rgba(255, 255, 255, 0.91);
+    padding-top: 4%;
+    margin-left: 10%;
+    margin-right: 10%;
+    opacity: 100%;
+}
+
+#chart {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.arc text {
+    font: 10px sans-serif;
+    text-anchor: middle;
+}
+
+#mainTooltip {
+    position: absolute;
+    min-width: 90px;
+    height: 40px;
+    padding: 0 0 25px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 50px;
+    -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    fill: #fff;
+    color: #fff;
+    text-anchor: middle;
+    text-align: center;
+    font-weight: bold;
+    z-index: 9999;
+}
+
+#mainTooltip:before {
+    border: solid;
+    border-color: rgba(0, 0, 0, 0.6) transparent;
+    border-width: 10px 10px 0 10px;
+    top: 100%;
+    content: "";
+    left: 43%;
+    position: absolute;
+    z-index: 99;
+}
+
+#mainTooltip.hidden {
+    display: none;
+}
+
+.centergif {
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.inline {
+    /*display: inline;*/
+    float: left;
+    /*border: 3px solid red;*/
+    /*padding-left: 4%;*/
+    padding-right: 4%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 14rem;
+}
+
+.qna {
+    text-align: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: block;
+    /*line-height: 500pt;*/
+}
+
+.right {
+    float: right;
+    display: inline-block;
+}
+
+#qna2 {
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+}
+
+p.quote {
+    font-size: 0.7rem;
+
+}
+
+.videonumbers {
+    text-align: left;
+    margin-left: 7%;
+    margin-right: 5%;
+    display: block;
+    line-height: 500pt;
+}
+
+.whiteflannelbg {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+
+body {
+
+    font-family: Helvetica;
+    color: #262520;
+    background-image: url("thrasherbg.png");
+    background-repeat: no-repeat repeat;
+    background-size: 100% auto;
+    font-size: .8rem;
+    /*background-attachment: fixed;*/
+}
+
+.goth {
+    font-family: Bungee;
+}
+
+a {
+    font-style: normal;
+    text-decoration: underline;
+    color: #000;
+}
+
+svg text {
+    border: 4px solid orange;
+}
+
+#main-wrapper {
+    max-width: 100%;
+    margin: 0px auto;
+}
+
+#header {
+    margin-bottom: 10px;
+}
+
+img#bg {
+
+    position: absolute;
+    z-index: -1;
+    display: block;
+}
+
+
+.centered {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+    pointer-events: none;
+}
+
+sup {
+    vertical-align: text-top;
+    text-align: center;
+}
+
+/* Text
+============================ */
+
+
+h1 {
+    font-size: 2.2rem;
+    font-style: uppercase;
+    font-family: Bungee;
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+
+}
+
+h2 {
+    font-size: 2rem;
+    font-style: uppercase;
+    font-family: Bungee;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-bottom: 0%;
+
+
+}
+
+h3 {
+    font-size: 0.9rem;
+    /*padding: 3px 0px 5px 0;*/
+    margin-top: 0%;
+    font-style: normal;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 5%;
+    font-family: Bungee;
+}
+
+h4 {
+    font-size: 1rem;
+    /*font-style: uppercase;*/
+    margin: 0 0 6px 0px;
+    font-family: VT323;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    /*color: grey;*/
+}
+
+h5 {
+    font-size: 14px;
+    max-width: 85% padding-top:10px;
+    font-family: Helvetica;
+    text-align: left;
+    /*margin-bottom: .5rem;*/
+    margin-left: 15%;
+    margin-right: 15%;
+    font-weight: 800;
+    line-height: normal;
+}
+
+h6 {
+    font-size: 1rem;
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: .5rem;
+    font-weight: bold;
+}
+
+p,
+li {
+    margin-bottom: .5em;
+    max-width: 75%;
+    display: block;
+    margin: auto;
+    line-height: 1.4em;
+}
+
+br {
+    line-height: 150%;
+
+}
+
+
+hr {
+    max-width: 20%;
+}
+
+.desc {
+    font-style: italic;
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+
+/* Controls
+============================ */
+
+#obstacles,
+#grid-container {
+    max-width: 10%;
+    /*margin-left: 5px;*/
+    /*margin-right: 5px;*/
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+#my_dataviz {
+    width: 100%;
+}
+
+#stairchart {
+    width: 100%;
+}
+
+#my_interactivedatavis {
+    /*position:;*/
+    margin-left: -10%;
+    max-width: 50%;
+    overflow-wrap: normal;
+    /*padding:auto;*/
+
+}
+
+}
+
+#update {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.buttons {
+    margin: auto;
+}
+
+#percentages {
+    max-width: 690px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.button {
+    min-width: 15em;
+    height: 1.8em;
+    line-height: 1.8em;
+    padding: 2px;
+    margin-top: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: .7rem;
+    border: 2px solid #e0e0e0;
+    -moz-border-radius: 10px;
+    border-radius: 2px;
+    background: rgb(248, 209, 6);
+    font-family: Bungee;
+}
+
+#spaceFiller {
+    width: 180px;
+    height: 1px;
+    /*padding-left:20px;*/
+}
+
+.button:hover {
+    background: black;
+    color: rgb(248, 209, 6);
+}
+
+.button.current {
+    background: black;
+    color: white;
+
+}
+
+
+/* Chart
+============================ */
+
+#totalcnt {
+    margin: 20px 0 30px 0;
+}
+
+#totalcnt #n {
+    font-size: 3.0em;
+}
+
+#charts {
+    /* position: relative; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10px;
+    /*max-width: 750;*/
+    margin: auto;
+}
+
+.chartholder h3 {
+    height: 1.2em;
+    text-align: center;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.genericholder {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+
+.tick {
+    font-family: Helvetica;
+    font-size: .9rem;
+    overflow-wrap: normal;
+
+}
+
+.axis text {
+    font: 3em;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    /*stroke: #fff;*/
+    shape-rendering: crispEdges;
+}
+
+.legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+
+path {
+    /*stroke: steelblue;*/
+    /*stroke-width: 2;*/
+    fill: none;
+}
+
+#topstaircovers {
+    opacity: 1;
+    position: absolute;
+    color: red;
+    width: 100%;
+    height: 100%;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#tooltip2 {
+    position: fixed;
+    top: 0;
+    height: 50%;
+    max-width: 50%;
+    margin: 5% auto;
+    overflow: visible;
+    text-align: center;
+}
+
+.popup {
+    position: fixed;
+    top: auto;
+    display: inline-block;
+    height: 50%;
+    top: 0%;
+    z-index: 0;
+    max-width: 30%;
+    margin: 10% auto;
+    overflow: visible;
+    text-align: center;
+
+
+}
+
+.y-axis path.domain {
+    opacity: 0;
+}
+
+
+/*Table*/
+/*=================*/
+.table {
+    max-width: 70%;
+    margin: auto;
+    overflow-x: auto;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    font-family: Bungee;
+    font-weight: 1;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    margin: auto;
+    font-size: .7rem;
+}
+
+th {
+    padding: 4px;
+    border-bottom: 5px solid #d0d0d0;
+    text-align: right;
+    font-family: Bungee;
+    font-size: .8rem;
+}
+
+.tooltipcover {
+    max-height: 50vh;
+}
+
+.tooltipcover {
+    display: block;
+    margin: auto;
+    /* Add any additional styling as needed */
+}
+
+#inlineimg {
+    float: left; /* Float the image to the left */
+    width: 30%; /* Set the width of the image to 30% */
+    margin-right: 20px; /* Add some margin to the right to create space between the image and text */
+    margin-bottom: 20px; /* Add some margin to the bottom to create space between images if there are multiple */
+}
+
+
+
+.popupcover {
+    max-height: 75vh;
+    width: auto;
+}
+
+td {
+    padding: 4px;
+    border-bottom: 1px solid #d0d0d0;
+    text-align: right;
+    font-size: .7rem;
+}
+
+.left {
+    text-align: left;
+}
+
+.x-axis {
+    font-size: .5rem;
+}
+
+.listimg {
+
+    width: 20%;
+}
+
+/*bar chart multiples*/
+.some-page-wrapper {
+    display: flex;
+    margin: 5px;
+    /*max-width: 90%;*/
+    max-height: 25%;
+}
+
+.areaplot {
+    display: none;
+}
+
+.barplot {
+    display: block;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+b {
+    font-family: Helvetica;
+    font-weight: bolder !important;
+}
+
+b.loud {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: auto;
+    /*margin-left: 4rem;*/
+    color: green;
+}
+
+.italic {
+    font-style: italic;
+}
+
+ul.a {
+    list-style-type: circle;
+}
+
+.h3title {
+    font-size: 0.8rem;
+    font-family: Bungee;
+    padding-bottom: 15px;
+
+}
+
+
+
+.title_dek {
+    min-height: 100%;
+    min-width: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+.main-title {
+    font-size: 5rem;
+    margin-top: 2rem;
+    height: 100%;
+}
+
+#four {
+    max-width: 200%;
+}
+
+.article-date {
+    font-size: .9rem;
+}
+
+p,
+ul,
+li {
+    font-family: Helvetica;
+    padding-top: 0.5rem;
+    /*font-size:1.5rem;*/
+}
+
+img {
+    max-width: 90%;
+}
+
+li.fact {
+    line-height: 1.4rem;
+    /*color: green;*/
+    font-size: 1.1em;
+}
+
+select {
+    font-size: 1rem;
+}
+
+g {
+    /*max-width:50%;*/
+}
+
+
+.face2 {
+    max-width: 35%;
+}
+
+
+.homepage {
+    font-family: Bungee Shade;
+    text-decoration: none;
+    padding-bottom: 0px;
+    padding-right: 4px;
+    margin-top: 8%;
+    color: black;
+    line-height: 0;
+    font-size: 2.1rem;
+    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    border: 1px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    color: black;
+}
+
+g {
+    /*width:10%;*/
+    padding-right: 50%;
+    margin-right: 50%;
+}
+
+g.tick text {
+    overflow-wrap: normal;
+    font-size: 0.9rem;
+    format: "04d";
+}
+
+@media screen and (max-width: 900px) {
+    #whiteflannelbg {
+        background-color: rgba(255, 255, 255, 0.9);
+        margin-top: 0%;
+        margin-left: 0%;
+        margin-right: 0%;
+
+        opacity: 100%;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    g.tick text {
+        width: 5px;
+        overflow-wrap: normal;
+        font-size: .5rem;
+    }
+
+    g.dot {
+        r: 5;
+    }
+
+    #main-wrapper {
+        max-width: 100%;
+        margin: 0px auto;
+    }
+
+    .centergif {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    .popup {
+        position: fixed;
+        top: 0;
+        display: inline-block;
+        height: 80%;
+        z-index: 0;
+        top: 25%;
+        max-width: 70%;
+        margin-top: 30%;
+        margin: 10% auto;
+        overflow: visible;
+        text-align: center;
+
+
+    }
+
+
+
+    .inline {
+        width: 100%;
+        padding-left: 0%;
+        float: left;
+    }
+
+    .chartholder h3 {
+        height: 1em;
+        font-size: 1em;
+        text-align: center;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        font-style: uppercase;
+        font-family: Bungee;
+        /*text-align: left;*/
+        margin-left: 2%;
+        margin-right: 2%;
+
+    }
+
+    h3 {
+        font-size: 0.9rem;
+        font-style: normal;
+
+        margin-left: 2%;
+        margin-right: 2%;
+        font-family: Bungee;
+        max-width: 50%;
+        margin: auto;
+        margin-top: 4%;
+        margin-bottom: 5%;
+    }
+
+
+
+    li {
+        margin-bottom: .5em;
+        max-width: 100%;
+        display: block;
+        margin: auto;
+        line-height: 1.4em;
+    }
+
+
+    g.tick {
+        /*font-family: Inconsolata;*/
+        text-transform: uppercase;
+        font-size: 0.5rem;
+        overflow-wrap: break-word;
+
+    }
+
+    .button {
+        min-width: 40%;
+        max-width: 40%;
+        height: 1.8em;
+        line-height: 1.8em;
+        padding: 2px;
+        margin-top: 6px;
+        cursor: pointer;
+        text-align: center;
+        font-size: .55rem;
+        border: 2px solid #e0e0e0;
+        -moz-border-radius: 10px;
+        border-radius: 2px;
+        background: rgb(248, 209, 6);
+        font-family: Bungee;
+    }
+
+    #spaceFiller {
+        display: none;
+        width: 0px;
+        height: 1px;
+        /*padding-left:20px;*/
+    }
+
+
+    #my_interactivedatavis {
+        margin-left: 0%;
+        margin-right: 5%;
+        width: 90%;
+        overflow-wrap: break-word;
+        /*padding:auto;*/
+
+    }
+
+    .intro {
+        margin: 5%;
+    }
+
+    .right {
+        float: right;
+        display: inline-block;
+        max-width: 40%;
+    }
+
+    .face2 {
+        max-width: 40%;
+        /*padding-bottom: 2%;*/
+    }
+
+    .main-title {
+        font-size: 3rem;
+        margin-top: 7%;
+    }
+
+    .face {
+        height: 6rem;
+    }
+
+    .table {
+        max-width: 85%;
+    }
+
+    p {
+        font-size: 0.9rem;
+        max-width: 95%;
+    }
+
+    p.quote {
+        font-size: 0.7em;
+
+    }
+
+    ul {}
+
+    h1 {
+        font-size: 2rem;
+
+    }
+}
+
+#my_datavis {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    max-width: 80%;
+}
+
+#y-axis-force .domain {
+    opacity: 0;
+}
+
+
+#y-axis-force .tick {
+    opacity: 0.8;
+    stroke-width: 2;
+}
+
+text.trick-name {
+    font-family: Bungee;
+    stroke-linejoin: round;
+    text-anchor: middle;
+    stroke: black;
+    paint-order: stroke fill;
+    fill: rgb(248, 209, 6);
+    stroke-width: 3px;
+    pointer-events: none;
+}

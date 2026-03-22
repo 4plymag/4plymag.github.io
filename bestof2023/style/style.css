@@ -1,0 +1,372 @@
+/* Fonts */
+/*==============*/
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.face2 {
+  max-height: 50%;
+  max-width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navigation-bar a {
+  color: black;
+}
+
+html {background: black}
+
+.navigation-bar {
+  height: 3.3em;
+  width: 100%;
+  top: -0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  position: fixed;
+  margin-bottom: 10%;
+  transition: height 400ms ease-in-out;
+}
+
+
+
+#home-div {
+  position: fixed;
+  top: 0.3rem;
+  left: 0.15rem;
+  color: white;
+  height: auto;
+  padding-left: 1em;
+  padding-bottom: 0.5em;
+  display: flex;
+  transition: height 400ms ease-in-out, width 400ms ease-in-out, padding-top 400ms ease-in-out;
+}
+
+#four {
+  height: 100%;
+  font-size: 2.5em;
+  font-family: 'Bungee', cursive;
+  float: left;
+  transition: height 400ms ease-in-out, font-size 400ms ease-in-out;
+}
+
+#plymag {
+  position: relative;
+  top: 0.21em;
+  height: 2em;
+  display: flex;
+  float: left;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: height 400ms ease-in-out, flex-direction 400ms ease-in-out, top 400ms ease-in-out;
+}
+
+#ply, #mag {
+  height: 50%;
+  font-size: 1em;
+  font-family: 'Bungee', cursive;
+}
+
+#mag {
+  float: right;
+}
+
+#menu-div {
+  position: fixed;
+  right: 0.25em;
+  top: 0.25em;
+  height: 2.2em;
+  padding-right: 1em;
+  padding-bottom: 0.5em;
+  display: flex;
+  margin-bottom: auto;
+  transition: height 400ms ease-in-out;
+}
+
+#menu-div img {
+  margin: auto;
+  padding-top: 20%;
+  max-width: 90%;
+  max-height: 90%;
+  align-self: center;
+}
+
+.qna img {
+  display: block;  /* Make the image a block-level element */
+  margin: 3% auto 0;  /* Apply top and bottom margin, center horizontally */
+  max-width: 60%;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header a:hover {
+  color: red;
+}
+
+p {
+  max-width: 95%;
+  font-family: Roboto;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+table {
+  width: auto;
+  border-collapse: collapse;
+  max-width: 80%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  /*border-bottom: 1px solid black;*/
+  /*font-size: 13px;*/
+  /*background-color: #f2f2f2;*/
+}
+
+@media only screen and (max-width: 600px) {
+  th, td {
+    font-size: 10px;
+    padding: 2px 3px;
+    max-width: 90%;
+  }
+}
+
+body {
+  font-size: 1.08em;
+  color: black;
+  background-color: #ffffff;
+}
+
+a:hover {
+  color: red;
+}
+
+a {
+  color: lightpink;
+}
+
+a:visited {
+  color:white;
+}
+
+a:visited:hover {
+  color:red;
+}
+
+#main-wrapper {
+  max-width: 100%;
+  padding-top: 20px auto;
+  background-color: white;
+  color: black;
+  margin-bottom: 0px;
+}
+
+#main-wrapper p {
+  font-size: 1.1em;
+  line-height: 1.25;
+  font-family: Roboto;
+}
+
+@media screen and (max-width: 768px) {
+  #main-wrapper p {
+    font-size: 0.9em;
+  }
+}
+
+.centered {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+sup {
+  vertical-align: text-top;
+  font-size: smaller;
+}
+
+h1 {
+  font-size: 2main.2rem;
+  font-style: uppercase;
+  margin: 0 0 6px 0px;
+  font-family: Proxima Nova;
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+  padding-top: 20px;
+  color: #FE0002;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-style: uppercase;
+  margin: 0 0 6px 0px;
+  font-family: 'Lato';
+  max-width: 800px;
+  margin: auto;
+  padding-bottom: 5px;
+}
+
+h2 {
+  font-size: 0.9rem;
+  font-style: uppercase;
+  margin: 0 0 6px 0px;
+  font-family: 'Titillium+Web';
+  max-width: 800px;
+  padding-bottom: 5px;
+}
+
+p,
+ul,
+li {
+  margin-bottom: .5rem;
+  margin: auto;
+}
+
+hr {
+  max-width: 20%;
+}
+
+.section1 {
+  background-color: black;
+  color: white;
+}
+
+
+h5 {
+  font-size: 1.8em;
+  font-variant: small-caps;
+  /*font-family: 'Bungee', cursive;*/
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .main-title {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 3em;
+  }
+}
+
+.main-title {
+  padding-top: 3rem;
+  padding-bottom: 0.3em;
+  text-align: center;
+  font-family: Bungee;
+}
+
+.gif {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .gif {
+    width: 60%;
+  }
+}
+
+.article-date {
+  font-size: 1rem;
+}
+
+header {
+  background-color: black;
+  /*padding-bottom: 1em;*/
+  color: white;
+}
+
+.qna{
+    max-width: 65%;
+}
+
+header .qna {
+  max-width: 63%;
+}
+
+@media only screen and (max-width: 600px) {
+  .qna {
+    max-width: 97%;
+    width: 97%;
+  }
+}
+
+.table-container{
+    overflow-x: auto;
+}
+
+.section2 {
+  background-color: antiquewhite;
+  color: #001e1d;
+}
+
+.section3 {
+  background-color: #ffffff;
+  color: #0D9B43;
+}
+
+section {
+  padding-top: 1%;
+  padding-bottom: 4%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90%;
+}
+
+.section-intro {
+  padding-bottom: 0px;
+  max-width: 95%;
+  margin: auto;
+  height: auto;
+  width: auto;
+}
+
+.fact .uline {
+  font-family: Bungee;
+  font-size: 1.2rem;
+}
+
+#stats-table {
+  margin: auto;
+  background-color: black;
+  border: 2px solid red;
+  color: white;
+}
+
+#stats-table th, #stats-table td {
+  border: 1px solid red;
+  padding: 6px;
+}
+
+#stats-table th {
+  background-color: red;
+}
+
+#stats-table tbody tr:nth-child(even) {
+  background-color: #333;
+}
+
+#stats-table tbody tr:hover {
+  background-color: #555;
+}
+

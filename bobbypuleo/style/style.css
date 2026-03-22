@@ -1,0 +1,836 @@
+/* Fonts */
+/*==============*/
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Outline');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline');
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=Avenir');
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+@import url('https://fonts.googleapis.com/css?family=Neue+Haas+Grotesk');
+@import url('https://fonts.googleapis.com/css?family=Trade+Gothic');
+@import url('https://fonts.googleapis.com/css?family=Changa');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.face2 {
+  max-height: 50%;
+  height: auto;
+  max-width: 80%;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.sidebyside {
+  margin: auto;
+  max-width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sidebyside img {
+  max-width: 47.5%;
+  width: auto;
+  height: auto;
+  padding: 1% 2%;
+}
+
+.davids {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  max-width: 60%;
+  margin: auto;
+}
+
+.davids img {
+  width: auto;
+  max-width: 31%;
+  height: auto;
+  padding: auto;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .davids img {
+    width: auto;
+    height: auto;
+    max-width: 31%;
+  }
+
+  .davids {
+
+    max-width: 95%;
+  }
+}
+
+
+
+
+@media (max-width: 767px) {
+  /* Mobile styles */
+  .sidebyside {
+    max-width: 95%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebyside img {
+    max-width: 85%;
+  }
+}
+
+
+
+.break {
+  display: block;
+}
+
+.y-axis text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90px;
+}
+
+.y-axis text:hover {
+    overflow: visible;
+    width: auto;
+    white-space: normal;
+}
+
+.navigation-bar a {
+    color: white;
+}
+
+.navigation-bar {
+height: 2.9em; /* desktop */
+width: 100%;
+top: -0.1em;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: black;
+position: fixed;
+margin-bottom: 10%;
+transition: height 400ms ease-in-out;
+}
+
+#home-div {
+position: fixed;
+top: 0.3rem;
+left: 0.15rem;
+color: white;
+height: auto;
+padding-left: 1em;
+padding-bottom: 0.5em;
+display: flex;
+transition: height 400ms ease-in-out, width 400ms ease-in-out, padding-top 400ms ease-in-out;
+}
+
+#four {
+height: 100%;
+/*width: 100%;*/
+font-size: 2.5em;
+font-family: 'Bungee', cursive;
+float: left;
+transition: height 400ms ease-in-out, font-size 400ms ease-in-out;
+}
+
+#plymag {
+position: relative;
+top: 0.21em;
+/*transition: top 400ms ease-in-out;*/
+}
+
+#plymag {
+height: 2em;
+/*padding-top: 0.2em;*/
+display: flex;
+float: left;
+flex-direction: column;
+align-items: flex-start;
+transition: height 400ms ease-in-out, flex-direction 400ms ease-in-out, top 400ms ease-in-out;
+}
+
+#typing::after {
+content: "|";
+animation: blink 1s steps(1) infinite;
+}
+
+#ply{
+width: 100%;
+}
+
+#ply, #mag {
+height: 50%;
+font-size: 1em;
+font-family: 'Bungee', cursive;
+}
+
+#mag{float: right}
+
+#menu-div {
+position: fixed;
+right: 0.25em;
+top: 0.25em;
+height: 2.2em;
+padding-right: 1em;
+/*padding-top: 0.5em;*/
+padding-bottom: 0.5em;
+/*align-self: center;*/
+display: flex;
+/*margin-top: auto;*/
+margin-bottom: auto;
+transition: height 400ms ease-in-out;
+}
+
+#menu-div img {
+margin: auto;
+padding-top: 10%;
+max-width: 80%;
+max-height: 80%;
+align-self: center;
+
+}
+
+header a {
+    color: darkolivegreen;
+    text-decoration: none;
+}
+
+header a:hover{
+    color: red;
+}
+
+p {
+    max-width: 95%;
+}
+
+
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+u,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*font-size: 1em;*/
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+          padding: 5px;
+        }
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    max-width: 90%;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    font-size: 13px;
+    background-color: #f2f2f2;
+  }
+  
+  
+  @media only screen and (max-width: 600px) {
+    th, td {
+      font-size: 10px;
+      padding: 2px 3px;
+      max-width: 90%;
+    }
+  }
+
+#csv-table {
+  width: 60%;
+  margin: auto;
+  padding: 0 15%;}
+
+
+body {
+/*font-family: 'Playfair Display', serif;*/
+    font-size: 1.08em;
+    color: black;
+    background-color: #ffffff;
+}
+
+a:hover{
+    color: orange;
+}
+
+a{
+    color: darkolivegreen;
+}
+
+
+#buttons button {
+    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    height: 1.8em;
+    padding: 2px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.8rem;
+    border: 2px solid #e0e0e0;
+    -moz-border-radius: 10px;
+    /*border-radius: 2px;*/
+    color: blue;
+    /*font-family: Titillium+Web;*/
+    background-color: white;
+    /*this sets the background color to white*/
+}
+
+#my_interactivedatavis{
+    width: 100%;
+}
+
+
+#main-wrapper {
+    max-width: 100%;
+    padding-top: 20px auto;
+    background-color: white;
+    color: black;
+    margin-bottom: 0px;
+}
+
+#main-wrapper p {
+    font-size: 1em;
+    line-height: 1.15;
+}
+
+
+.centered {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+    pointer-events: none;
+}
+
+sup {
+    vertical-align: text-top;
+    font-size: smaller;
+}
+
+h1 {
+    font-size: 2main.2rem;
+    font-style: uppercase;
+    margin: 0 0 6px 0px;
+    font-family: Proxima Nova;
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+    padding-top: 20px;
+    color: #FE0002;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-style: uppercase;
+    margin: 0 0 6px 0px;
+    font-family: 'Lato';
+    /*text-align: center;*/
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 0.9rem;
+    font-style: uppercase;
+    margin: 0 0 6px 0px;
+    font-family: 'Titillium+Web';
+    /*text-align: center;*/
+    max-width: 800px;
+    /*margin: auto;*/
+    padding-bottom: 5px;
+}
+
+p,
+ul,
+li {
+    margin-bottom: .5rem;
+    margin: auto;
+}
+
+hr {
+    max-width: 5%;
+}
+
+.desc {
+    font-style: italic;
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+.section1 {
+    background-color: #FFD987;
+}
+
+
+/* Set 15% margin for desktop and 3% margin for mobile */
+@media (max-width: 767px) {
+  /* Mobile styles */
+  .qna{
+    margin: auto;
+    max-width: 92%;
+}
+}
+
+@media (min-width: 768px) {
+  /* Desktop styles */
+  .qna{
+    max-width: 60%;
+}
+}
+
+
+/* Set the h2 text to 2em and use the Bungee font */
+h5 {
+  font-size: 1.6em;
+  font-family: 'Bungee', cursive;
+  text-align: center;
+}
+
+
+/* Controls
+============================ */
+
+#obstacles,
+#my_dataviz,
+#grid-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+#update {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+
+#percentages {
+    max-width: 690px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.button {
+    height: 1.8em;
+    line-height: 1.8em;
+    padding: 2px;
+    margin-top: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: .7rem;
+    border: 2px solid #e0e0e0;
+    -moz-border-radius: 10px;
+    border-radius: 2px;
+    background: #f7f6f1;
+    font-family: Bungee;
+}
+
+#spaceFiller {
+    width: 218px;
+    height: 1px;
+}
+
+.button:hover {
+    background: #e0e0e0;
+}
+
+.button.current {
+    background: #c9a111;
+    color: #262520;
+}
+
+
+/* Chart
+============================ */
+
+
+
+#charts {
+    /* position: relative; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    max-width: 750px;
+    margin: auto;
+}
+
+.tick {
+    /*font-family: Titillium+Web;*/
+    font-size: 1em;
+}
+
+.y-axis path.domain {
+    opacity: 0;
+}
+
+.left {
+    text-align: left;
+}
+
+.x-axis {
+    font-size: .75rem;
+}
+
+.bar-chart-bar {
+    /* styles for the bars */
+}
+
+/*bar chart multiples*/
+.some-page-wrapper {
+    display: flex;
+    margin: 5px;
+    max-width: 90%;
+    max-height: 25%;
+    margin-right: 10%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+h3 {
+    font-family: Bungee;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+.main-title {
+font-size: 2.7em;
+}
+}
+
+@media (min-width: 768px) {
+.main-title {
+font-size: 3.5em;
+}
+}
+
+.main-title {
+padding-top: 3rem;
+padding-bottom: 0.3em;
+text-align: center;
+}
+
+.gif {
+  width: 90%;
+   display: block;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .gif {
+    width: 60%;
+  }
+}
+
+
+
+.article-date {
+    font-size: 1rem;
+}
+
+#pieChart svg {
+    margin: auto;
+}
+
+#pieChart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+g.tick line {
+    opacity: .1;
+}
+
+path.domain {
+    opacity: 0;
+}
+
+
+
+header {
+    background-color: orange;
+    padding-bottom: 1em;
+        /*font-family: 'Changa';*/
+    color: black;
+}
+
+.instagram-media {
+  display: inline-block;
+  vertical-align: right;
+  margin: 0;
+  max-width: 50%;
+
+}
+
+.qna2 {
+font-size: 0.9em;
+align-items: center;
+justify-content: center;
+/*text-align: left;*/
+max-width: 90%
+}
+
+
+
+header .qna {
+    max-width: 63%;
+}
+
+@media only screen and (max-width: 600px) {
+    header .qna {
+        max-width: 97%;
+        width: 97%;
+    }
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+}
+
+.piccy {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .piccy {
+    max-width: 90%;
+  }
+}
+
+
+.section2 {
+    background-color: antiquewhite;
+    color: #001e1d;
+}
+
+
+.section3 {
+    background-color: #ffffff;
+    color: #0D9B43;
+}
+
+section {
+    padding-top: 1%;
+    padding-bottom: 4%;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+ul.facts {
+    padding-left: 25%;
+    max-width: 100%;
+}
+
+li.fact {
+    display: list-item;
+    /*list-style-type: circle;*/
+    margin-left: 0px;
+    padding-bottom: 15px;
+}
+
+ul.facts1 {
+    color: #ffffff;
+    padding-left: 25%;
+    max-width: 100%;
+}
+
+
+.uline {
+    text-decoration: underline;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.tab {
+    padding-left: 5%;
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+}
+
+.section-intro {
+    padding-bottom: 0px;
+    /*padding-left: 3em;*/
+    /*padding-right: 3em;*/
+    max-width: 95%;
+    margin: auto;
+    height: auto;
+    width: auto;
+    /* background-repeat: repeat-y; */
+}
+
+.fact .uline {
+    font-family: Bungee;
+    font-size: 1.2rem;
+}
+

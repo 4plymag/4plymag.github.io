@@ -1,0 +1,245 @@
+"trick","obstacledetail","obstacle","cnt"
+"360 flip","","flat",1
+"360 flip","into bank","gap",1
+"blunt stall to fakie","street transition","bank",1
+"blunt stall to fs 180","street transition","bank",1
+"bs 180","","gap",1
+"bs 180","","hip",1
+"bs 180","into bank","gap",1
+"bs 180 to sw bs 5-0","into bank","ledge",1
+"bs 180 to sw bs nosegrind","","ledge",1
+"bs 180 to sw bs nosegrind to halfcab","","ledge",1
+"bs 270 manual","","bank",1
+"bs 360","bump to gap","gap",1
+"bs 5-0","","ledge",1
+"bs 5-0","bank to ledge","ledge",1
+"bs 5-0","into bank","ledge",2
+"bs 5-0 to fs 180","into bank","ledge",1
+"bs 5050","","flat rail",1
+"bs 5050","","hubba",1
+"bs 5050","","ledge",1
+"bs 5050","into bank","flat rail",2
+"bs 5050","into bank","ledge",4
+"bs 5050 pop over","","flat rail",1
+"bs 5050 to bs 180","ledge to gap","ledge",1
+"bs 5050 to ollie up","","flat rail",1
+"bs bluntslide","","hubba",1
+"bs bluntslide to sw manual","ledge to pad","ledge",1
+"bs boardslide","","flat rail",1
+"bs boardslide","through knobs","flat rail",1
+"bs boardslide ","rail to curb","flat rail",1
+"bs boardslide to fakie","","flat rail",1
+"bs crook","","ledge",2
+"bs crook","bank to ledge","ledge",1
+"bs crook","into bank","ledge",1
+"bs crook to fakie","","ledge",1
+"bs crook to fakie","into bank","ledge",1
+"bs heelflip","over barrier","stairs",1
+"bs kickflip","","bank",2
+"bs kickflip","bump to gap","gap",1
+"bs kickflip","flat gap","flat",1
+"bs kickflip","flat gap","gap",1
+"bs kickflip","street transition","transition",1
+"bs lipslide to fakie","","ledge",1
+"bs nosegrind","","ledge",2
+"bs nosegrind","curvy rail","flat rail",1
+"bs nosegrind","into bank","ledge",2
+"bs nosegrind to nollie bs 180","","ledge",1
+"bs nosegrind to nollie bs 180 pop over","into bank","flat rail",1
+"bs nosegrind to nollise fs 180","into bank","ledge",1
+"bs noseslide","into bank","ledge",1
+"bs noseslide to fakie","","ledge",1
+"bs noseslide to fakie","bank to ledge","ledge",1
+"bs nosestall","street transition","transition",1
+"bs ollie","channel","bank",1
+"bs ollie","channel","gap",2
+"bs ollie","gap","bank",1
+"bs ollie","park","transition",1
+"bs ollie","steep bank","bank",1
+"bs tailslide","bank to ledge","ledge",2
+"bs tailslide","gap to bank","bank",1
+"bs tailslide","into bank","ledge",1
+"bs tailslide","outledge","ledge",1
+"bs tailstall","bank to ledge","ledge",1
+"double kickflip","","bank",1
+"fakie 360 flip","","flat",1
+"fakie bs lipslide","","flat rail",1
+"fakie bs noseslide","","ledge",1
+"fakie bs talislide","","ledge",1
+"fakie fs 180","","hip",1
+"fakie fs 180","over rail","gap",1
+"fakie fs heelflip","","flat",1
+"fakie fs kickflip","","bank",1
+"fakie kickflip","","bank",1
+"fakie kickflip","","flat",1
+"fakie kickflip","","hip",1
+"fakie kickflip","up curb","flat",1
+"fakie manual","bank pad","pad",1
+"fakie ollie","bank to bank","gap",1
+"fakie ollie","into bank","gap",1
+"fakie ollie","over can","flat",2
+"fakie ollie to sw bs nosegrind","","ledge",1
+"fakie ollie to sw fs 5-0","","ledge",1
+"fakie ollie to sw fs 5-0","into bank","ledge",1
+"fakie ollie to sw fs nosegrind","","ledge",1
+"fakie ollie to sw nosegrind","into bank","ledge",1
+"fakie varial kickflip","","flat",1
+"feeble to pop over","","flat rail",1
+"footplant","bump to gap","gap",1
+"fs 180","","bank",1
+"fs 180","","flat",2
+"fs 180","bump to bar","gap",1
+"fs 180","bump to gap","gap",2
+"fs 180","bump to hydrant","gap",1
+"fs 180","into bank","gap",1
+"fs 180","over benches","gap",1
+"fs 180 to sw fs 5-0 to sw bs 180","","ledge",1
+"fs 180 to sw fs nosegrind to fakie fs 180","bank to ledge","ledge",1
+"fs 180 to sw manual","into bank","pad",1
+"fs 5-0","","ledge",1
+"fs 5-0","bank to ledge","ledge",2
+"fs 5-0","gap to pad","pad",1
+"fs 5-0","into bank","ledge",2
+"fs 5-0 stall","bank to ledge","ledge",1
+"fs 5-0 stall","quarterpipe","transition",1
+"fs 5-0 stall","street transition","transition",1
+"fs 5-0 to bs 180","into bank","ledge",1
+"fs 5-0 to bs 180","out rail","flat rail",1
+"fs 5-0 to fs 180","bank to ledge","ledge",1
+"fs 5050","","flat rail",2
+"fs 5050","","ledge",1
+"fs 5050","gap to ledge","ledge",1
+"fs 5050","gap to ledge to bank","ledge",1
+"fs 5050","into bank","ledge",3
+"fs 5050","outledge","ledge",1
+"fs 5050","van","ledge",1
+"fs 5050 to bs 180","","ledge",1
+"fs 5050 to bs 180","into bank","ledge",1
+"fs bluntslide","table","ledge",1
+"fs bluntslide to fakie","bank to ledge","ledge",1
+"fs bluntslide to fakie","into bank","ledge",2
+"fs boardslide","","handrail",1
+"fs boardslide","","ledge",1
+"fs boardslide","pop over","ledge",1
+"fs crook to fakie","bank to ledge","ledge",1
+"fs crook to ffakie","","ledge",1
+"fs feeble","","handrail",1
+"fs feeble stall","street transition","transition",1
+"fs kickflip","","hip",1
+"fs noseblunt","","ledge",2
+"fs noseblunt","into bank","ledge",1
+"fs nosegrind","","flat rail",1
+"fs nosegrind","","ledge",2
+"fs nosegrind","down 4 up 4","ledge",1
+"fs nosegrind","into bank","ledge",3
+"fs nosegrind","up ledge","ledge",1
+"fs nosegrind stall to fakie","bank to rail","flat rail",1
+"fs noseslide","into bank","ledge",1
+"fs noseslide","outledge","ledge",1
+"fs ollie","","bank",4
+"fs ollie","street transition","transition",1
+"fs ollie","channel","gap",1
+"fs tailslide","","ledge",1
+"fs tailslide","into bank","ledge",2
+"fs tailslide","street transition","transition",1
+"fs tailslide pop over","into bank","flat rail",1
+"fs tailslide to fakie","into bank","ledge",1
+"fs talislide","into bank","ledge",1
+"halfcab","","flat",2
+"halfcab","","hip",1
+"halfcab","bump to gap","gap",1
+"halfcab","into bank","flat",1
+"halfcab flip","","flat",1
+"halfcab heelflip","","flat",1
+"halfcab to 5-0 stall to fakie","","bank",1
+"halfcab to nose manual","into bank","pad",1
+"halfcab to noseblunt to fs 5050","","ledge",1
+"heelflip","","flat",1
+"heelflip","channel","bank",1
+"heelflip to fakie","","bank",1
+"into bank","up ledge","ledge",1
+"kickflip","","bank",1
+"kickflip","","gap",2
+"kickflip","","hip",1
+"kickflip","bank to bank","gap",1
+"kickflip","bump to bump","gap",1
+"kickflip","bump to gap","gap",1
+"kickflip","channel","bank",1
+"kickflip","flat gap","gap",1
+"kickflip","into bank","gap",2
+"kickflip","off curb","flat",1
+"kickflip","over can","flat",1
+"manual","","pad",5
+"manual","gap to pad","pad",2
+"manual","into bank","pad",1
+"manual to fs 180","into bank","pad",1
+"manual to manual to fs shuv","pad to pad","pad",1
+"nollie","bump to bump","gap",1
+"nollie","flat gap","gap",1
+"nollie","into bank","gap",2
+"nollie","over chain","gap",1
+"nollie bs 180","bump to gap","gap",1
+"nollie bs heelflip","","flat",1
+"nollie fs 180","bump to gap","gap",1
+"nollie fs 180","over chain","gap",1
+"nollie fs 180","up curb","flat",1
+"nollie fs 360","over bench","gap",1
+"nollie heelflip","","bank",1
+"nollie heelflip","","flat",2
+"nollie kickflip","","bank",1
+"nollie kickflip","","flat",1
+"nollie to bs tailslide","","ledge",1
+"nollie to fs 5-0","","ledge",1
+"nollie to fs 5050 to bs 180","bank to ledge","ledge",1
+"nollie to fs noseblunt","park","transition",1
+"nollie to fs nosegrind","","ledge",1
+"nollie to nose manual","","pad",1
+"nollie to noseblunt","into bank","ledge",1
+"nose manual","","pad",4
+"nose manual","angled pad","pad",1
+"nose manual","into bank","pad",1
+"ollie","","bank",1
+"ollie","","gap",8
+"ollie","","hip",1
+"ollie","up curb","flat",2
+"ollie","1","gap",1
+"ollie","bank to gap","gap",1
+"ollie","bump to bank","gap",1
+"ollie","bump to bar","gap",3
+"ollie","bump to bump","gap",3
+"ollie","bump to can","gap",1
+"ollie","bump to gap","gap",2
+"ollie","channel","bank",2
+"ollie","flat gap","gap",5
+"ollie","into bank","gap",17
+"ollie","into bank","gap",1
+"ollie","into cellar door","gap",1
+"ollie","over hydrant","flat",1
+"ollie","over hydrant","gap",1
+"ollie","over rail","gap",3
+"pivot to fakie","","transition",1
+"shuv","up curb","flat",1
+"sw bs 180","into bank","gap",1
+"sw bs 180","into hill","gap",1
+"sw bs 5-0","into bank","ledge",1
+"sw bs 5-0 to sw fs 180","into bank","ledge",1
+"sw bs nosegrind","","ledge",3
+"sw bs nosegrind","into bank","ledge",1
+"sw bs tailslide","into bank","ledge",1
+"sw fs 180","","flat",1
+"sw fs 180","bump to gap","gap",1
+"sw fs 180 to manual","into bank","pad",1
+"sw fs 5050","","flat rail",1
+"sw fs 5050","","handrail",1
+"sw fs heelflip","flat gap","gap",1
+"sw fs nosegrind","","ledge",1
+"sw fs wallride","bank to wall","bank",1
+"sw kickflip","","bank",1
+"sw kickflip","","flat",1
+"sw ollie","bump to bar","gap",1
+"sw ollie","bump to bump","gap",1
+"sw ollie","into bank","gap",1
+"sw ollie","over hydrant","gap",1
+"sw shuv","flat gap","gap",1
+"sw shuv","over can","flat",1
+"sw varial heelflip","flat gap","gap",1

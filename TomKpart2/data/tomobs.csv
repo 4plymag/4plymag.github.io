@@ -1,0 +1,672 @@
+obs09,det09,obs10,det10,obs12,det12,allyears,alldets
+gap,curb cut,flat rail,,flat rail,Lo-Tide,gap,Warfare
+flat,hill,flat,off curb,flat rail,Lo-Tide,flat,Warfare
+stairs,11 stairs,flat rail,,ledge,Lo-Tide,stairs,Warfare
+flat,,ledge,ledge to gap,ledge,Lo-Tide,flat,Warfare
+flat,onto sculpture,ledge,ledge to gap,flat,Lo-Tide,flat,Warfare
+flat rail,,flat,over hydrant,flat rail,Lo-Tide,flat rail,Warfare
+ledge,gap to ledge,flat rail,,ledge,Lo-Tide,ledge,Warfare
+ledge,gap to outledge,flat rail,rail to ledge,flat,Lo-Tide,ledge,Warfare
+flat rail,,wall,bank to wall,flat,Lo-Tide,flat rail,Warfare
+ledge,,ledge,,hubba,Lo-Tide,ledge,Warfare
+ledge,,ledge,banked ledge,ledge,Lo-Tide,ledge,Warfare
+handrail,18 stairs,gap,street gap,ledge,Lo-Tide,handrail,Warfare
+flat,,gap,street gap,handrail,Lo-Tide,flat,Warfare
+handrail,rail down ramp,ledge,,bump to bar,Lo-Tide,handrail,Warfare
+handrail,rail down ramp,flat,,wall,Lo-Tide,handrail,Warfare
+ledge,outledge,flat rail,,ledge,Lo-Tide,ledge,Warfare
+ledge,gap to ledge,gap,off ledge,handrail,Lo-Tide,ledge,Warfare
+ledge,,ledge,outledge,handrail,Lo-Tide,ledge,Warfare
+ledge,,ledge,ledge to gap,handrail,Lo-Tide,ledge,Warfare
+flat rail,,ledge,banked ledge,hubba,Lo-Tide,flat rail,Warfare
+gap,kicker sidewalk gap,ledge,bank to ledge,stairs,Lo-Tide,gap,Warfare
+ledge,,flat rail,,handrail,Lo-Tide,ledge,Warfare
+ledge,up ledge,ledge,outledge,hubba,Lo-Tide,ledge,Warfare
+handrail,rail down ramp,flat,,handrail,Lo-Tide,handrail,Warfare
+wall,over barrier,wall,wall to gap,handrail,Lo-Tide,wall,Warfare
+ledge,banked ledge,ledge,kicker to ledge,flat,Lo-Tide,ledge,Warfare
+flat,off curb,ledge,gap to ledge,gap,Lo-Tide,flat,Warfare
+ledge,bank to ledge,ledge,gap to ledge,hubba,Lo-Tide,ledge,Warfare
+wall,bank to wall,flat rail,,hubba,Lo-Tide,wall,Warfare
+gap,onto dumpster,hubba,,handrail,Lo-Tide,gap,Warfare
+gap,,hubba,,gap,Lo-Tide,gap,Warfare
+hubba,,handrail,rail down ramp,ledge,Lo-Tide,hubba,Warfare
+handrail,curved rail,gap,gap to curb,ledge,Lo-Tide,handrail,Warfare
+gap,curb cut,flat rail,rail to drop,gap,Lo-Tide,gap,Warfare
+gap,flat gap,flat rail,rail to drop,handrail,Lo-Tide,gap,Warfare
+ledge,,gap,over rail to pad,bump to bar,Lo-Tide,ledge,Warfare
+handrail,10 stairs,ledge,bank to ledge,handrail,Lo-Tide,handrail,Warfare
+handrail,10 stairs,bump to bar,over bar,gap,Lo-Tide,handrail,Warfare
+handrail,10 stairs,flat,over trash can,handrail,Lo-Tide,handrail,Warfare
+handrail,9 stairs,handrail,6 stairs,handrail,Lo-Tide,handrail,Warfare
+gap,up gap,ledge,up ledge,handrail,Lo-Tide,gap,Warfare
+handrail,9 stairs,ledge,up ledge,gap,Lo-Tide,handrail,Warfare
+handrail,9 stairs,stairs,5 flat 4 stairs,flat rail,Lo-Tide,handrail,Warfare
+gap,,hubba,,handrail,Lo-Tide,gap,Warfare
+ledge,ledge to curb,hubba,double kink,ledge,Lo-Tide,ledge,Warfare
+gap,kicker sidewalk gap,handrail,gap to rail,ledge,Lo-Tide,gap,Warfare
+ledge,gap to ledge,handrail,gap to rail,handrail,Lo-Tide,ledge,Warfare
+handrail,7 stairs,hubba,,flat rail,Lo-Tide,handrail,Warfare
+bump to bar,over bar into bank,,,ledge,Lo-Tide,bump to bar,Warfare
+handrail,7 stairs,,,handrail,Lo-Tide,handrail,Warfare
+wall,bank to wall,,,handrail,Lo-Tide,wall,Warfare
+hubba,kinked hubba,,,handrail,Lo-Tide,hubba,Warfare
+hubba,kinked hubba,,,,,hubba,Warfare
+handrail,1 kink,,,,,handrail,Warfare
+ledge,,,,,,ledge,Warfare
+handrail,7 stairs,,,,,handrail,Warfare
+bump to bar,over bar,,,,,bump to bar,Warfare
+bump to bar,over bar,,,,,bump to bar,Warfare
+bump to bar,over bar to curb,,,,,bump to bar,Warfare
+gap,over rail,,,,,gap,Warfare
+hubba,gap to hubba,,,,,hubba,Warfare
+hubba,gap to hubba,,,,,hubba,Warfare
+handrail,rail down ramp,,,,,handrail,Warfare
+handrail,rail down ramp,,,,,handrail,Warfare
+handrail,rail down ramp,,,,,handrail,Warfare
+flat rail,up rail,,,,,flat rail,Warfare
+flat rail,bump to rail,,,,,flat rail,Warfare
+handrail,5 flat 8 stairs,,,,,handrail,Warfare
+,,,,,,flat rail,SLAP part
+,,,,,,flat,SLAP part
+,,,,,,flat rail,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,flat,SLAP part
+,,,,,,flat rail,SLAP part
+,,,,,,flat rail,SLAP part
+,,,,,,wall,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,gap,SLAP part
+,,,,,,gap,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,flat,SLAP part
+,,,,,,flat rail,SLAP part
+,,,,,,gap,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,flat rail,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,flat,SLAP part
+,,,,,,wall,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,flat rail,SLAP part
+,,,,,,hubba,SLAP part
+,,,,,,hubba,SLAP part
+,,,,,,handrail,SLAP part
+,,,,,,gap,SLAP part
+,,,,,,flat rail,SLAP part
+,,,,,,flat rail,SLAP part
+,,,,,,gap,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,bump to bar,SLAP part
+,,,,,,flat,SLAP part
+,,,,,,handrail,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,ledge,SLAP part
+,,,,,,stairs,SLAP part
+,,,,,,hubba,SLAP part
+,,,,,,hubba,SLAP part
+,,,,,,handrail,SLAP part
+,,,,,,handrail,SLAP part
+,,,,,,hubba,SLAP part
+,,,,,,flat rail,Lo-Tide
+,,,,,,flat rail,Lo-Tide
+,,,,,,ledge,Lo-Tide
+,,,,,,ledge,Lo-Tide
+,,,,,,flat,Lo-Tide
+,,,,,,flat rail,Lo-Tide
+,,,,,,ledge,Lo-Tide
+,,,,,,flat,Lo-Tide
+,,,,,,flat,Lo-Tide
+,,,,,,hubba,Lo-Tide
+,,,,,,ledge,Lo-Tide
+,,,,,,ledge,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,bump to bar,Lo-Tide
+,,,,,,wall,Lo-Tide
+,,,,,,ledge,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,hubba,Lo-Tide
+,,,,,,stairs,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,hubba,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,flat,Lo-Tide
+,,,,,,gap,Lo-Tide
+,,,,,,hubba,Lo-Tide
+,,,,,,hubba,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,gap,Lo-Tide
+,,,,,,ledge,Lo-Tide
+,,,,,,ledge,Lo-Tide
+,,,,,,gap,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,bump to bar,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,gap,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,gap,Lo-Tide
+,,,,,,flat rail,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,ledge,Lo-Tide
+,,,,,,ledge,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,flat rail,Lo-Tide
+,,,,,,ledge,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,handrail,Lo-Tide
+,,,,,,ledge,Cold War
+,,,,,,flat,Cold War
+,,,,,,ledge,Cold War
+,,,,,,handrail,Cold War
+,,,,,,stairs,Cold War
+,,,,,,stairs,Cold War
+,,,,,,wall,Cold War
+,,,,,,bump to bar,Cold War
+,,,,,,flat rail,Cold War
+,,,,,,gap,Cold War
+,,,,,,flat rail,Cold War
+,,,,,,handrail,Cold War
+,,,,,,gap,Cold War
+,,,,,,handrail,Cold War
+,,,,,,handrail,Cold War
+,,,,,,handrail,Cold War
+,,,,,,gap,Cold War
+,,,,,,bump to bar,Cold War
+,,,,,,gap,Cold War
+,,,,,,ledge,Cold War
+,,,,,,pad,Cold War
+,,,,,,handrail,Cold War
+,,,,,,handrail,Cold War
+,,,,,,flat,Cold War
+,,,,,,ledge,Cold War
+,,,,,,ledge,Cold War
+,,,,,,hubba,Cold War
+,,,,,,handrail,Cold War
+,,,,,,handrail,Cold War
+,,,,,,handrail,Cold War
+,,,,,,hubba,Cold War
+,,,,,,hubba,Cold War
+,,,,,,flat,Cold War
+,,,,,,hubba,Cold War
+,,,,,,ledge,Cold War
+,,,,,,hubba,Cold War
+,,,,,,hubba,Cold War
+,,,,,,ledge,Cold War
+,,,,,,flat,Cold War
+,,,,,,flat,Cold War
+,,,,,,handrail,Cold War
+,,,,,,handrail,Cold War
+,,,,,,gap,Cold War
+,,,,,,hubba,Cold War
+,,,,,,hubba,Cold War
+,,,,,,handrail,Cold War
+,,,,,,handrail,Cold War
+,,,,,,hubba,Cold War
+,,,,,,hubba,Cold War
+,,,,,,hubba,Cold War
+,,,,,,handrail,Cold War
+,,,,,,ledge,Out Of Sync
+,,,,,,bump to bar,Out Of Sync
+,,,,,,bump to bar,Out Of Sync
+,,,,,,flat,Out Of Sync
+,,,,,,flat rail,Out Of Sync
+,,,,,,flat rail,Out Of Sync
+,,,,,,handrail,Out Of Sync
+,,,,,,handrail,Out Of Sync
+,,,,,,ledge,Out Of Sync
+,,,,,,ledge,Out Of Sync
+,,,,,,gap,Out Of Sync
+,,,,,,ledge,Out Of Sync
+,,,,,,ledge,Out Of Sync
+,,,,,,handrail,Out Of Sync
+,,,,,,flat,Out Of Sync
+,,,,,,gap,Out Of Sync
+,,,,,,ledge,Out Of Sync
+,,,,,,ledge,Out Of Sync
+,,,,,,bank,Out Of Sync
+,,,,,,ledge,Out Of Sync
+,,,,,,handrail,Out Of Sync
+,,,,,,stairs,Out Of Sync
+,,,,,,handrail,Out Of Sync
+,,,,,,gap,Out Of Sync
+,,,,,,ledge,Out Of Sync
+,,,,,,gap,Out Of Sync
+,,,,,,flat rail,Out Of Sync
+,,,,,,ledge,Out Of Sync
+,,,,,,flat rail,Out Of Sync
+,,,,,,pole,Out Of Sync
+,,,,,,pole,Out Of Sync
+,,,,,,handrail,Tom K. x Wugazi
+,,,,,,transition,Tom K. x Wugazi
+,,,,,,ledge,Tom K. x Wugazi
+,,,,,,flat rail,Tom K. x Wugazi
+,,,,,,flat rail,Tom K. x Wugazi
+,,,,,,ledge,Tom K. x Wugazi
+,,,,,,handrail,Tom K. x Wugazi
+,,,,,,handrail,Tom K. x Wugazi
+,,,,,,gap,Tom K. x Wugazi
+,,,,,,flat rail,Tom K. x Wugazi
+,,,,,,flat,Tom K. x Wugazi
+,,,,,,flat rail,Tom K. x Wugazi
+,,,,,,flat rail,Tom K. x Wugazi
+,,,,,,hubba,Tom K. x Wugazi
+,,,,,,flat,3D Welcomes
+,,,,,,pole,3D Welcomes
+,,,,,,gap,3D Welcomes
+,,,,,,gap,3D Welcomes
+,,,,,,flat,3D Welcomes
+,,,,,,flat,3D Welcomes
+,,,,,,flat rail,3D Welcomes
+,,,,,,ledge,3D Welcomes
+,,,,,,stairs,3D Welcomes
+,,,,,,gap,3D Welcomes
+,,,,,,pad,3D Welcomes
+,,,,,,flat rail,3D Welcomes
+,,,,,,flat rail,3D Welcomes
+,,,,,,ledge,3D Welcomes
+,,,,,,flat,3D Welcomes
+,,,,,,gap,3D Welcomes
+,,,,,,flat rail,3D Welcomes
+,,,,,,gap,3D Welcomes
+,,,,,,gap,3D Welcomes
+,,,,,,ledge,3D Welcomes
+,,,,,,flat rail,3D Welcomes
+,,,,,,gap,3D Welcomes
+,,,,,,gap,3D Welcomes
+,,,,,,wall,3D Welcomes
+,,,,,,handrail,3D Welcomes
+,,,,,,ledge,3D Welcomes
+,,,,,,pole,Hi-Tide
+,,,,,,flat,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,gap,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,bump to bar,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,handrail,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,flat rail,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,gap,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,gap,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,gap,Hi-Tide
+,,,,,,gap,Hi-Tide
+,,,,,,gap,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,flat,Hi-Tide
+,,,,,,flat rail,Hi-Tide
+,,,,,,gap,Hi-Tide
+,,,,,,pole,Hi-Tide
+,,,,,,gap,Hi-Tide
+,,,,,,gap,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,pole,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,ledge,Hi-Tide
+,,,,,,pole,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,wall,Hi-Tide
+,,,,,,gap,Hi-Tide
+,,,,,,ledge,Substance
+,,,,,,curb,Substance
+,,,,,,gap,Substance
+,,,,,,curb,Substance
+,,,,,,ledge,Substance
+,,,,,,ledge,Substance
+,,,,,,ledge,Substance
+,,,,,,gap,Substance
+,,,,,,ledge,Substance
+,,,,,,flat rail,Substance
+,,,,,,ledge,Substance
+,,,,,,ledge,Substance
+,,,,,,ledge,Substance
+,,,,,,ledge,Substance
+,,,,,,ledge,Substance
+,,,,,,pole,Substance
+,,,,,,wall,Substance
+,,,,,,wall,Substance
+,,,,,,ledge,Substance
+,,,,,,ledge,Substance
+,,,,,,hubba,Substance
+,,,,,,ledge,Substance
+,,,,,,gap,Substance
+,,,,,,ledge,Substance
+,,,,,,wall,Substance
+,,,,,,gap,Substance
+,,,,,,curb,Substance
+,,,,,,ledge,Substance
+,,,,,,ledge,Substance
+,,,,,,handrail,Substance
+,,,,,,gap,Substance
+,,,,,,ledge,Substance
+,,,,,,ledge,Substance
+,,,,,,gap,Substance
+,,,,,,gap,Substance
+,,,,,,handrail,Substance
+,,,,,,ledge,Substance
+,,,,,,flat rail,Substance
+,,,,,,ledge,Substance
+,,,,,,stairs,Substance
+,,,,,,pole,Substance
+,,,,,,hubba,Substance
+,,,,,,wall,Substance
+,,,,,,gap,Substance
+,,,,,,gap,Substance
+,,,,,,gap,Substance
+,,,,,,ledge,Substance
+,,,,,,ledge,Substance
+,,,,,,wall,Substance
+,,,,,,bump to bar,Substance
+,,,,,,gap,Substance
+,,,,,,ledge,Substance
+,,,,,,stairs,Brighton 344
+,,,,,,ledge,Brighton 344
+,,,,,,stairs,Brighton 344
+,,,,,,flat rail,Brighton 344
+,,,,,,flat rail,Brighton 344
+,,,,,,bump to bar,Brighton 344
+,,,,,,ledge,Brighton 344
+,,,,,,gap,Brighton 344
+,,,,,,bump to bar,Brighton 344
+,,,,,,flat,Brighton 344
+,,,,,,flat,Brighton 344
+,,,,,,flat,Brighton 344
+,,,,,,ledge,Brighton 344
+,,,,,,ledge,Brighton 344
+,,,,,,bump to bar,Brighton 344
+,,,,,,hubba,Brighton 344
+,,,,,,hubba,Brighton 344
+,,,,,,flat rail,Brighton 344
+,,,,,,curb,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,gap,Keeping The Flame
+,,,,,,flat,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,hubba,Keeping The Flame
+,,,,,,pole,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,wall,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,handrail,Keeping The Flame
+,,,,,,gap,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,pad,Keeping The Flame
+,,,,,,pad,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,stairs,Keeping The Flame
+,,,,,,gap,Keeping The Flame
+,,,,,,wall,Keeping The Flame
+,,,,,,gap,Keeping The Flame
+,,,,,,wall,Keeping The Flame
+,,,,,,handrail,Keeping The Flame
+,,,,,,gap,Keeping The Flame
+,,,,,,gap,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,handrail,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,pad,Keeping The Flame
+,,,,,,pad,Keeping The Flame
+,,,,,,gap,Keeping The Flame
+,,,,,,curb,Keeping The Flame
+,,,,,,pole,Keeping The Flame
+,,,,,,gap,Keeping The Flame
+,,,,,,handrail,Keeping The Flame
+,,,,,,handrail,Keeping The Flame
+,,,,,,handrail,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,ledge,Keeping The Flame
+,,,,,,transition,Aunt Tammy Vol. 3
+,,,,,,flat rail,Aunt Tammy Vol. 3
+,,,,,,ledge,Aunt Tammy Vol. 3
+,,,,,,handrail,Aunt Tammy Vol. 3
+,,,,,,flat rail,Aunt Tammy Vol. 3
+,,,,,,ledge,Aunt Tammy Vol. 3
+,,,,,,gap,Aunt Tammy Vol. 3
+,,,,,,flat rail,Aunt Tammy Vol. 3
+,,,,,,handrail,Aunt Tammy Vol. 3
+,,,,,,stairs,Aunt Tammy Vol. 3
+,,,,,,ledge,Aunt Tammy Vol. 3
+,,,,,,pole,Aunt Tammy Vol. 3
+,,,,,,ledge,Aunt Tammy Vol. 3
+,,,,,,gap,Aunt Tammy Vol. 3
+,,,,,,ledge,Aunt Tammy Vol. 3
+,,,,,,flat,String Theory
+,,,,,,transition,String Theory
+,,,,,,handrail,String Theory
+,,,,,,ledge,String Theory
+,,,,,,gap,String Theory
+,,,,,,gap,String Theory
+,,,,,,flat rail,String Theory
+,,,,,,bump to bar,String Theory
+,,,,,,bump to bar,String Theory
+,,,,,,gap,String Theory
+,,,,,,gap,String Theory
+,,,,,,stairs,String Theory
+,,,,,,gap,String Theory
+,,,,,,stairs,String Theory
+,,,,,,handrail,String Theory
+,,,,,,handrail,String Theory
+,,,,,,handrail,String Theory
+,,,,,,ledge,String Theory
+,,,,,,gap,String Theory
+,,,,,,wall,String Theory
+,,,,,,ledge,String Theory
+,,,,,,flat rail,String Theory
+,,,,,,gap,String Theory
+,,,,,,ledge,String Theory
+,,,,,,ledge,String Theory
+,,,,,,ledge,String Theory
+,,,,,,flat rail,String Theory
+,,,,,,stairs,String Theory
+,,,,,,stairs,String Theory
+,,,,,,stairs,String Theory
+,,,,,,hubba,String Theory
+,,,,,,gap,String Theory
+,,,,,,ledge,String Theory
+,,,,,,ledge,String Theory
+,,,,,,ledge,String Theory
+,,,,,,handrail,String Theory
+,,,,,,gap,String Theory
+,,,,,,ledge,String Theory
+,,,,,,ledge,String Theory
+,,,,,,ledge,String Theory
+,,,,,,ledge,String Theory
+,,,,,,flat,String Theory
+,,,,,,bump to bar,String Theory
+,,,,,,bump to bar,String Theory
+,,,,,,stairs,String Theory
+,,,,,,ledge,String Theory
+,,,,,,gap,String Theory
+,,,,,,ledge,String Theory
+,,,,,,curb,String Theory
+,,,,,,flat,String Theory
+,,,,,,bump to bar,String Theory
+,,,,,,gap,String Theory
+,,,,,,ledge,String Theory
+,,,,,,wall,String Theory
+,,,,,,handrail,String Theory
+,,,,,,curb,String Theory
+,,,,,,ledge,String Theory
+,,,,,,ledge,String Theory
+,,,,,,ledge,String Theory
+,,,,,,gap,String Theory
+,,,,,,ledge,String Theory
+,,,,,,handrail,String Theory
+,,,,,,flat,String Theory
+,,,,,,handrail,String Theory
+,,,,,,pole,String Theory
+,,,,,,handrail,String Theory
+,,,,,,pole,String Theory
+,,,,,,handrail,String Theory
+,,,,,,handrail,String Theory
+,,,,,,ledge,String Theory
+,,,,,,bump to bar,String Theory
+,,,,,,flat,Enter the Museum
+,,,,,,gap,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,bump to bar,Enter the Museum
+,,,,,,handrail,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,handrail,Enter the Museum
+,,,,,,flat,Enter the Museum
+,,,,,,flat rail,Enter the Museum
+,,,,,,wall,Enter the Museum
+,,,,,,hubba,Enter the Museum
+,,,,,,handrail,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,gap,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,handrail,Enter the Museum
+,,,,,,handrail,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,bump to bar,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,handrail,Enter the Museum
+,,,,,,handrail,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,handrail,Enter the Museum
+,,,,,,ledge,Enter the Museum
+,,,,,,handrail,WKND
+,,,,,,ledge,WKND
+,,,,,,bump to bar,WKND
+,,,,,,pad,WKND
+,,,,,,hubba,WKND
+,,,,,,ledge,WKND
+,,,,,,gap,WKND
+,,,,,,gap,WKND
+,,,,,,gap,WKND
+,,,,,,gap,WKND
+,,,,,,bump to bar,WKND
+,,,,,,wall,WKND
+,,,,,,wall,WKND
+,,,,,,ledge,WKND
+,,,,,,ledge,WKND
+,,,,,,bump to bar,WKND
+,,,,,,ledge,WKND
+,,,,,,curb,WKND
+,,,,,,handrail,WKND
+,,,,,,handrail,WKND
+,,,,,,flat,WKND
+,,,,,,handrail,WKND
+,,,,,,hubba,WKND
+,,,,,,flat,WKND
+,,,,,,handrail,WKND
+,,,,,,handrail,WKND
+,,,,,,wall,WKND
+,,,,,,flat rail,WKND
+,,,,,,ledge,WKND
+,,,,,,wall,WKND
+,,,,,,ledge,WKND
+,,,,,,handrail,WKND
+,,,,,,handrail,WKND
+,,,,,,handrail,WKND
+,,,,,,ledge,Cutting Corners Ep.1
+,,,,,,ledge,Cutting Corners Ep.1
+,,,,,,ledge,Cutting Corners Ep.1
+,,,,,,flat,Cutting Corners Ep.1
+,,,,,,flat,Cutting Corners Ep.1
+,,,,,,wall,Cutting Corners Ep.1
+,,,,,,gap,Cutting Corners Ep.1
+,,,,,,gap,Cutting Corners Ep.1
+,,,,,,gap,Cutting Corners Ep.1
+,,,,,,gap,Cutting Corners Ep.1
+,,,,,,bump to bar,Cutting Corners Ep.1
+,,,,,,pole,Cutting Corners Ep.1
+,,,,,,ledge,Cutting Corners Ep.1
+,,,,,,ledge,Cutting Corners Ep.1
+,,,,,,bump to bar,Cutting Corners Ep.1
+,,,,,,ledge,Cutting Corners Ep.1
+,,,,,,gap,Cutting Corners Ep.1
+,,,,,,ledge,Cutting Corners Ep.1
+,,,,,,flat rail,Cutting Corners Ep.1
+,,,,,,ledge,Cutting Corners Ep.1
+,,,,,,ledge,Cutting Corners Ep.1
+,,,,,,handrail,Cutting Corners Ep.1
+,,,,,,ledge,Cutting Corners Ep.1
+,,,,,,ledge,Cutting Corners Ep.1
+,,,,,,handrail,Cutting Corners Ep.1
+,,,,,,handrail,Cutting Corners Ep.1
+,,,,,,flat rail,Backwash
+,,,,,,handrail,Backwash
+,,,,,,bump to bar,Backwash
+,,,,,,pole,Backwash
+,,,,,,flat,Backwash
+,,,,,,ledge,Backwash
+,,,,,,ledge,Backwash
+,,,,,,ledge,Backwash
+,,,,,,ledge,Backwash
+,,,,,,gap,Backwash
+,,,,,,bump to bar,Backwash
+,,,,,,gap,Backwash
+,,,,,,ledge,Backwash
+,,,,,,pole,Backwash
+,,,,,,gap,Backwash
+,,,,,,bump to bar,Backwash
+,,,,,,gap,Backwash
+,,,,,,bump to bar,Backwash
+,,,,,,ledge,Backwash
+,,,,,,flat rail,Backwash
+,,,,,,flat rail,Backwash
+,,,,,,ledge,Backwash
+,,,,,,handrail,Backwash
+,,,,,,handrail,Backwash
+,,,,,,handrail,Backwash
+,,,,,,gap,Backwash
+,,,,,,ledge,Backwash
+,,,,,,handrail,Backwash
+,,,,,,flat,Backwash
+,,,,,,gap,Backwash
+,,,,,,gap,Backwash
+,,,,,,handrail,Backwash
+,,,,,,wall,Backwash
+,,,,,,ledge,Backwash
+,,,,,,curb,Backwash
+,,,,,,gap,Backwash
+,,,,,,gap,Backwash

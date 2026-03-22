@@ -1,0 +1,184 @@
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Use a font that suits Google Maps API */
+body, input, button {
+    font-family: Arial, sans-serif;
+}
+
+/* Style the legend container */
+.legend-container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px; /* Normal font size for desktop */
+}
+
+/* Style the search input */
+#searchInput {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Normal font size for input */
+}
+
+/* Style the search button */
+#searchButton {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px; /* Normal font size for button */
+}
+
+/* Change button color on hover */
+#searchButton:hover {
+    background-color: #0056b3;
+}
+
+/* Larger font sizes for desktop */
+#spot-panel {
+  position: fixed;
+  top: 0;
+  left: -500px; /* Initially off-screen */
+  width: 300px;
+  height: 40%; /* Limiting the height to 50% of the page height */
+  max-height: 80%; /* Ensure it doesn't exceed the page height */
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease-in-out;
+}
+
+#spot-info {
+  /*padding: 20px;*/
+  font-size: 16px; /* Normal font size for info */
+}
+
+.spot-image-container {
+    max-width: 200px; /* Limit the maximum width of the image container */
+}
+
+.spot-image {
+    width: 95%; /* Ensure the image fills its container */
+    height: auto; /* Maintain the aspect ratio */
+    margin-right: 5%;
+}
+
+.star {
+    width: 1.1em; /* Set the width of the star images to match the font size */
+    height: 1.1em; /* Set the height of the star images to match the font size */
+    display: inline-block; /* Ensure proper alignment with text */
+}
+
+
+
+#spot-image {
+  margin: 0 auto; /* Center the image horizontally */
+  max-width: 90%;
+  height: 30vh;
+  max-height: 30vh; /* Adjusted to 50% of the height of the info window */
+  overflow: hidden; /* Ensures the image does not overflow */
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+#spot-image img {
+  max-height: 100%; /* Allows the image to maintain its aspect ratio */
+  width: auto; /* Ensures the image fits within the container */
+  height: 100%;
+  max-width: 100%;
+  padding-right: 5%;
+  display: block; /* Ensures proper rendering */
+}
+
+#spot-name {
+  margin: 0;
+  padding-top: 5px;
+  font-size: 18px; /* Increase font size for name */
+  font-weight: bold; /* Make name bold */
+}
+
+#spot-type,
+#spot-address {
+  /*margin: 10px 0;*/
+  font-size: 14px; /* Adjust font size for type and address */
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  /* Adjustments for mobile devices */
+
+  .legend-container {
+    font-size: 22px; /* Larger font size for legend on mobile */
+    top: 50px; /* Adjusted for better placement on mobile */
+    right: 10px; /* Adjusted for better placement on mobile */
+    padding: 15px; /* Increased padding for better spacing */
+  }
+
+
+
+  #searchInput {
+    padding: 10px; /* Adjusted padding for better spacing */
+    font-size: 22px; /* Normal font size for input on mobile */
+  }
+
+  #searchButton {
+    padding: 10px; /* Adjusted padding for better spacing */
+    font-size: 16px; /* Normal font size for button on mobile */
+  }
+
+  #spot-panel {
+    left: 0; /* Centered on mobile */
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Adjusted to auto height on mobile */
+    max-height: 100%; /* Ensure it fits within the viewport */
+  }
+
+  #spot-info {
+    padding: 15px; /* Adjusted padding for better spacing */
+    font-size: 21px; /* Normal font size for info on mobile */
+  }
+
+  #spot-image {
+    height: auto; /* Adjusted to auto height on mobile */
+    width: 100%; /* Full width on mobile */
+    max-width: 100%; /* Ensure image fits within the container */
+  }
+
+  #spot-name {
+    padding-top: 10px; /* Increased padding for better spacing */
+    font-size: 26px; /* Further increased font size for name */
+  }
+
+  #spot-type,
+  #spot-address {
+    font-size: 21px; /* Further increased font size for type and address */
+  }
+}

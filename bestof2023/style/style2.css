@@ -1,0 +1,770 @@
+/* Fonts */
+/*==============*/
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Outline');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline');
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import url('https://fonts.googleapis.com/css?family=Avenir');
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+@import url('https://fonts.googleapis.com/css?family=Neue+Haas+Grotesk');
+@import url('https://fonts.googleapis.com/css?family=Trade+Gothic');
+@import url('https://fonts.googleapis.com/css?family=Changa');
+@import url('https://fonts.googleapis.com/css?family=Changa+Bold');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+
+
+.sidebyside {
+  margin: auto;
+  max-width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sidebyside img {
+  max-width: 47.5%;
+  width: auto;
+  height: auto;
+  padding: 1% 2%;
+}
+
+@media (max-width: 767px) {
+  /* Mobile styles */
+  .sidebyside {
+    max-width: 95%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebyside img {
+    max-width: 85%;
+  }
+}
+
+
+
+.break {
+  display: block;
+}
+
+.y-axis text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90px;
+}
+
+.y-axis text:hover {
+    overflow: visible;
+    width: auto;
+    white-space: normal;
+}
+
+.navigation-bar a {
+    color: white;
+}
+
+.navigation-bar {
+height: 2.9em; /* desktop */
+width: 100%;
+top: -0.1em;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: black;
+position: fixed;
+margin-bottom: 10%;
+transition: height 400ms ease-in-out;
+}
+
+#home-div {
+position: fixed;
+top: 0.3rem;
+left: 0.15rem;
+color: white;
+height: auto;
+padding-left: 1em;
+padding-bottom: 0.5em;
+display: flex;
+transition: height 400ms ease-in-out, width 400ms ease-in-out, padding-top 400ms ease-in-out;
+}
+
+#four {
+height: 100%;
+/*width: 100%;*/
+font-size: 2.5em;
+font-family: 'Bungee', cursive;
+float: left;
+transition: height 400ms ease-in-out, font-size 400ms ease-in-out;
+}
+
+#plymag {
+position: relative;
+top: 0.21em;
+/*transition: top 400ms ease-in-out;*/
+}
+
+#plymag {
+height: 2em;
+/*padding-top: 0.2em;*/
+display: flex;
+float: left;
+flex-direction: column;
+align-items: flex-start;
+transition: height 400ms ease-in-out, flex-direction 400ms ease-in-out, top 400ms ease-in-out;
+}
+
+#typing::after {
+content: "|";
+animation: blink 1s steps(1) infinite;
+}
+
+#ply{
+width: 100%;
+}
+
+#ply, #mag {
+height: 50%;
+font-size: 1em;
+font-family: 'Bungee', cursive;
+}
+
+#mag{float: right}
+
+#menu-div {
+position: fixed;
+right: 0.25em;
+top: 0.25em;
+height: 2.2em;
+padding-right: 1em;
+/*padding-top: 0.5em;*/
+padding-bottom: 0.5em;
+/*align-self: center;*/
+display: flex;
+/*margin-top: auto;*/
+margin-bottom: auto;
+transition: height 400ms ease-in-out;
+}
+
+#menu-div img {
+margin: auto;
+padding-top: 10%;
+max-width: 80%;
+max-height: 80%;
+align-self: center;
+
+}
+
+header a {
+    color: #6185F8;
+    text-decoration: none;
+}
+
+
+
+p {
+    max-width: 95%;
+    /*width: 80%;*/
+}
+
+
+
+/* #Reset & Basics (Inspired by E. Meyers)
+================================================== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+u,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*font-size: 1em;*/
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+body {
+font-family: 'Changa';
+    font-size: 1.1rem;
+    color: black;
+    background-color: #ffffff;
+}
+
+a:hover{
+    color: orange;
+}
+
+a{
+    color: darkolivegreen;
+}
+
+
+#buttons button {
+    margin: 0 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    height: 1.8em;
+    padding: 2px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0.8rem;
+    border: 2px solid #e0e0e0;
+    -moz-border-radius: 10px;
+    /*border-radius: 2px;*/
+    color: blue;
+    font-family: Titillium+Web;
+    background-color: white;
+    /*this sets the background color to white*/
+}
+
+#popup {
+    position: absolute;
+    pointer-events: none;
+    font-family: 'Titillium+Web';
+    text-align: left;
+    z-index: 1;
+    width: auto;
+    top: 50%;
+
+    left: 50%;
+    text-decoration: capitalize;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#popupheading {
+    width: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px 10px 0 0;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 1px solid #000;
+    background-color: lightgrey;
+}
+
+.popupheading {
+    width: 100%;
+    text-align: left;
+    padding-left: 5px;
+}
+
+#popupcontent{
+
+}
+
+
+.regular {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.light-grey {
+
+    background-color: rgba(231, 231, 231, 0.8);
+}
+
+.regular,
+.light-grey {
+    align-items: center;
+    flex-basis: auto;
+    max-width: 100%;
+    padding-left: 11px;
+    padding-right: 13px;
+    width: auto;
+    display: block;
+    padding-top: 2px;
+    padding-bottom: 1px;
+}
+
+
+#main-wrapper {
+    max-width: 100%;
+    padding-top: 20px auto;
+    background-color: white;
+    color: black;
+    margin-bottom: 0px;
+}
+
+#main-wrapper p {
+    font-size: 0.7em;
+}
+
+
+.centered {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+    pointer-events: none;
+}
+
+sup {
+    vertical-align: text-top;
+    font-size: smaller;
+}
+
+h1 {
+    font-size: 2main.2rem;
+    font-style: uppercase;
+    margin: 0 0 6px 0px;
+    font-family: Proxima Nova;
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+    padding-top: 20px;
+    color: #FE0002;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-style: uppercase;
+    margin: 0 0 6px 0px;
+    font-family: 'Lato';
+    /*text-align: center;*/
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 0.9rem;
+    font-style: uppercase;
+    margin: 0 0 6px 0px;
+    font-family: 'Titillium+Web';
+    /*text-align: center;*/
+    max-width: 800px;
+    /*margin: auto;*/
+    padding-bottom: 5px;
+}
+
+p,
+ul,
+li {
+    margin-bottom: .5rem;
+    display: block;
+    margin: auto;
+    line-height: 1.1rem;
+}
+
+hr {
+    max-width: 5%;
+}
+
+.desc {
+    font-style: italic;
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+.section1 {
+    background-color: #FFD987;
+}
+
+
+/* Make the <b> text bold */
+b {
+  font-weight: bold;
+  font-family: 'Changa', sans-serif;
+
+}
+
+/* Set 15% margin for desktop and 3% margin for mobile */
+@media (max-width: 767px) {
+  /* Mobile styles */
+  .qna{
+    margin: auto;
+    max-width: 92%;
+}
+}
+
+@media (min-width: 768px) {
+  /* Desktop styles */
+  .qna{
+    margin: auto;
+    max-width: 70%;
+}
+}
+
+
+/* Set the h2 text to 2em and use the Bungee font */
+h5 {
+  font-size: 2em;
+  font-family: 'Bungee', cursive;
+  text-align: center;
+}
+
+
+/* Controls
+============================ */
+
+#obstacles,
+#my_dataviz,
+#grid-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+#update {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+
+#percentages {
+    max-width: 690px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.button {
+    /* min-width: 15em; */
+    height: 1.8em;
+    line-height: 1.8em;
+    padding: 2px;
+    margin-top: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: .7rem;
+    border: 2px solid #e0e0e0;
+    -moz-border-radius: 10px;
+    border-radius: 2px;
+    background: #f7f6f1;
+    font-family: Bungee;
+}
+
+#spaceFiller {
+    width: 218px;
+    height: 1px;
+}
+
+.button:hover {
+    background: #e0e0e0;
+}
+
+.button.current {
+    background: #c9a111;
+    color: #262520;
+}
+
+
+/* Chart
+============================ */
+
+#totalcnt {
+    margin: 20px 0 30px 0;
+}
+
+#totalcnt #n {
+    font-size: 3.0em;
+}
+
+#charts {
+    /* position: relative; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    max-width: 750px;
+    margin: auto;
+}
+
+.tick {
+    font-family: Titillium+Web;
+    font-size: 1.2em;
+}
+
+.y-axis path.domain {
+    opacity: 0;
+}
+
+.left {
+    text-align: left;
+}
+
+.x-axis {
+    font-size: .75rem;
+}
+
+.bar-chart-bar {
+    /* styles for the bars */
+}
+
+/*bar chart multiples*/
+.some-page-wrapper {
+    display: flex;
+    margin: 5px;
+    max-width: 90%;
+    max-height: 25%;
+    margin-right: 10%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+h3 {
+    font-family: Bungee;
+    padding-bottom: 10px;
+}
+
+.main-title {
+    font-size: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 1em;
+    height: 100%;
+}
+
+.article-date {
+    font-size: 1rem;
+}
+
+#pieChart svg {
+    margin: auto;
+}
+
+#pieChart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+g.tick line {
+    opacity: .1;
+}
+
+path.domain {
+    opacity: 0;
+}
+
+header {
+    background-color: orange;
+    padding-bottom: 1em;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+}
+
+.section2 {
+    /* background-color: #abd1c6; */
+    background-color: antiquewhite;
+    color: #001e1d;
+}
+
+
+.section3 {
+    /* background-color: #abd1c6; */
+    background-color: #ffffff;
+    color: #0D9B43;
+}
+
+section {
+    padding-top: 1%;
+    padding-bottom: 4%;
+}
+
+.section-header {
+    padding-bottom: 30px;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+ul.facts {
+    padding-left: 25%;
+    max-width: 100%;
+}
+
+li.fact {
+    display: list-item;
+    /*list-style-type: circle;*/
+    margin-left: 0px;
+    padding-bottom: 15px;
+}
+
+ul.facts1 {
+    color: #ffffff;
+    padding-left: 25%;
+    max-width: 100%;
+}
+
+
+.uline {
+    text-decoration: underline;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+.tab {
+    padding-left: 5%;
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+}
+
+.section-intro {
+    padding-bottom: 0px;
+    padding-left: 3em;
+    padding-right: 3em;
+    height: auto;
+    width: auto;
+    /* background-repeat: repeat-y; */
+}
+
+.fact .uline {
+    font-family: Bungee;
+    font-size: 1.2rem;
+}
+

@@ -1,0 +1,466 @@
+"trick","obstacledetail","obstacle","cnt"
+"360 flip","into bank","gap",1
+"360 flip","into pole jam","gap",1
+"360 flip","over can","gap",1
+"360 flip","over hip and rail","bank",1
+"360 flip","over hydrant","gap",1
+"360 flip","over rail","gap",1
+"360 flip","plain jane","flat",1
+"360 flip","plain jane","gap",1
+"360 flip to bs noseslide","into bank","ledge",1
+"360 flip to bs noseslide","plain jane","ledge",1
+"360 flip to bs noseslide to fakie","plain jane","ledge",1
+"360 flip to crook","plain jane","ledge",1
+"360 flip to fs 5050","gap to curb","curb",1
+"360 flip to manny","into bank","pad",1
+"acid drop to fs 5050","drop to curb","curb",1
+"big flip","plain jane","stairs",1
+"bs 180","into bank","gap",1
+"bs 180","plain jane","stairs",1
+"bs 180 revert to fakie manny to halfcab","pad to bank","pad",1
+"bs 180 to bs 5-0 stall to tail drop","into bank","ledge",1
+"bs 180 to fakie manny to halfcab","into bank","pad",1
+"bs 180 to fakie manny to halfcab","ledge to pad","pad",1
+"bs 180 to fakie manny to halfcab","plain jane","pad",1
+"bs 180 to fakie manny to kickflip","plain jane","pad",1
+"bs 180 to fakie manny to sw fs 5-0","pad to hubba","pad",1
+"bs 180 to sw bs 5-0 to sw bs 180","plain jane","handrail",1
+"bs 180 to sw bs 5-0 to sw fs 180","bank to ledge","ledge",1
+"bs 180 to sw bs 5-0 to sw fs shuv","plain jane","hubba",1
+"bs 180 to sw fs 5-0","banked ledge","ledge",1
+"bs 180 to sw fs 5-0 to regular","street transition","transition",1
+"bs 180 to sw fs crook","outledge","ledge",1
+"bs 180 to sw hill bomb","flat gap","gap",1
+"bs 180 to sw manny to sw fs 360","plain jane","pad",1
+"bs 180 to sw manny to sw kickflip","plain jane","pad",1
+"bs 180 to sw wallie","to wall","ledge",1
+"bs 270 cab to bs tail to bs shuv","plain jane","ledge",1
+"bs 360","plain jane","gap",1
+"bs 360","plain jane","stairs",2
+"bs 360 kickflip","plain jane","stairs",2
+"bs 360 to bs wallride","kicker to wall","wall",1
+"bs 360 to fakie","street transition","transition",1
+"bs 5-0 to fs 180","into bank","ledge",1
+"bs 5050","outledge","ledge",1
+"bs 5050","plain jane","hubba",1
+"bs 5050 to bs 5050","ledge to rail","ledge",1
+"bs 5050 to fs body varial","plain jane","handrail",1
+"bs 5050 to fs shuv to bs 5050","to hubba","ledge",1
+"bs 5050 to kickflip transfer","up rail","flat rail",1
+"bs 5050 to ollie","ledge to gap","ledge",1
+"bs 5050 to ride-on ride to ride-on bs 5050","rail to stump to rail","flat rail",1
+"bs 5050 transfer","plain jane","flat rail",1
+"bs bean plant","concrete skatepark","transition",1
+"bs bigfip","plain jane","stairs",1
+"bs bigspin to sw manny to sw fs 180","plain jane","pad",1
+"bs blunt to bs blunt","hubba to ledge","hubba",1
+"bs blunt to bs blunt to fakie","ledge to ledge","ledge",1
+"bs blunt to fakie","outledge","ledge",1
+"bs blunt to fakie","plain jane","handrail",1
+"bs blunt to ollie","over bike","ledge",1
+"bs blunt transfer","into bank","flat rail",1
+"bs boardslide","bump to bar","flat rail",1
+"bs boardslide","curved hubba","hubba",1
+"bs boardslide","gap to curb","curb",1
+"bs boardslide","glass barrier to drop","flat rail",1
+"bs boardslide","into bank","handrail",1
+"bs boardslide","into hill","flat rail",1
+"bs boardslide","kinked hubba","hubba",1
+"bs boardslide","knobbed","handrail",1
+"bs boardslide","ledge to rail to handrail","ledge",1
+"bs boardslide to bridge slide to fakie","benches","ledge",1
+"bs boardslide to bs boardslide","handrail to hubba","handrail",1
+"bs boardslide to fs shuv to 5050","rail to rail","flat rail",1
+"bs boardslide to fs shuv transfer","into bank","handrail",1
+"bs boardslide to fs tailslide","to can","hubba",1
+"bs boardslide to kickflip","pipes","flat rail",1
+"bs boardslide to kickflip to bs boardslide","plain jane","curb",1
+"bs boardslide to sw fs 5050","handrail to ledge","handrail",1
+"bs boardslide to transfer fs 5-0","into bank","flat rail",1
+"bs crook","double kink","handrail",1
+"bs crook","into bank","flat rail",1
+"bs crook","into bank","ledge",1
+"bs crook","plain jane","handrail",1
+"bs crook","plain jane","hubba",1
+"bs crook","plain jane","ledge",2
+"bs crook bonk","outledge","ledge",1
+"bs crook to bs crook","to ledge","ledge",1
+"bs crook to hippie jump","flat rail to gap","flat rail",1
+"bs feeble","curved ledge","ledge",1
+"bs front foot no comply","street transition","transition",1
+"bs halfcab roll off to manny to slappy bs blunt transfer to fakie","plain jane","curb",1
+"bs kickflip","channel","bank",1
+"bs kickflip","double set","stairs",1
+"bs kickflip","flat gap","gap",2
+"bs kickflip","plain jane","bank",1
+"bs kickflip","plain jane","gap",1
+"bs kickflip","up gap","gap",1
+"bs kickflip to sw bs 5-0","bump to ledge","ledge",1
+ckflip to sw bs nosegrind","plain jane","ledge",1
+bs lipslide","gap to ledge","ledge",1
+"bs lipslide","outledge","ledge",1
+"bs lipslide","plain jane","handrail",2
+"bs lipslide to bs tailslide","plain jane","ledge",1
+"bs lipslide to fs shuv","ledge to stairs","ledge",1
+"bs lipslide to shuv","plain jane","ledge",1
+"bs nose bonk to nollie shuv","plain jane","ledge",1
+"bs noseblunt","gap to ledge","ledge",1
+"bs noseblunt","into bank","ledge",1
+"bs noseblunt","table","ledge",1
+"bs noseblunt stall","quarterpipe","transition",1
+"bs noseblunt to fakie","curved ledge","ledge",1
+"bs noseblunt to fakie","plain jane","ledge",1
+"bs noseblunt to nollie fs shuv","into bank","ledge",1
+"bs nosegrind","gap to ledge","ledge",1
+"bs nosegrind","plain jane","ledge",2
+"bs nosegrind to nollie fs kickflip","outledge","ledge",1
+"bs nosegrind to nollie heelflip","plain jane","ledge",1
+"bs noseslide","ledge to gap","ledge",2
+"bs noseslide","outledge","ledge",1
+"bs noseslide","plain jane","flat rail",1
+"bs noseslide","plain jane","handrail",1
+"bs noseslide","plain jane","hubba",1
+"bs noseslide to bs 5-0","to handrail","hubba",1
+"bs noseslide to bs 5050","plain jane","hubba",1
+"bs noseslide to bs blunt to fakie","ledge to ledge","ledge",1
+"bs noseslide to fakie","bank to ledge","ledge",1
+"bs noseslide to nollie heelflip","gap to ledge","ledge",1
+"bs noseslide to nollie kickflip","curved ledge","ledge",1
+"bs noseslide to nollie kickflip","plain jane","ledge",1
+"bs ollie","channel","gap",1
+"bs shuv to bs tailslide","gap to curb to gap","curb",1
+"bs smith","bump to rail","flat rail",1
+"bs smith","out rail","flat rail",1
+"bs smith","plain jane","ledge",1
+"bs smith to bs bigspin","curved ledge","ledge",1
+"bs smith to bs noseblunt","plain jane","flat rail",1
+"bs tailslide","outledge","ledge",2
+"bs tailslide to bs 270","outledge","ledge",1
+"bs tailslide to bs 270","plain jane","flat rail",1
+"bs tailslide to bs body varial","plain jane","ledge",1
+"bs tailslide to bs kickflip","plain jane","ledge",1
+"bs tailslide to fakie","curved ledge","curb",1
+"bs tailslide to shuv","plain jane","ledge",1
+"bs wallie","into bank","wall",1
+"bs wallie to bs 5050","to ledge","wall",1
+"bs wallride","plain jane","wall",1
+"bs wallride nollie out","on mailbox","wall",1
+"bs wallride nollie out","plain jane","wall",1
+"bs wallride to bs 180 melon","plain jane","wall",1
+"bs wallride to bs bigspin","wall to stairs","wall",1
+"bs wallride to kickflip","wall to bank","wall",1
+"bs wallride to melon","plain jane","wall",1
+"bump-n-jump nollie to fs 5050","gap to curb","curb",1
+"casper stall","plain jane","bank",1
+"caveman to bs smith","curved ledge","ledge",1
+"deck bonk","into bank","flat rail",1
+"deck bonk to nosegrind","bench","ledge",1
+"dolphin flip","flat gap","gap",1
+"drop in 5050 to fs 5050","handrail to hubba","handrail",1
+"drop to sw manny to sw ollie","gap to pad to gap","pad",1
+"fakie 360 flip","bump to gap","gap",1
+"fakie big flip","over can","gap",1
+"fakie big flip","plain jane","gap",1
+"fakie fs kickflip","over rail","gap",1
+"fakie fs kickflip","plain jane","stairs",1
+"fakie fs kickflip to fs noseslide","plain jane","ledge",1
+"fakie hardflip","plain jane","stairs",1
+"fakie hardflip to sw bs noseslide to regular","plain jane","ledge",1
+"fakie hardflip to sw fs 5-0","plain jane","ledge",1
+"fakie heelflip","into bank to drop","gap",1
+"fakie heelflip","plain jane","stairs",1
+"fakie kickflip","into bank","gap",1
+"fakie kickflip","plain jane","gap",2
+"fakie kickflip to sw bs crook","plain jane","ledge",1
+"fakie kickflip to sw bs nosegrind","plain jane","ledge",1
+"fakie kickflip to sw fs 5-0","outledge","ledge",1
+"fakie manny to fakie bigspin to manny","plain jane","pad",1
+"fakie manny to fakie kickflip","to stairs","pad",1
+"fakie ollie","over handrail","gap",1
+"fakie ollie to sw fs crook","plain jane","ledge",1
+"fakie shuv to fakie manny to sw bs lipslide","pad to ledge","pad",1
+"fs 180 to sw bs crook to normal","plain jane","ledge",1
+"fs 180 to sw fs 5-0","plain jane","hubba",1
+"fs 180 to sw fs 5-0 to sw bs 180","outledge","ledge",1
+"fs 180 to sw fs nosegrind","outledge","ledge",1
+"fs 180 to sw manny to sw bs wallride to bs revert","to wall","pad",1
+"fs 5-0","outledge","ledge",1
+"fs 5-0 to kickflip","plain jane","ledge",1
+"fs 5050","around corner","handrail",1
+"fs 5050","bank to rail","flat rail",1
+"fs 5050","bump to bar to ledge","ledge",1
+"fs 5050","into bank","flat rail",2
+"fs 5050","keyhole","flat rail",1
+"fs 5050","on chains","transition",1
+"fs 5050","quad kink","handrail",1
+"fs 5050","up and down","flat rail",1
+"fs 5050","up hubba","hubba",2
+"fs 5050 to bs 180","curved rail","flat rail",1
+"fs 5050 to bs 180 transfer","curved rail","flat rail",1
+"fs 5050 to bs 360","outledge","ledge",1
+"fs 5050 to bs 5050","curb to curb","curb",1
+"fs 5050 to bs bigspin","plain jane","ledge",1
+"fs 5050 to fs 5050","gap to ledge to ledge","ledge",1
+"fs 5050 to fs shuv to nose manny to nollie","ledge to pad to stairs","ledge",1
+"fs 5050 to ollie","ledge to gap","ledge",1
+"fs 5050 to ollie","up rail to gap","handrail",1
+"fs blunt stall to fs 180","street transition","transition",1
+"fs blunt to bs noseblunt","plain jane","ledge",1
+"fs blunt to kickflip","plain jane","handrail",1
+"fs blunt to shuv","plain jane","handrail",1
+"fs boardslide","plain jane","curb",1
+"fs boardslide","plain jane","handrail",1
+"fs boardslide to sw manny","chain to pad","pad",1
+"fs crook","plain jane","ledge",1
+"fs crook to fakie","plain jane","ledge",1
+"fs feeble","plain jane","ledge",1
+"fs heelflip","over can","gap",2
+"fs kickflip","duck under pole","gap",1
+"fs kickflip","over trash can","gap",1
+"fs kickflip","plain jane","stairs",3
+"fs kickflip","street transition","transition",1
+"fs layup","plain jane","transition",1
+"fs lipslide","bump to dumpster","ledge",1
+"fs lipslide","curved ledge","ledge",1
+"fs lipslide","gap to rail","flat rail",1
+"fs lipslide","outledge","ledge",1
+"fs lipslide","plain jane","handrail",2
+"fs lipslide","plain jane","hubba",1
+"fs lipslide to fakie","hubba to ledge","hubba",1
+"fs lipslide to heelflip","plain jane","ledge",1
+"fs noseblunt","curved ledge","ledge",1
+"fs noseblunt","plain jane","ledge",1
+"fs noseblunt to nollie fs shuv to sw bs crook to fakie","plain jane","ledge",1
+"fs noseblunt to nollie kickflip","plain jane","ledge",1
+"fs nosegrind","curved ledge","ledge",1
+"fs nosegrind","plain jane","ledge",1
+"fs nosegrind to nollie kickflip","into bank","ledge",1
+"fs nosegrind transfer","out rail","flat rail",1
+"fs noseslide","plain jane","ledge",2
+"fs noseslide to fakie","into bank","ledge",1
+"fs noseslide to fakie","ledge to gap","ledge",1
+"fs noseslide to fs 270","plain jane","ledge",1
+"fs noseslide to fs shuv","outledge","ledge",1
+"fs noseslide to nollie meatspin","plain jane","ledge",1
+"fs shuv to bs 5050","plain jane","ledge",1
+"fs tailslide to fs bigspin","plain jane","ledge",1
+"fs tailslide to kickflip","hubba","ledge",1
+"fs tailslide to kickflip to fakie","bump to ledge","ledge",1
+"fs wallride indie","to stairs","wall",1
+"fs wallride to bs 180","wall to gap","wall",1
+"fs wallride to bs bigspin","street transition","transition",1
+"fs wallride to fs 5-0","wall to handrail","handrail",1
+"fs wallride to fs lipslide","to ledge","wall",1
+"fullcab kickflip","over pad","gap",1
+"fullcab kickflip","plain jane","flat",1
+"fullcab to sw bs 5050","gap to curb","curb",1
+"halfcab","into bank","flat",1
+"halfcab hippie flip","into bank","gap",1
+"halfcab kickflip to manny to bs revert to fakie manny to fakie kickflip","plain jane","pad",1
+"halfcab to bs noseblunt to fakie","banked ledge","ledge",1
+"halfcab to bs noseslide to sw fs 270 to fakie manny","plain jane","ledge",1
+"halfcab to fs blunt to fakie","bank to ledge","ledge",1
+"halfcab to fs noseblunt to nollie kickflp","plain jane","ledge",1
+"halfcab to fs noseslide","outledge","ledge",1
+"halfcab to sw fs nosegrind to fakie","concrete skatepark","transition",1
+"halfcab to transfer bs noseblunt","ledge to drop","ledge",1
+"hardflip","bump to gap","gap",1
+"hardflip","into bank","gap",1
+"hardflip","over wall","gap",1
+"hardflip","plain jane","stairs",3
+"hardflip to fakie","miniramp","transition",1
+"hardflip to fs blunt","plain jane","ledge",1
+"hardflip to manny","plain jane","pad",1
+"heelflip","flat gap","gap",1
+"heelflip","plain jane","stairs",1
+"heelflip to bs crook","plain jane","hubba",1
+"heelflip to bs crook","plain jane","ledge",1
+"heelflip to bs lipslide","outledge","ledge",1
+"heelflip to firecracker","plain jane","gap",1
+"heelflip to fs crook to fakie","plain jane","ledge",1
+"impossible","stairs","gap",1
+"impossible to fs 5-0","bump to can","ledge",1
+"kickflip","bump to gap","gap",1
+"kickflip","concrete skatepark","gap",1
+"kickflip","escalator","bank",1
+"kickflip","hip","transition",1
+"kickflip","into bank","flat",1
+"kickflip","into bank","gap",2
+"kickflip","over bar","flat",1
+"kickflip","over rail","gap",1
+"kickflip","over rail into bank","gap",1
+"kickflip","plain jane","gap",4
+"kickflip","plain jane","stairs",3
+"kickflip","stairs to disaster","stairs",1
+"kickflip to bs body varial","plain jane","gap",1
+"kickflip to bs lipslide","bump to curb","curb",1
+"kickflip to bs noseblunt to fakie","plain jane","ledge",1
+"kickflip to bs noseslide","plain jane","ledge",1
+"kickflip to bs noseslide to fakie","into bank","ledge",1
+"kickflip to bs tailslide","outledge","ledge",1
+"kickflip to bs tailslide","plain jane","ledge",1
+"kickflip to bs tailslide to bs 360","plain jane","ledge",1
+"kickflip to bs tailslide to bs bigspin","plain jane","handrail",1
+"kickflip to bs tailslide to shuv","to stairs","ledge",1
+"kickflip to fakie","plain jane","bank",1
+"kickflip to fs 5050","plain jane","handrail",1
+"kickflip to fs crook to fs crook","drop","ledge",1
+"kickflip to fs tailslide","plain jane","ledge",1
+"kickflip to manny to bs wallride to shuv","to wall","pad",1
+"kickflip to ollie to kickflip","playground","pad",1
+"kickflip to transfer fs noseslide","bump to ledge","ledge",1
+"kicklip to manny to bs 5050","pad to ledge","pad",1
+"late bs bigspin","plain jane","stairs",1
+"manny","into bank","pad",1
+"manny to bs bigspin","plain jane","pad",1
+"manny to bs boardslide","pad to handrail","pad",1
+"manny to wallride nollie to manny","pad to wall to pad","pad",1
+"melon bash","sign on stairs","stairs",1
+"no comply","over can","flat",1
+"no comply","plain jane","gap",1
+"no comply","up stairs","stairs",1
+"no comply to bs tailslide","plain jane","ledge",1
+"no compy bs 180 to sw fs 5050 to sw fs 180","plain jane","curb",1
+"no compy to fs blunt to fakie","plain jane","ledge",1
+"nollie","flat gap","gap",1
+"nollie bs 180","plain jane","stairs",1
+"nollie bs 180 to fakie manny to halfcab to manny to bs 180 to fakie manny","pad to pad","pad",1
+"nollie bs 180 to sw fs nosegrind","plain jane","ledge",1
+"nollie bs inward heelflip","over rail","gap",1
+"nollie bs kickflip","plain jane","stairs",1
+"nollie bs kickflip to fakie manny to fs halfcab","plain jane","pad",1
+"nollie fs 180 to sw bs crook to regular","outledge","ledge",1
+"nollie fs big flip","over wall","gap",1
+"nollie fs heellip","over can","flat",1
+"nollie fs kickflip","plain jane","gap",1
+"nollie fs kickflip to sw fs 5-0","plain jane","ledge",1
+"nollie hardflip","plain jane","stairs",1
+"nollie heelflip","bump to bar","gap",1
+"nollie heelflip","flat gap","gap",1
+"nollie heelflip","into bank","flat",1
+"nollie heelflip to bs wallride","plain jane","wall",1
+"nollie heelflip to nose manny","pad to drop","pad",1
+"nollie kickflip","bump to bar","gap",1
+"nollie kickflip","into bank","gap",2
+"nollie to bs crook","plain jane","ledge",1
+"nollie to bs tailslide to bs kickflip","plain jane","ledge",1
+"nollie to fs noseblunt","plain jane","ledge",1
+"nose manny","bank to pad to bank","pad",1
+"nose manny to bs nosegrind to nose manny","pad to ledge to pad","pad",1
+"nose manny to bs nosegrind to nose manny drop nose manny","plain jane","pad",1
+"nose manny to fs nollie 360 kickflip","plain jane","pad",1
+"nose manny to fs nosegrind indie","concrete skatepark","pad",1
+"nose manny to nollie","pad to flat gap","pad",1
+"nose slide to nollie kickflip","plain jane","ledge",1
+"nosegrind to wall ride","up ledge","ledge",1
+"ollie","bank","gap",1
+"ollie","bump to bar","gap",2
+"ollie","escalator","gap",1
+"ollie","flat gap","gap",1
+"ollie","into bank","flat",1
+"ollie","onto ball","gap",1
+"ollie","over rail","gap",1
+"ollie","over rail into double bank","gap",1
+"ollie","over table","gap",1
+"ollie","plain jane","gap",2
+"ollie","rooftop","gap",1
+"ollie","to drop to drop to drop","gap",1
+"ollie bs noseslide","bump to bar to ledge","gap",1
+"ollie to body varial","plain jane","stairs",1
+"ollie to bs wallride","plain jane","wall",1
+"ollie to deck bonk","plain jane","gap",1
+"ollie to fs wallride","gap to wall","wall",1
+"ollie to fs wallride","plain jane","wall",2
+"ollie to no comply","over rail into bank","gap",1
+"ollie to ollie to ollie","bank to bank to bank","bank",1
+"ollie to ollie to ollie","pad to chain","pad",1
+"pole jam 5050","into bank","flat rail",1
+"pole jam to hippie jump","plain jane","flat rail",1
+"pole jam to manny to pole jam","pole jam flat pole jam","flat rail",1
+"polejam to fs lipslide to fakie","pole to gap to rail","flat rail",1
+"ride-on 5050","bank to rail","flat rail",1
+"ride-on 5050","outledge","ledge",1
+"ride-on 5050","plain jane","handrail",1
+"ride-on 5050 to shuv","plain jane","flat rail",1
+"ride-on bs 5050","ledge to gap","ledge",1
+"ride-on bs 5050 to ride-on bs 5050","rail to rail","flat rail",1
+"ride-on bs nosegrind","curb","ledge",1
+"ride-on bs tailslide","plain jane","ledge",1
+"ride-on fs crook","tram tracks","flat rail",1
+"ride-on fs lipslide","drop to rail","flat rail",1
+"ride-on fs lipslide to fakie","plain jane","flat rail",1
+"ride-on sw bs crook","escalator","ledge",1
+"shoe slide to caveman","into hill","flat rail",1
+"shuv to bs 5-0 to bs 180","plain jane","ledge",1
+"shuv to fs blunt","plain jane","flat rail",1
+"shuv to fs blunt to fakie","bench","flat rail",1
+"shuv to fs noseslide to nollie shuv","plain jane","ledge",1
+"shuv to fs noseslide to transfer fakie","plain jane","ledge",1
+"shuv to manny to fs 180","plain jane","pad",1
+"shuv to tail grab","into hill","stairs",1
+"slappy bs 5050","around corner","curb",1
+"slappy bs crook to bs 180","street transition","transition",1
+"slappy bs lipslide","plain jane","ledge",1
+"slappy bs smith","plain jane","curb",1
+"slappy fs crook to nose manny to fs noseslide to fakie","to pad to ledge","ledge",1
+"sw 360 flip","flat gap to bank","gap",1
+"sw 360 flip","plain jane","stairs",3
+"sw bs 180","plain jane","gap",1
+"sw bs 180 to bs 5-0 to fs 180","outledge","ledge",1
+"sw bs 360","plain jane","stairs",1
+"sw bs heelflip","over can","gap",1
+"sw bs heelflip","plain jane","gap",1
+"sw bs kickflip","over rail","stairs",1
+"sw bs kickflip","plain jane","stairs",1
+"sw bs kickflip to manny","gap to pad","pad",1
+"sw bs noseblunt","plain jane","handrail",1
+"sw bs slappy crook to normal","plain jane","curb",1
+"sw bs smith to sw bs kickflip","curved ledge","ledge",1
+"sw bs tailslide","into bank","ledge",1
+"sw bs tailslide to bs wallride","ledge to wall","ledge",1
+"sw bs tailslide to sw shuv","plain jane","ledge",1
+"sw bs wallride hippie jump","bank to wall","wall",1
+"sw fs 180 to bs crook","plain jane","ledge",1
+"sw fs 180 to fs 5-0","into bank","ledge",1
+"sw fs 360","plain jane","stairs",2
+"sw fs 360 heelflip","bump to bar","gap",1
+"sw fs heelflip","plain jane","stairs",1
+"sw fs kickflip","bump to gap","gap",1
+"sw fs kickflip","over ledge","flat",1
+"sw fs kickflip","plain jane","stairs",2
+"sw fs shuv","into bank","gap",1
+"sw fs shuv to sw manny to sw fs shuv","plain jane","pad",1
+"sw hardflip","bump to can","gap",1
+"sw hardflip","double set","stairs",1
+"sw hardflip","flat gap","gap",1
+"sw hardflip","plain jane","gap",1
+"sw hardflip","plain jane","stairs",1
+"sw hardflip to bs tailslide","plain jane","ledge",1
+"sw heelflip","flat gap","gap",1
+"sw heelflip","plain jane","stairs",3
+"sw inward heelflip","over block","gap",1
+"sw kickflip","bump to bar","gap",1
+"sw kickflip","into hill","gap",1
+"sw kickflip to sw bs tailslide","gap to ledge to gap","ledge",1
+"sw kickflip to sw bs tailslide","plain jane","ledge",2
+"sw kickflip to sw manny to sw ollie","flat","pad",1
+"sw manny to sw 360 flip","plain jane","pad",1
+"sw ollie","over picnic table","gap",1
+"sw varial kickflip","plain jane","stairs",1
+"sw wallride to sw bs noseslide","wall to ledge","ledge",1
+"taildrop to 5050","plain jane","handrail",1
+"varial heelflip","over block","flat",1
+"varial heelflip","plain jane","gap",1
+"varial heelflip","plain jane","stairs",1
+"varial heelflip to fs noseslide","plain jane","ledge",1
+"wallie","over fence","curb",1
+"wallie fs heeflip","plain jane","wall",1
+"wallie to bs 5050","plain jane","flat rail",1
+"wallie to bs boardslide","plain jane","handrail",1
+"wallie to bs boardslide","triple drop","ledge",1
+"wallie to bs crook","plain jane","ledge",1
+"wallie to bs tailslide to bs kickflip","plain jane","ledge",1
+"wallie to fs 5050","barrier","ledge",1
+"wallie to fs crook","plain jane","ledge",1
+"wallie to late bs bigspin","bump to gap","gap",1
+"wallride to bs crook to nollie shuv","bank to wall to ledge","ledge",1

@@ -1,0 +1,103 @@
+obstacle,year,percentage
+% Ledge,2009,25
+% Ledge,2010,33
+% Ledge,2012,21
+% Ledge,2013,15
+% Ledge,2014,16
+% Ledge,2014,35
+% Ledge,2014,15
+% Ledge,2015,33
+% Ledge,2016,25
+% Ledge,2016,44
+% Ledge,2017,36
+% Ledge,2018,33
+% Ledge,2019,30
+% Ledge,2020,41
+% Ledge,2020,21
+% Ledge,2021,43
+% Ledge,2023,24
+% Handrail,2009,28
+% Handrail,2010,7
+% Handrail,2012,33
+% Handrail,2013,28
+% Handrail,2014,4
+% Handrail,2014,14
+% Handrail,2014,23
+% Handrail,2015,2
+% Handrail,2016,0
+% Handrail,2016,4
+% Handrail,2017,12
+% Handrail,2018,13
+% Handrail,2019,15
+% Handrail,2020,28
+% Handrail,2020,24
+% Handrail,2021,10
+% Handrail,2023,18
+% Bump to Bar,2009,6
+% Bump to Bar,2010,2
+% Bump to Bar,2012,4
+% Bump to Bar,2013,4
+% Bump to Bar,2014,0
+% Bump to Bar,2014,7
+% Bump to Bar,2014,0
+% Bump to Bar,2015,2
+% Bump to Bar,2016,19
+% Bump to Bar,2016,2
+% Bump to Bar,2017,0
+% Bump to Bar,2018,0
+% Bump to Bar,2019,9
+% Bump to Bar,2020,7
+% Bump to Bar,2020,9
+% Bump to Bar,2021,10
+% Bump to Bar,2023,12
+% Wall,2009,5
+% Wall,2010,5
+% Wall,2012,2
+% Wall,2013,2
+% Wall,2014,4
+% Wall,2014,0
+% Wall,2014,0
+% Wall,2015,28
+% Wall,2016,0
+% Wall,2016,10
+% Wall,2017,7
+% Wall,2018,0
+% Wall,2019,3
+% Wall,2020,3
+% Wall,2020,12
+% Wall,2021,5
+% Wall,2023,3
+% Flat Rail,2009,8
+% Flat Rail,2010,19
+% Flat Rail,2012,8
+% Flat Rail,2013,4
+% Flat Rail,2014,20
+% Flat Rail,2014,14
+% Flat Rail,2014,31
+% Flat Rail,2015,4
+% Flat Rail,2016,13
+% Flat Rail,2016,4
+% Flat Rail,2017,0
+% Flat Rail,2018,20
+% Flat Rail,2019,4
+% Flat Rail,2020,3
+% Flat Rail,2020,3
+% Flat Rail,2021,5
+% Flat Rail,2023,6
+% Gap,2009,15
+% Gap,2010,10
+% Gap,2012,10
+% Gap,2013,11
+% Gap,2014,28
+% Gap,2014,14
+% Gap,2014,8
+% Gap,2015,20
+% Gap,2016,6
+% Gap,2016,21
+% Gap,2017,19
+% Gap,2018,13
+% Gap,2019,17
+% Gap,2020,7
+% Gap,2020,12
+% Gap,2021,14
+% Gap,2023,24

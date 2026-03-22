@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84472984-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-84472984-4');
+  </script>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Quartersnacks Top Ten 2022 Analysis</title>
+  <link rel="stylesheet" href="style/style.css" type="text/css" media="screen" />
+  <script src="assets/d3.v4.min.js"></script>
+  <script src="assets/d3-interpolate-path.min.js"></script>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<header>
+  <div class="navigation-bar">
+        <div id="home-div">
+            
+                <div id="four"><a href="/">4</a></div>
+                <div id="plymag">
+                    <a href="/"><div id="ply">PLY</div></a>
+                    <a href="/"><div id="mag">mag</div></a>
+                </div>
+            </a>
+        </div>
+        <div id="menu-div">
+            <img id="menu" src="images/menu.png" onclick="underconstruction()">
+        </div>
+    </div>
+  <section class='section-intro'>
+    <center>
+      <h1>
+        <!-- <a class='homepage' href="http://4plymag.com" class="homepage"><img src="images/NES_caplogo.png" alt="4Ply Logo" width="370"></a> -->
+      </h1>
+      <br><br><br><br>
+      <h4>January 2023</h4>
+      <h3 class='main-title'><h3>2022 #QSTop10</h3>
+<!--  -->
+      <img src="images/8bit_2.jpg" width=450><br><br>
+
+      <h4 class='author'>By <a href="https://www.instagram.com/warmupzone/" target="_blank">Pete Glover</a><br>with <a href="https://www.instagram.com/fosterschild/" target="_blank">Harrison Lisewski</a></h4>
+    </center>
+  </section>
+</header>
+
+    <div id="main-wrapper">
+
+  <p>
+    <br><br>
+   	With inflation out of control, unrest at home and abroad, and extreme weather patterns disrupting our lives and livelihoods, there are few things one can rely on in this world. 99¢ pizza slices are endangered if not extinct, Brooklyn Nine-Nine is no longer streaming on Hulu, and Ville Wester quit Polar after closing out their latest video. 
+   	<br><br>
+	But fear not; We can all still find comfort and stability as the tastemakers at <a href="https://quartersnacks.com">Quartersnacks</a> tirelessly continue to round up the freshest clips from around the globe every Friday-ish and, inevitably, 4PLY once again extracts every possible analytic angle imaginable.
+	<br><br>
+	So gather around while we spin yarns of skateboarding derring-do based on over 11000 cells of neatly organized data derived from every QSTop10 of 2022.
+   	<br><br>
+    <!-- <img src="images/QSlogo.png" class='center' alt="QSTop10 Logo" width="400"><br> -->
+  </p>
+
+<section class='section1'>
+  <hr>
+    <h5>
+      DATA & METHODOLOGY
+    </h5>
+  <p>
+    <br>
+    We logged every trick, obstacle, spot, source video, replay, slam, and so on for all 50 weeks there was a Top10 drop in 2022. It took a long time, especially trying to figure out the stances because who the hell are half these kids? Anyways, you can check the dataset here [link to google sheet]. Please note that when a clip consists of a line, the only trick logged is what we determine to be the most significant trick of the line.
+    <br><br>
+	This now gives us 3 years worth of Quartersnacks clips in the books so we can really start spotting trends and coming up with correlations. Anybody willing to log previous year’s Countdowns in exchange for stickers*, hit us up.
+	<br><br>
+	* We’re out of stickers.
+  </p>
+  <hr>
+</section>
+    <h1>
+      WHO'S UP
+    </h1>
+  <p>
+    <br>
+	Always as we ever have, 4PLY utilizes our own special Points system to assign values to each clip based on its ranking. Basically, we just subtract the clips rank from the integer 11 and voila. So you’re #1 clip is getting 10 points, and your #10 clip is just getting 1 point.
+	<br><br>
+	This isn’t to say that a #10 clip is anything to scoff at. Every skater who enters the hallowed halls of Quartersnacks Top10 enshrinement is a winner.<br>
+	But more accurately the winner is, once again, <b>Tyshawn the Gifted One</b>.
+    <br><br>
+    <!-- <img src="images/toppoints.png" class='center' alt="Top Points Chart" width="530"><br> -->
+    In fact, from a #QSTop10 perspective, Tyshawn Jones might’ve just had the most dominant year of any skateboarder ever. Not only did Tyshawn make seven appearances in the Countdown, a feat never before recorded, but he hit the #1 spot on six of those occasions!
+    <br><br>
+    For comparison, Louie Lopez, one of the most consistent Countdown clip producing skaters of all time, also managed a staggering seven appearances in 2022, but only hit the top spot once.
+    <br><br>
+    Unlike 2021 when Tyshawn topped the QSTop10 ranks but wasn’t included in Thrasher’s Skater of the Year finalists round-up (but consistent with 2020 when Mason Silva took the QS Points crown and SOTY home), both Tyshawn and Louie were in the mix for SOTY and QS glory.
+    <br><br>
+    The SOTY to QS Points Ranking correlation continues as we note that among Thrasher’s other finalists T-Funk is part of the 8-way tie for 11th place and Nyjah didn’t show up in the Countdown at all. Furthermore, six of the ten highest ranked Points skaters for Quartersnacks were not among the thirty nine SOTY finalists.
+    <hr>
+  </p>
+    <h1>
+    SKATER POINTS-BY-YEAR
+    </h1>
+   <p><br>
+   	With 3 years of data under our belts, we can now explore how some of your favorite skaters have held it down year after year after year.
+   </p>
+    <select id="metric-select" style='margin-left: 30%;'></select>
+    <center>
+        <div id="linechart" div></div>
+    </center>
+  <p>
+    <br>
+    Who's holding strong? Who's blowing up? Who's fading away?<br>
+    Explore the above line chart to see the year-over-year progression of points for 20 of your faves.
+    <br>
+   </p>
+   <h1>
+   APPEARANCES
+   </h1>
+   <p><br>
+   	With 10 slots available every week for 50 weeks, we have 500 clips logged for 2022. Within that framework, 390 individual skaters made the cut. Of those, 317 (81.3%) made just a singular entry. Of the 73 multi-appearance workhorses, 52 hit it twice, 13 hit it thrice, and give it up for these 8 maniacs who got in there 4 or more times.
+	<br><br> 
+    <!-- <img src="images/appearances.png" class='center' alt="TOP APPEARANCES chart" width="600"> -->
+   </p>
+  <hr>
+  <h2>
+   TOP TRICKS of 2022
+   </h2>
+   <p>
+    <br>
+    Before we dig into the trick trends of 2022, it is important to understand that we here at 4PLY transcribe tricks on a granular level. This is to say that we regard the totality of the trick when recording it. And while we can and will analyze groupings of similar tricks, know when looking at these trick counts that a backside noseslide is a different trick from a nollie backside noseslide.
+	<br><br>
+    With that in mind, it should come as no surprise that of the 500 possible tricks, there were 340 different tricks recorded. This fact is driven further home when we observe that 82.6% of those tricks were performed only once in all the Countdowns of the year. 30 tricks showed up twice, and 13 made three appearances. The following chart maps all the tricks that popped up four or more times.
+    <br><br>
+    <!-- <img src="images/toptricks.png" class='center' alt="Top Tricks Chart" width="500"> -->
+    <br><br>
+    All your favorites are here, with kickflips and ollies topping the charts once again. It is also worth noting the trebombs are at about half the level of the previous year, and frontside 50-50s are on the rise along with a significant increase in backside kickflips and crooked grinds. Strategize your next game of SKATE accordingly.<br><br>
+    </p>
+    <hr>
+    <h1>TRICKY (TRICKY) TRICKY (TRICKY) HUH!</h1>
+	<br>
+
+  <h2 id='bar-header'>Top Tricks By Obstacle</h2><br><br>
+        <div id="my_interactivedatavis">
+        </div>
+
+    <ul class='facts'>
+    <li class='fact'>Over 1/5th (107) of all tricks recorded involved a kickflip of some kind!</li>
+    <li class='fact'>22 tricks were kickflipped into (from all stances).</li>
+    <li class='fact'>15 tricks were kickflipped out of (we're combining kickflips and nollie flips out here).</li>
+    <li class='fact'>Tricks with a kickflip outnumbered tricks with a heelflip by more than 3 to 1.</li>
+    <li class='fact'>Most likely to flip on the QSTop10: Will Marshall, who executed a flip trick in 5 of his 6 appearances (and shoved in the 6th as well).</li><br>
+    <li class='fact'>Including flip tricks variations, there were 20 halfcab tricks and and 4 full cabs.</li>
+    <li class='fact'>The most common cab trick: “bs 180 to fake manual to bs halfcab” with 3.</li>
+    <li class='fact'>Appearance by Steve Caballero: 0.</li><br>
+    <li class='fact'>Tricks incorporating a hardflip (including fakie, switch, and nollie): 19.</li><br>
+    <li class='fact'>Hippie jump tricks: 4.</li><br>
+    <li class='fact'>Sum of all blunts: 35.</li>
+    <li class='fact'>Number of nosebluntslide variations: 15.</li>
+    <li class='fact'>2022’s most blunted: Deedz (2).</li><br>
+    <li class='fact'>Wallride tricks: 25.</li>
+    <li class='fact'>Most common wallride trick: Ollie to fs wallride (3).</li>
+    <li class='fact'>Wallie tricks: 13.</li>
+    <li class='fact'>Quartersnacks Wall-Crawlers: Campillo, Athans, and Sean Greene (2 each).</li><br>
+    <li class='fact'>Number of unique tricks that contained some type of shove it: 31 (19 backside : 12 frontside).</li>
+    <li class='fact'>Most likely to Shove It: TJ Rogers (2-for-2 in his clips)</li>
+    <li class='fact'>Most "simple" shove in the Countdown: Nik Stain’s switch frontside shove.</li><br>
+    <li class='fact'>240 tricks (48%) contained an element of backside (either rotation of obstacle location) while 162 tricks contained an element of frontside (32.4%).</li>
+    <li class='fact'>4 tricks had both backside and frontside rotational elements.</li><br>
+    <li class='fact'>There was a combined total of 33 crooked grinds (14 backside : 9 frontside).</li>
+    <li class='fact'>Crookedest skater: Felipe Oliveira (2 outta 3 appearances).</li><br>
+    <li class='fact'>20 tricks incorporated a 360flip.</li>
+    <li class='fact'>There were 8 normal 360flips, 4 switch 360flips, 1 fakie 360flip, and 0 nollie 360flips.</li>
+    <li class='fact'>5 treflips were into grinds or slides, including 2 treflip to bs noseslides.</li>
+    <li class='fact'>Skaters combined 360flips with manuals twice, 1 in and 1 out.</li>
+    <li class='fact'>Tre King: WillMarsh with 2. Both were into backside noseslides.<br><img src="images/willmarsh.gif" class="center" alt="WillMarsh x 2 GIF"></li><br>
+    <li class='fact'>84 tricks were labelled as “oddball”, being either hard to describe or just… a bit strange.</li><br>
+    <li class='fact'>There were 23 different 5-0 grind variations. None repeated.</li><br>
+    <li class='fact'>3 tricks were labelled as “mindbenders”.</li><br>
+    <li class='fact'>There were 13 Ride-On tricks.</li>
+    <li class='fact'>Number of unique Slappies: 7.</li>
+    <li class='fact'>There were 5 “Bonks”, including 3 “Deck Bonks”.</li><br>
+    <li class='fact'>Number of No-Comply tricks: 8.</li>
+    <li class='fact'>Percentage of No-Comply tricks done by Jordan Trahan: 38%.</li>
+    <li class='fact'>Bumb N Jumps: 1.</li><br>
+    <li class='fact'>“Combo” tricks that conspicuously link several tricks together, usually with a manual: 9.</li>
+    </ul>
+  <hr>
+  <h1>STANCE</h1>
+  <p><br>
+  	While the commonality of ambidextrous skills in contemporary skateboarding is undeniable, when we analyze the stance each trick is launched from, things were overwhelmingly normal-footed in 2022. 77.6% of tricks were done in the skater’s natural stance, with both switch and nollie tricks in significant decline from the previous year. Fakie tricks, however, stood strong at a consistent 6.8% (up .2% from 2021).<br><br>
+  	2022’s most switch: Carl Aikens who went opposite footed in 3 out of 3 appearances.
+  	<br><br>
+	2022 Nollie King: Tyshawn, who went off the nose twice.
+	   <br><br>
+    <img src="images/nollie.gif" class="center" alt="Tyshawn nollie GIF"><br>
+  </p>
+  <hr>
+  <h2>OBSTACLES</h2>
+  <p><br>
+    Upon what did the Countdown champions of Quartersnacks execute their celebrated maneuvers? Take a deep breath and drill down into our interactive exploration of Obstacle breakdowns for 2022. 
+    <br><br>
+    <!-- <img src="images/obstacles.png" alt="Harrison's Interactive Obstacle Charts GO HERE" width="550"><br> -->
+
+    
+        
+        <h1 id='section-header'>Top Obstacles</h1><br><br>
+        <div id="pieChart">
+            <div id="popup">
+              <div id = "popupheading">
+                
+              </div>
+              <div id = "popupcontent">
+                </div>
+            </div>
+            <svg id="svg2"></svg>
+        </div>
+        <div id="buttons">
+            <button id="2020">2020</button>
+            <button id="2021">2021</button>
+            <button id="2022">2022</button>
+            <button id="allyears">All Years</button>
+        </div>
+
+    <br>
+    \\ I'LL WRITE ABOUT THESE CHARTS HERE ONCE I GET TO EXPLORE THEM A BIT. \\
+	  <br><br>
+    Some more 2022 Obstavations for you:
+    <ul class='facts'>
+    <li class='fact'>There were 31 tricks “over” things including:</li>
+    <li class='fact'>8 tricks over cans.</li>
+    <li class='fact'>11 tricks over rails.</li>
+    <li class='fact'>2 tricks over tables.</li>
+    <li class='fact'>1 trick over a bicycle.</li><br>
+    <!-- <li class='fact'>There was 1 trick over a hydrant and 1 trick <i>around</i> a hydrant, but not tricks on a hydrant.<br><img src="images/hydrants.gif" class="center" alt="Both hydrant tricks GIF"><br></li> -->
+	<li class='fact'>42 tricks were “into banks”.</li>
+	<li class='fact'>There were 7 “Up” tricks: 3 up hubbas, 2 up rails, 1 up stairs, and 1 up a gap.</li>
+	<!-- <li class='fact'>3 tricks involved escalators.<br><img src="images/escalators.gif" class="center" alt="3 Escalator tricks GIF"><br></li> -->
+	<li class='fact'>Stair Master: Carl Aikens (3).</li>
+	<li class='fact'>Hubba Hero: Felipe Bartolome (2).</li>
+	<li class='fact'>Manual Master: Victor Campillo (3).</li>
+	<li class='fact'>Prince of Flat Rails: Alexis Lacroix (2).</li>
+	<li class='fact'>Bump to Bar Boys: Tyshawn and Jake Johnson (2 each).</li>
+	</ul>
+   </p>
+   <hr>
+   <h1>LINES</h1>
+   <p>
+  	As always, 4PLY made sure to note when a Top Ten clip was a line, which we define as a sequence of 2 or more consecutive tricks. However, we reserve the right to exclude 2-trick sequences that consist of a primary stunt accompanied by a pre or post-hammer flat ground trick or hill bomb. Also, when counting number of tricks in a line, we don’t include ollies up curbs or powerslides.
+  	<br><br>
+	2022’s totals included 152 lines, which was down a slight 1.6% from the previous year. This gives us about 3 lines in a typical Countdown week. The most lines a weekly Countdown contained was 6 (happened 3 times), and twice a Countdown didn’t have any lines at all.
+	<br><br>
+	The longest lines recorded were 7-tricks narratives by Mason Coletti and, of course, Chris Athans. Coincidentally, both of these lines took place in San Francisco. There were 3 occurrences of 6-trick lines, and 4 occurrences of 5-trick lines.
+	<br><br>
+	Line Lord ’22: Looouuuuu - with 4 out of 7 clips being of the line variety.
+	<br><br>
+	Also of note: 2 different instances of mirror lines happening.
+	<br><br>
+  </p>
+    <hr>
+    <h1>RUN IT BACK TURBO</h1>
+  <p>
+    Exactly like the percentage of lines, Replayed footage (either replayed in the original clip source, replayed by Quartersnacks for the Countdown, or shown of more than one angle) was down exactly 1.6% from last year. This still gives us a sizable 187 clips with replays. Three weeks had 7 different clips with replays, and only once all year did a weekly Countdown not have any replays.
+    <br><br>
+	 There were 19 triple replays, and 1 quadruple replay.
+	<br><br>
+	Check this out: 1 Clip, 2 Fits (Alan Bell, week14)
+    <!-- <img src="images/2fits.gif" class="center" alt="2 Fits 1 Clip GIF"><br><br> -->
+    Also worth commenting on since we went to all the trouble to track it is the presence of slow-motion in 174 Countdown clips (34.8%… up 2.2% from 2021).
+    <br><br>
+    Who's the Slow-Most skater in 2022?<br>Tyshawn, with 4 of his clips meriting a slow-motion look.
+  </p>
+  <hr>
+  <h2>SPOTS</h2>
+  <p><br>
+    So where in the world are the top clips being filmed? We’re glad you asked.
+	<br><br>
+	11.8% clips came from New York City, which might seem low for a NYC website like Quartersnacks, but actually on par when compared to previous years. The skater with the most New York clips? Do we even need to tell you it was Tyshawn (6-of-7 clips).
+	<br><br>
+	Exactly in line with last year is the presence of 8 clips from the hills of SF. But, that is more of a locale than a spot. So let’s take a look at where you’ll be wanting to skate this summer.
+	<br>
+    <img src="images/topspots.png" class='center' alt="Top Spots 2022 Chart" width="500">
+    <br><br>
+    Big ups to all your favorite East Coast spots! Philadelphia’s Muni plaza, popular since the early 90s, has at last ascended the rankings to be the top spot of 2022. Other legendary spots like DC’s Pulaski, Flushing Fountain, and the New York Courthouse got lots of love along with NYC’s latest proving ground, the UN Hubba-to-Ledge.
+	<br><br>
+	The 17-way tie of 2-hitters is a veritable where’s where of skate tourism goals, with holy grounds like Hollywood High, Pier 7, Jarmers, University, Burnside, the Pyramid Ledges, Union Square (SF), that Paris curved ledge, and the Bay Blocks.
+	<br><br>
+	Also with just 2 clips each in 2022 are the previous undefeated Milano Centrale plaza and New York’s former fan-favorite Museum of Natural History.
+	<br><br>
+	Other Spot notes to keep your brain occupied include:
+  </p>
+  	<br>
+  <ul class='facts'>
+    <li class='fact'>2 clips were recorded at a demo.</li>
+    <li class='fact'>2 tricks filmed in indoor skateparks (not including the previously mentioned demo clip).</li>
+    <li class='fact'>6 tricks were filmed at concrete outdoor parks (including Burnside clips).</li>
+    <li class='fact'>5 tricks were filmed at DIY spots.</li>
+    <li class='fact'>At least 4 tricks involved the crazy embankments that are on the sides of stair sets in Europe. From here on out we are going to call them “Euramps”. What are those things even for<br>
+      <!-- <img src="images/skateshop.gif" class="center" alt="Euramp GIF" width="350"></li> -->
+    <li class='fact'>Build me a spot: Etienne week 8<br>
+      <!-- <img src="images/buildit.gif" class="center" alt="Build ET a Spot GIF" width="350"></li>  -->
+  </ul>
+  </p>
+</section>
+  <hr>
+  <section class='section1'>
+	<h2>SOURCE VIDEOS</h2>
+  <p><br><br>
+  	<!-- <img src="images/sources.png" class='center' alt="Clip Sources Chart" width="700"> -->
+    <br>
+  	Despite constant declarations that the long-form video is dead, we can see that over 70% of the clips for the QSTop10 come from multi-part videos that once might consider “full-length” or nearly such. Of those videos, 64% are from a company, and 36% are of the “Homie” or independently produced auteur variety.
+  	<br><br>
+    More significant than the dip in stand-alone solo part stature is the continued decline of relevant footage being culled from Instagram. In 2022, only 59 clips came from social media, was 31% percent less then the 86 IG clips 2021 (which itself was an 18% drop from 2020)!
+	<br><br>
+	That being said, the undisputed King of 2022, Tyshawn the Gifted One, had 6 of his 7 clips pulled from the Gram, so don’t call time of death just yet.
+	</p>
+	<hr>
+	<p>
+	<br>
+	Like last year, we also took a look at what brands were backing the videos and clips that made it into the Countdown to see who is getting the best content bang for their buck.
+	<br><br>
+    <img src="images/brands.png" class='center' alt="Brand/Clip Count/Video Count Chart" width="500">
+    <br>
+	Both Polar and Sour got a full weeks worth of clips all to themselves (with Sour getting an extra Gustav clip from there Sucksess bonus edit to put them at 11 overall), but DC Shoes did the best job of leveraging several collaborations and 7 videos to get 11 clips in the #QSTop10. Thrasher also did well with their own original content in 2022.
+  </p>
+</section>
+	<hr>
+  <h2>MORE OBSERVATIONS</h2>
+  	<br>
+    <ul class='facts'>
+    <li class='fact'>Skaters identifying as women made 14 appearances in 2022, up 2 from the previous year and double the amount in 2020.</li>
+    <li class='fact'>Notable women of 2022 were Mariah Duran for clocking clips in the Countdown on 3 different occasions, Vitoria Mendonça for getting in there twice, and Rayssa Leal for being the first woman to hit the #1 spot.</li><br>
+    <li class='fact'>Karsten Kleppan got in QSTop10 again in 2022 for skating this curved ledge. Not as dipped as last year's Countdown clip here, but still impressive.<br>
+      <!-- <img src="images/skateshop.gif" class="center" alt="Kleppan again" width="350"></li> -->
+    <li class='fact'>There were 2 tricks in the pouring rain: Alexis Lacroix and Rowan Zorilla at the Dime Downhill.</li>
+    <li class='fact'>There was 1 trick in the snow: Alexis Lacroix again.</li>
+    <li class='fact'>In Week 24, Jesse Alba boardslid some pipes to kick flip out for #8 in the Countdown. Louie Lopez then immediately pulled some 7 Minute Abs with a boardslide to kickflip to boardslide on the Curb Event at CPH Open for #7.</li>
+    <!-- <li class='fact'>There were 37 Slams in the 2022 #QSTop10. That’s 28% more than 2021.<br><img src="images/slam.gif" class="center" alt="Slam GIF"></li> -->
+    <li class='fact'>Lucas Puig was only in the Countdown once in 2022, so you’re damn right he wasn’t wearing a shirt.</li>
+    <!-- <li class='fact'>Clips that made it into the Countdown with “Quick Footedness”: 16.<br><img src="images/quickfoot.gif" class="center" alt="Quick Foot GIF"></li> -->
+    <!-- <li class='fact'>Traveling?<br><img src="images/bball.gif" class="center" alt="Curren Caples (week 28) GIF"></li> -->
+    <li class='fact'>12 times did a single slot go to a single skater but featured double-distinct clips. There was also 1 triple clip slot, and even a 1 quad-clipper.</li><br>
+    <li class='fact'>The most common first name for 2022 was, just like last year, Kevin. There were 7 of ‘em, including Spanky and KB.</li>
+    <li class='fact'>Other common names were Nick (6 + not including Nik Stain), Jake (6), Leo (5 + a Leonardo), Tom (5 + 1 Tommy), and Felipe (4).</li>
+    <li class='fact'>There 4 Johns, 2 Johnnys, 1 Jonathan, and 1 Jonatan</li>
+    <li class='fact'>With all those Jakes, Johns, Jordans (4 of ‘em), it is no surprise that, once again, “J” is by far the most popular letter to start a skater’s name. In fact, there were 13 more J names than last year… 58 total… not including Figgy.</li>
+    <li class='fact'>There were a couple of common last names with 3 occurrences each, but we’ll give it to Williams (3) with an added Willms to push it over the top.</li>
+    <li class='fact'>Most common first letter for a skater’s last name was “B”. Once again, same as last year.</li>
+    <li class='fact'>The average running time for a 2022 QSTop10 Countdown was 2:14. The longest was 3:07 and the shortest was 1:43.</li>
+  </ul><br>
+<section class="section1">
+  <p>
+    <br>
+	  So that’s a wrap on the year in Snacks. The 2023 race for total feed domination is already underway (and we see Victor Campillo has already made an appearance with a manual clip) so you’d better book your ticket to Philly and get your bag of tricks well stocked if you wanna see your name in next year’s #QSTop10 analysis by 4PLY. Might we suggest changing your name to something that starts with the letter “J” and doing some kind of deck bonk trick.
+	  <br><br>
+	  Until then, <a href="https://www.instagram.com/4plymag/" target="_blank">hit us up on social media</a> or email and keep reaching for the stars. See you in the <a href="https://www.instagram.com/quartersnacks/" target="_blank">Quartersnacks #QSTop10 comments</a>.
+    <br><br>
+    End of discussion.<br>
+    <img src="images/endofdiscussion.gif" class="center" alt="Tyshawn picnic clip" width="400">
+  </p>
+</section>
+</div>
+
+<script type="text/javascript" src="js/LineChart.js"></script>
+<script>
+    const line = new LineChart({
+        data: "data/skater_time.csv",
+        element: "#linechart",
+        metric: "Tyshawn Jones",
+        dropdown: '#scatter-tooltip',
+        xValue: 'year',
+        yValue: 'cnt'
+    });
+
+  
+    d3.select('#metric-select').on('change', function (d) {
+        let metric = d3.select('#metric-select').property('value');
+        console.log('new metric', metric)
+        line.draw(metric);
+    })
+
+
+
+</script>
+
+
+<script>
+  const colorMap = d3.map()
+    .set('ledge', '#5a98e1')
+    .set('curb', '#7BADE7')
+    .set('bank', '#F1BF5E')
+    .set('handrail', '#138200')
+    .set('hubba', '#095cd4')
+    .set('transition', '#eeaf36')
+    .set('pad', 'grey')
+    .set('stairs', '#B20D0B')
+    .set('flat rail', '#16B65C')
+    .set('flat', '#FE423F')
+    .set('wall', '#d9a739')
+    .set('gap', '#FE130F')
+    .set('hip', '#F7D79B')
+    .set('other', 'grey');
+  </script>
+<script type="text/javascript" src="js/InteractiveBarplot.js"></script>
+<script type="text/javascript" src="js/InteractivePie.js"></script>
+<script type="text/javascript" src="js/NavBar.js"></script>
+
+

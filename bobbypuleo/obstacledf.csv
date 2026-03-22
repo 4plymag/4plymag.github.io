@@ -1,0 +1,57 @@
+"trick","obstacle","cnt"
+"360 flip","gap",6
+"360 flip to bs noseslide","ledge",2
+"bs 180 to fakie manual to halfcab","pad",3
+"bs 360","stairs",2
+"bs 360 kickflip","stairs",2
+"bs boardslide","flat rail",3
+"bs boardslide","handrail",2
+"bs boardslide","hubba",2
+"bs crook","handrail",2
+"bs crook","ledge",3
+"bs kickflip","bank",2
+"bs kickflip","gap",4
+"bs lipslide","handrail",2
+"bs lipslide","ledge",2
+"bs noseblunt","ledge",3
+"bs noseblunt to fakie","ledge",2
+"bs nosegrind","ledge",3
+"bs noseslide","ledge",3
+"bs noseslide to nollie kickflip","ledge",2
+"bs smith","flat rail",2
+"bs tailslide","ledge",2
+"bs wallride nollie out","wall",2
+"fakie big flip","gap",2
+"fakie kickflip","gap",3
+"fs 5050","flat rail",5
+"fs 5050","handrail",2
+"fs 5050","hubba",2
+"fs heelflip","gap",2
+"fs kickflip","gap",2
+"fs kickflip","stairs",3
+"fs lipslide","handrail",2
+"fs lipslide","ledge",3
+"fs noseblunt","ledge",2
+"fs nosegrind","ledge",2
+"fs noseslide","ledge",2
+"fs noseslide to fakie","ledge",2
+"hardflip","gap",3
+"hardflip","stairs",3
+"kickflip","flat",2
+"kickflip","gap",10
+"kickflip","stairs",4
+"kickflip to bs tailslide","ledge",2
+"nollie heelflip","gap",2
+"nollie kickflip","gap",3
+"ollie","gap",13
+"ollie to fs wallride","wall",3
+"sw 360 flip","stairs",3
+"sw bs heelflip","gap",2
+"sw bs kickflip","stairs",2
+"sw fs 360","stairs",2
+"sw fs kickflip","stairs",2
+"sw hardflip","gap",3
+"sw hardflip","stairs",2
+"sw heelflip","stairs",3
+"sw kickflip","gap",2
+"sw kickflip to sw bs tailslide","ledge",3

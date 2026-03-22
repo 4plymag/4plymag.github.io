@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Brisbane Spot Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+        <!-- <script type="module" src="./legend.js"></script> -->
+
+        <!-- <script type="module" src="./points.js"></script> -->
+
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="spot-panel">
+  <div id="spot-info">
+    <div id="spot-image"></div>
+    <h2 id="spot-name"></h2>
+    <p id="spot-type"></p>
+    <p id="spot-address"></p>
+  </div>
+  <button id="close-panel">&lt; Back</button>
+</div>
+
+<div id="legend" class="legend-container">
+    <div id="obstacleLegend">
+        <!-- Obstacle type checkboxes will be dynamically added here -->
+    </div><br>
+        <input type="text" id="searchInput" placeholder="Search...">
+
+    <button id="searchButton">Search</button>
+</div>
+
+
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzyrjsBEfDN7koGSC1QkV1CzyswQCg8aw&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>
