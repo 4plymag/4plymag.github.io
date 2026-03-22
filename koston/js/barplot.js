@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-const barMargin = {top: 20, right: 10, bottom: 50, left: 220},
+const barMargin = {top: 50, right: 10, bottom: 50, left: 220},
     barWidth = 800 - barMargin.left - barMargin.right,
     barHeight = 500 - barMargin.top - barMargin.bottom;
 
@@ -53,21 +53,31 @@ d3.csv("data/top_tricks.csv", function(data) {
 
 })
 
-// add title
-d3.select('svg')
+// add title — left-aligned
+d3.select('#my_dataviz svg')
   .append('text')
-  .attr('x', (barWidth + barMargin.right) / 2)
-  .attr('y', barMargin.top / 1.1)
-  .html("Koston Has No 'Standout' Trick")
+  .attr('x', barMargin.left)
+  .attr('y', 20)
+  .text("Koston Has No 'Standout' Trick")
   .style('font-family', "Bungee")
-  .style('font-size', '1.2rem')
+  .style('font-size', '1.1rem')
 
-// add x-axis
-d3.select('svg')
-  .append("text")    
-  .attr('x', (barWidth + barMargin.right + barMargin.left) / 2)  
-  .attr('y', barHeight + barMargin.top + 40)       
-  // .style("text-anchor", "left")
+// add subtitle
+d3.select('#my_dataviz svg')
+  .append('text')
+  .attr('x', barMargin.left)
+  .attr('y', 38)
+  .text("Most-performed tricks across all video parts")
   .style('font-family', "Bungee")
-  .style('font-size', '1rem')
+  .style('font-size', '.55rem')
+  .style('fill', '#888')
+
+// add x-axis label
+d3.select('#my_dataviz svg')
+  .append("text")
+  .attr('x', (barWidth + barMargin.right + barMargin.left) / 2)
+  .attr('y', barHeight + barMargin.top + 40)
+  .style("text-anchor", "middle")
+  .style('font-family', "Bungee")
+  .style('font-size', '.6rem')
   .text("Count Across All Video Parts");

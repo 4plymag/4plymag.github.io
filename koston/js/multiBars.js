@@ -28,7 +28,6 @@ let barplot = function (dataSource, data) {
   d3.select(`#g${dataSource.div}`).append("g")
     .attr("class", "x-axis")
     .attr("transform", "translate(0," + smallBarHeight + ")")
-    .style('font-size', ".4rem")
     .call(xAxis);
 
   // Y axis
@@ -41,7 +40,6 @@ let barplot = function (dataSource, data) {
     .attr("class", "y-axis")
     .call(d3.axisLeft(y))
     .selectAll("text")
-    .style("font-size", ".5rem")
     .style('font-family', 'Bungee')
 
   // add bars
@@ -57,14 +55,24 @@ let barplot = function (dataSource, data) {
     .style('stroke', 'teal')
     .style('stroke-width', 7)
 
-  // add title
+  // add title — left-aligned
   d3.select(`#svg${dataSource.div}`)
     .append('text')
-    .attr('x', smallBarWidth)
-    .attr('y', smallBarMargin.top)
-    .html(`${dataSource.subset}`)
-    .style('font-family', "Bungee Inline")
-    .style('font-size', '.75rem')
+    .attr('x', smallBarMargin.left)
+    .attr('y', 14)
+    .text(`${dataSource.subset}`)
+    .style('font-family', "Bungee")
+    .style('font-size', '.6rem')
+
+  // add subtitle
+  d3.select(`#svg${dataSource.div}`)
+    .append('text')
+    .attr('x', smallBarMargin.left)
+    .attr('y', 26)
+    .text(`Top tricks, by count`)
+    .style('font-family', "Bungee")
+    .style('font-size', '.35rem')
+    .style('fill', '#888')
 }
 
 barDict = [

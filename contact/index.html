@@ -1,96 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-84472984-4"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84472984-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-84472984-4');
+    </script>
+    <title>Contact — 4PLY</title>
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Inconsolata:400,700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: #f5f0eb;
+            color: #222;
+            font-family: Inconsolata, monospace;
+            -webkit-font-smoothing: antialiased;
+        }
+        .site-header {
+            background: #f5f0eb;
+            color: #111;
+            padding: 1.5rem 2rem 1.2rem;
+            text-align: center;
+        }
+        .site-logo {
+            font-family: Bungee Shade, cursive;
+            font-size: 4.5rem;
+            color: #111;
+            text-decoration: none;
+            letter-spacing: 3px;
+            display: inline-block;
+            line-height: 1;
+        }
+        .site-logo:hover { color: #7b2d8e; }
+        .tagline {
+            font-family: Inconsolata, monospace;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            color: #888;
+        }
+        .header-nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 0.9rem;
+        }
+        .header-nav a {
+            color: #111;
+            text-decoration: none;
+            font-family: Bungee, cursive;
+            font-size: 0.6rem;
+        }
+        .header-nav a:hover { color: #7b2d8e; }
 
-	  gtag('config', 'UA-84472984-4');
-	</script>
-<title>4PLY MAGAZINE</title>
-<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-<link rel="stylesheet" type="text/css" href="styles.css">
- <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div class="header" id="header">
-			<div id="topicons" class="icons-top">
-			<ul>
-				<li><a class="fa fa-instagram" href="http://instagram.com/4PLYMAG"></a></li>
-				<li><a class="fa fa-twitter" href="https://twitter.com/4PLYMAG"></a></li>
-				
-				<li><a class="fa fa-envelope" href="mailto:4plymagazine@gmail.com"></a></li>
-			</ul>
-		</div>
-			<h1 class="titletext"><a href="/">4PLYMAG</a></h1>
-			
-		<div class="topnav" id="myTopnav">
-			<a href="/" class="active">Home</a>
-			<a href="/about/" class="active">About</a>
-			<a href="/contact/">Contact</a>
-			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-				<i class="fa fa-bars" style='font-size: 1.1rem;'></i>
-			</a>
-		</div>
+        .page-content {
+            max-width: 680px;
+            margin: 2rem auto 4rem;
+            padding: 0 2rem;
+        }
+        .page-title {
+            font-family: Bungee, cursive;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: #111;
+        }
+        .page-content p {
+            font-family: Inconsolata, monospace;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #444;
+        }
+        .page-content a {
+            color: #7b2d8e;
+            text-decoration: underline;
+        }
+        .page-content a:hover {
+            color: #111;
+        }
+        .socials {
+            margin-top: 1.5rem;
+        }
+        .socials a {
+            color: #555;
+            font-size: 1.3rem;
+            margin-right: 0.8rem;
+            text-decoration: none;
+        }
+        .socials a:hover { color: #7b2d8e; }
 
-		<div id="redbar"></div>
+        .site-footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            font-family: Inconsolata, monospace;
+            font-size: 0.85rem;
+            color: #999;
+        }
 
-	</div>
-
+        @media (max-width: 700px) {
+            .site-logo { font-size: 2.5rem; }
+            .page-content { padding: 0 1.2rem; }
+            .header-nav { display: none; }
+        }
+    </style>
 </head>
-
-
-
 <body>
-	<div class="overall">
-		<!-- Header -->
-		
 
+<header class="site-header">
+    <a href="/" class="site-logo">4PLY</a>
+    <p class="tagline">skateboarding, data, and other useless knowledge</p>
+    <div class="header-nav-row">
+        <nav class="header-nav">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </div>
+</header>
 
-			<!-- add some space below list -->
-			<br>
-		</div> <!-- div main -->
+<div class="page-content">
+    <h1 class="page-title">Contact</h1>
 
-				<div class='about'>
-					<p>
-						<br>
-						<br><br><br><br><br><br><br><br>
-					</p>
-					<h2 style="font-family: Bungee; font-weight: 100;">CONTACT </h2>	
+    <p>So you've found our contact page. Nice.</p>
 
-					<p>So you've found our contact page. Nice. 
-					<br><br>Got a pitch for a 4PLY article? Got a favorite skater or video you'd like to see profiled? Want to help us compile or process data? Feel like critiquing us cause you have nothing better to do? Want to pay us to slyly incorportate your brand's products into a future article?
-					<br><br>Let's talk. Get in touch with the 4PLY team through email or a direct message on the socail media platform of your choosing.
-					<br><br>
+    <p style="margin-top:1rem;">Got a pitch for a 4PLY article? Got a favorite skater or video you'd like to see profiled? Want to help us compile or process data? Want to tell us how bad we are? Want to pay us to slyly incorporate your brand's products into a future article?</p>
 
-<!-- <p></p> -->
-				
-			      
-			     <ul>
-  <li><a class="fa fa-twitter" href="https://twitter.com/4PLYMAG" style="font-size:1.4rem;"></a></li>
-  <li><a class="fa fa-instagram" color="black" href="http://instagram.com/4PLYMAG" style="font-size:1.4rem;"></a></li>
-  <li><a class="fa fa-envelope" href="mailto:4plymagazine@gmail.com" style="font-size:1.4rem;"></a></li>
-</ul>
+    <p style="margin-top:1rem;">Let's talk. Get in touch with the 4PLY team through email or a direct message on the social media platform of your choosing.</p>
 
-				</div>
-				<br>
-				<br>
-				<br>
-				<br>
-				
-				</p>
-				
-	</div> <!-- div row -->
-</div> <!-- div overall -->
+    <div class="socials">
+        <a class="fa fa-twitter" href="https://twitter.com/4PLYMAG"></a>
+        <a class="fa fa-instagram" href="http://instagram.com/4PLYMAG"></a>
+        <a class="fa fa-envelope" href="mailto:4plymag@gmail.com"></a>
+    </div>
+</div>
 
+<footer class="site-footer">
+    <p>&copy; 2026 4PLY Magazine</p>
+</footer>
 
-		<div class="footer">
-		        <p>©&nbsp;2023 4PLY Magazine<br></p>
-	</div> <!-- .footer-content -->
 </body>
 </html>
