@@ -232,11 +232,17 @@ hr {
 
 .tick {
 	font-family: Bungee;
-	font-size: 1.2em;
+	font-size: .7rem;
 }
 
+.x-axis path.domain,
 .y-axis path.domain {
 	opacity: 0;
+}
+
+.lineLegend text {
+	font-family: Bungee;
+	font-size: .6rem;
 }
 
 
@@ -277,7 +283,7 @@ hr {
 }
 
 .x-axis {
-	font-size: .5rem;
+	font-size: .7rem;
 }
 
 /*bar chart multiples*/

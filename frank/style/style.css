@@ -75,7 +75,7 @@ p.quote {
 
 
 body {
-    font-family: Changa;
+    font-family: Roboto;
     color: #262520;
     background-image: url("frankbg2.png");
     background-repeat: no-repeat repeat;
@@ -482,7 +482,7 @@ td {
 }
 
 b {
-    font-family: Changa;
+    font-family: Roboto;
     font-weight: bolder !important;
 }
 
@@ -535,7 +535,7 @@ ul.a {
 p,
 ul,
 li {
-    font-family: Changa;
+    font-family: Roboto;
     padding-top: 0.5rem;
     /*font-size:1.5rem;*/
 }

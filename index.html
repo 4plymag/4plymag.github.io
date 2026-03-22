@@ -1,623 +1,719 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-84472984-4"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-
-		gtag('config', 'UA-84472984-4');
-	</script>
-    <script src="index.js"></script>
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-84472984-4');
+    </script>
     <title>4PLY MAGAZINE</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <div class="header" id="header">
-        <div id="topicons" class="icons-top">
-            <ul>
-                <li><a class="fa fa-instagram" href="http://instagram.com/4PLYMAG"></a></li>
-                <li><a class="fa fa-twitter" href="https://twitter.com/4PLYMAG"></a></li>
-                <li><a class="fa fa-envelope" href="mailto:4plymagazine@gmail.com"></a></li>
-            </ul>
-        </div>
-        <h1 class="titletext">4PLYMAG</h1>
-        <div class="topnav" id="myTopnav">
-            <a href="/" class="active">Home</a>
-            <a href="/about/" class="active">About</a>
-            <a href="/contact/">Contact</a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars" style='font-size: 1.1rem;'></i>
-            </a>
-        </div>
-        <div id="redbar"></div>
-    </div>
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Inconsolata:400,700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #f5f0eb;
+            color: #222;
+            font-family: Inconsolata, monospace;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---- HEADER ---- */
+        .site-header {
+            background: #f5f0eb;
+            color: #111;
+            padding: 1.5rem 2rem 1.2rem;
+            z-index: 100;
+            position: relative;
+        }
+        .header-center {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .site-logo {
+            font-family: Bungee Shade, cursive;
+            font-size: 4.5rem;
+            color: #111;
+            text-decoration: none;
+            letter-spacing: 3px;
+            display: inline-block;
+            line-height: 1;
+        }
+        .site-logo:hover .logo-letter { opacity: 0.7; }
+        .logo-sub {
+            font-family: Bungee, cursive;
+            font-size: 0.55rem;
+            color: #111;
+            letter-spacing: 1px;
+            vertical-align: bottom;
+            margin-left: 0.4rem;
+            display: inline-block;
+            line-height: 1.4;
+            text-align: left;
+            margin-bottom: 0.2rem;
+        }
+        .logo-letter {
+            display: inline-block;
+            animation: pastel-cycle 40s ease-in-out infinite;
+            animation-delay: calc(var(--i) * -10s);
+        }
+        @keyframes pastel-cycle {
+            0%   { color: #111; }
+            15%  { color: #e05c8a; }
+            30%  { color: #111; }
+            45%  { color: #5ca8e0; }
+            60%  { color: #111; }
+            75%  { color: #9b6ec5; }
+            90%  { color: #3dba7a; }
+            100% { color: #111; }
+        }
+        .tagline {
+            font-family: Inconsolata, monospace;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            color: #888;
+        }
+        .article-count {
+            font-family: Bungee, cursive;
+            font-size: 0.65rem;
+            margin-top: 0.4rem;
+            color: #7b2d8e;
+            letter-spacing: 0.5px;
+        }
+        .header-nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 0.9rem;
+        }
+        .header-nav a {
+            color: #111;
+            text-decoration: none;
+            font-family: Bungee, cursive;
+            font-size: 0.6rem;
+        }
+        .header-nav a:hover { color: #7b2d8e; }
+        .header-socials {
+            display: none;
+        }
+
+        /* ---- SIDEBAR (top right, absolute) ---- */
+        .sidebar {
+            position: absolute;
+            top: 1.2rem;
+            right: 2rem;
+            background: #f5f0eb;
+            padding: 0;
+            font-family: Inconsolata, monospace;
+            text-align: right;
+        }
+        .sidebar-heading {
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 0.3rem;
+        }
+        .sidebar-socials {
+            margin-bottom: 0.3rem;
+        }
+        .sidebar-socials a {
+            color: #555;
+            font-size: 0.85rem;
+            margin-left: 0.4rem;
+            text-decoration: none;
+        }
+        .sidebar-socials a:hover { color: #7b2d8e; }
+        .sidebar-text {
+            font-size: 0.62rem;
+            line-height: 1.3;
+            color: #777;
+            margin-bottom: 0.25rem;
+        }
+        .donate-btn {
+            font-family: Bungee, cursive;
+            font-size: 0.5rem;
+            padding: 0.3rem 0.7rem;
+            background: #fff;
+            color: #7b2d8e;
+            border: 1.5px dashed #7b2d8e;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+            margin-top: 0.2rem;
+        }
+        .donate-btn:hover {
+            background: #7b2d8e;
+            color: #fff;
+        }
+
+        /* ---- CONTROLS ---- */
+        .controls {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 0.65rem 0.9rem 0.65rem 2.4rem;
+            font-family: Inconsolata, monospace;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            background: #fff;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            transition: box-shadow 0.15s;
+        }
+        .search-box input:focus {
+            box-shadow: 0 0 0 2px #7b2d8e;
+        }
+        .search-box .search-icon {
+            position: absolute;
+            left: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+        .sort-btns {
+            display: flex;
+            gap: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+        .sort-btn {
+            font-family: Bungee, cursive;
+            font-size: 0.55rem;
+            padding: 0.65rem 1.2rem;
+            border: none;
+            background: #fff;
+            cursor: pointer;
+            color: #888;
+            transition: background 0.15s, color 0.15s;
+        }
+        .sort-btn.active {
+            background: #7b2d8e;
+            color: #fff;
+        }
+        .sort-btn:hover:not(.active) {
+            background: #f0ebe5;
+            color: #111;
+        }
+        .result-count {
+            font-family: Bungee, cursive;
+            font-size: 0.55rem;
+            color: #aaa;
+            white-space: nowrap;
+        }
+
+        /* ---- CARD GRID ---- */
+        .card-grid {
+            max-width: 1400px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--card-color, #e6c8f2);
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .card-body {
+            padding: 1.1rem 1.2rem 1.3rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-number {
+            font-family: Bungee, cursive;
+            font-size: 0.55rem;
+            color: var(--card-color, #e6c8f2);
+            margin-bottom: 0.3rem;
+        }
+        .card-title {
+            font-family: Bungee, cursive;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+            color: #111;
+        }
+        .card-blurb {
+            font-family: Inconsolata, monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #555;
+            flex: 1;
+            margin-bottom: 0.8rem;
+        }
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 0.5rem;
+            padding-top: 0.7rem;
+            border-top: 1px solid #f0ebe5;
+        }
+        .card-date {
+            font-family: Bungee, cursive;
+            font-size: 0.48rem;
+            color: #bbb;
+        }
+        .card-author {
+            font-family: Inconsolata, monospace;
+            font-size: 0.75rem;
+            color: #888;
+            text-align: right;
+        }
+
+        /* ---- NO RESULTS ---- */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 1rem;
+            font-family: Bungee, cursive;
+            font-size: 1rem;
+            color: #aaa;
+        }
+
+        /* ---- FOOTER ---- */
+        .site-footer {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            font-family: Inconsolata, monospace;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        .site-footer a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+        .site-footer a:hover { color: #7b2d8e; }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 900px) {
+            .sidebar { display: none; }
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0 1rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .site-logo { font-size: 2.5rem; }
+            .site-header { padding: 1.2rem 1rem 1rem; }
+            .card-grid {
+                grid-template-columns: 1fr;
+                padding: 0 0.8rem;
+            }
+            .card-img { height: 180px; }
+            .controls {
+                padding: 0.8rem 0.8rem 1rem;
+                gap: 0.5rem;
+            }
+            .search-box { min-width: 0; flex-basis: 100%; }
+            .sort-btns { flex-basis: auto; }
+            .header-nav { display: none; }
+            .tagline { font-size: 0.85rem; }
+        }
+    </style>
 </head>
-
 <body>
-    <div class="overall">
-        <div class="row" style="overflow:auto;">
-            <div class="main">
-                <!-- <img src="images/ad.png" width="100%"> -->
-                <div>
-                    <h2>
-                        <a onClick="a();" style="cursor: pointer; cursor: hand;">
-                            Latest Articles</a>
-                    </h2>
-                </div>
 
-                                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/bunt-thumb.jpg" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/buntrapidfire" align="right"><span>Crushing Numbers:<br>'The Bunt' Rapid Fire</span></a>
-                        <div class='preview_date'>Nov&nbsp;28.&nbsp;2024&nbsp;//&nbsp;By <a href="https://warmupzone.com/" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Shots ring out and names get named as we compile 8 years of Rapid Fire with the Ghost.
-                            </span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
+<header class="site-header">
+    <div class="header-center">
+        <a href="/" class="site-logo"><span class="logo-letter" style="--i:0">4</span><span class="logo-letter" style="--i:1">P</span><span class="logo-letter" style="--i:2">L</span><span class="logo-letter" style="--i:3">Y</span><span class="logo-sub">skateboard<br>magazine</span></a>
+        <p class="tagline">skateboarding, data, and other useless knowledge</p>
+        <p class="article-count" id="articleCount"></p>
+        <div class="header-nav-row">
+            <nav class="header-nav">
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+        </div>
+    </div>
+    <aside class="sidebar">
+        <p class="sidebar-heading">Support <span style="font-family:Bungee">4PLY</span></p>
+        <div class="sidebar-socials">
+            <a class="fa fa-twitter" href="https://twitter.com/4PLYMAG"></a>
+            <a class="fa fa-instagram" href="http://instagram.com/4PLYMAG"></a>
+            <a class="fa fa-envelope" href="mailto:4plymag@gmail.com"></a>
+        </div>
+        <p class="sidebar-text"><em>Think of it as an investment...</em></p>
+        <form action="https://www.paypal.com/donate" method="post" target="_top" style="margin:0">
+            <input type="hidden" name="business" value="GRWTSSSTV8S3S" />
+            <input type="hidden" name="no_recurring" value="0" />
+            <input type="hidden" name="currency_code" value="USD" />
+            <button type="submit" class="donate-btn">Donate</button>
+        </form>
+    </aside>
+</header>
 
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/previewimage.png" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/buntnetwork" align="right"><span>'The Bunt' Network Chart</span></a>
-                        <div class='preview_date'>Nov&nbsp;19.&nbsp;2024&nbsp;//&nbsp;By <a href="https://www.instagram.com/fosterschild/" target="_blank">Harrison Lisewski</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Visualizing your favorite skater's favorite skater, as well as <i>their</i> favorite skater (so on and so forth) using data from <a href="thebuntlive.com">The Bunt</a>'s '<i>Rapid Fire</i> Segment. Spoiler Alert - 
-                                It's Ishod.
+<div class="controls">
+    <div class="search-box">
+        <i class="fa fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search articles..." />
+    </div>
+    <div class="sort-btns">
+        <button class="sort-btn active" data-sort="favorites">Favorites</button>
+        <button class="sort-btn" data-sort="date">Latest</button>
+    </div>
+    <div class="result-count" id="resultCount"></div>
+</div>
 
-                            </span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
+<div class="card-grid" id="cardGrid"></div>
 
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/yutohorigomedunks.jpg" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/yutodunks" align="right"><span>Unlacing Yuto</span></a>
-                        <div class='preview_date'>August&nbsp;27.&nbsp;2024&nbsp;//&nbsp;By <a href="https://www.instagram.com/jrwlx/" target="_blank">Jarren Jose</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Deconstructing Yuto’s shoes in video parts to figure out their role in what makes him look (and skate) so damn good.<br>
-                            "Who wouldn’t also wanna keep the line going if you had the Fragments and the matching Jordan x Fragment Tee to go with it."</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
+<footer class="site-footer">
+    <div>
+        <a class="fa fa-instagram" href="http://instagram.com/4PLYMAG"></a>
+        <a class="fa fa-twitter" href="https://twitter.com/4PLYMAG"></a>
+        <a class="fa fa-envelope" href="mailto:4plymag@gmail.com"></a>
+    </div>
+    <p style="margin-top:0.8rem;">&copy; 2026 4PLY Magazine</p>
+</footer>
 
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/yuto3.jpg" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/yuto" align="right"><span>Unwinding Yuto</span></a>
-                        <div class='preview_date'>June&nbsp;20.&nbsp;2024&nbsp;//&nbsp;By <a href="https://www.instagram.com/jrwlx/" target="_blank">Jarren Jose</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Using data analysis to discover what makes Yuto Horigome one of the best skateboarders alive.<br>
-                            "He doesn’t have a single "go-to" trick. He’s got the talent to "go-to" all the tricks."</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
+<script>
+const ARTICLES = [
+  {
+    num: 28, title: "Crushing Numbers: 'The Bunt' Rapid Fire",
+    blurb: "Shots ring out and names get named as we compile 8 years of Rapid Fire with the Ghost.",
+    img: "images/bunt-thumb.jpg", href: "/buntrapidfire",
+    date: "2024-11-28", author: "Pete Glover", favorite: false
+  },
+  {
+    num: 27, title: "'The Bunt' Network Chart",
+    blurb: "Visualizing your favorite skater's favorite skater using data from The Bunt's Rapid Fire segment. Spoiler Alert — It's Ishod.",
+    img: "images/previewimage.png", href: "/buntnetwork",
+    date: "2024-11-19", author: "Harrison Lisewski", favorite: true
+  },
+  {
+    num: 26, title: "Unlacing Yuto",
+    blurb: "Deconstructing Yuto's shoes in video parts to figure out their role in what makes him look (and skate) so damn good.",
+    img: "images/yutohorigomedunks.jpg", href: "/yutodunks",
+    date: "2024-08-27", author: "Jarren Jose", favorite: false
+  },
+  {
+    num: 25, title: "Unwinding Yuto",
+    blurb: "Using data analysis to discover what makes Yuto Horigome one of the best skateboarders alive.",
+    img: "images/yuto3.jpg", href: "/yuto",
+    date: "2024-06-20", author: "Jarren Jose", favorite: true
+  },
+  {
+    num: 24, title: "Thrasher Covers Analysis",
+    blurb: "A brief overview of Thrasher covers from 1981 to present. Nothing beats a good ollie.",
+    img: "images/covers.png", href: "/thrashercovers",
+    date: "2024-03-12", author: "Harrison Lisewski & Pete Glover", favorite: true
+  },
+  {
+    num: 23, title: "Thrasher Cover Archive",
+    blurb: "A searchable database of every Thrasher cover from 1981 to now. 539 covers and counting.",
+    img: "images/archive.png", href: "/thrashersearch",
+    date: "2024-03-12", author: "Harrison Lisewski", favorite: false
+  },
+  {
+    num: 22, title: "Which Skater Had the Best Year in 2023?",
+    blurb: "All this analysis is leading us inevitably towards every skateboarder's favorite activity: arguing about who got SOTY.",
+    img: "images/champion.jpg", href: "/bestof2023",
+    date: "2024-01-20", author: "Pete Glover", favorite: false
+  },
+  {
+    num: 21, title: "Every Reference in Tom K's Rumble Pack Part, Real or Imagined",
+    blurb: "I don't think anybody quite anticipated the extent of easter eggs that would be delivered with the crane kick to the face of his extended intro.",
+    img: "images/tomk.jpg", href: "/RumblePack",
+    date: "2023-09-05", author: "Pete Glover", favorite: false
+  },
+  {
+    num: 20, title: "The Tom Karangelov Guide to Success: Part 2",
+    blurb: '"This whole time I was traumatized by this small hoodie in high school."',
+    img: "images/tomk2.jpg", href: "/TomKpart2",
+    date: "2023-07-15", author: "Pete Glover", favorite: false
+  },
+  {
+    num: 19, title: "The Tom Karangelov Guide to Success: Part 1",
+    blurb: '"I think in my life of skating I will just hyper focus on what I\'m into in that moment."',
+    img: "images/tomk1.jpg", href: "/TomKpart1",
+    date: "2023-07-03", author: "Pete Glover", favorite: true
+  },
+  {
+    num: 18, title: "Bobby Puleo Interview: Skating, Art and International Commerce",
+    blurb: "We sat down with Bobby Puleo to discuss skating, art and his unique perspective on the world of international commerce.",
+    img: "images/bpi.jpg", href: "/bobbypuleo",
+    date: "2023-05-31", author: "Harrison Lisewski", favorite: false
+  },
+  {
+    num: 17, title: "William Frederiksen Interview: CPH Open",
+    blurb: "William lays out the blueprint for anyone hoping to make their city anything like Copenhagen.",
+    img: "cphopen/images/will1.jpg", href: "/cphopen",
+    date: "2023-03-23", author: "Harrison Lisewski", favorite: false
+  },
+  {
+    num: 16, title: "Who's Up? Digging Deep On The 2022 Quartersnacks Top 10",
+    blurb: "Gather around while we spin yarns of skateboarding derring-do based on over 11,000 cells of neatly organized data.",
+    img: "images/qstop10_2022.jpg", href: "/2022qstop10",
+    date: "2023-02-06", author: "Pete Glover & Harrison Lisewski", favorite: false
+  },
+  {
+    num: 15, title: "16 Years of the Copenhagen Open",
+    blurb: 'It took all of 15 minutes upon arrival before liquors drunkened us and in true CPH spirit we said "fuck it."',
+    img: "images/cphcharts.jpg", href: "/CPHcharts",
+    date: "2023-01-04", author: "Pete Glover", favorite: false
+  },
+  {
+    num: 14, title: "Crushing Numbers: Tyshawn Jones in The General",
+    blurb: "Tyshawn is coming at this edit with the strategy of some kind of military leader, like a Lieutenant Colonel or something.",
+    img: "images/thegeneral.jpg", href: "/thegeneral",
+    date: "2022-10-24", author: "Pete Glover", favorite: false
+  },
+  {
+    num: 13, title: "Thrasher Caption Generator",
+    blurb: "Our video caption generator learns and adapts with each new description, eventually achieving wordsmithing singularity.",
+    img: "images/vidpreview (1).jpg", href: "/thrashergenerator",
+    date: "2022-09-01", author: "Pete Glover & Barry Wilson", favorite: false
+  },
+  {
+    num: 12, title: "An Analysis of the Video Descriptions on Thrasher",
+    blurb: "There are only so many synonyms for \"gnarly\" and \"smooth\" available.",
+    img: "images/thrasherwords.jpg", href: "/ThrasherCaptions",
+    date: "2022-08-30", author: "Pete Glover", favorite: false
+  },
+  {
+    num: 11, title: "Crushing Numbers: Shrimp Blunt Hijinx",
+    blurb: "4PLY diligently tracked all the non-skate clip footage in Shake Junt's recent Shrimp Blunt video.",
+    img: "images/beagle.jpg", href: "/shrimpblunt",
+    date: "2022-04-12", author: "Pete Glover", favorite: false
+  },
+  {
+    num: 10, title: "4Ply Analyzes Quartersnacks' Top 10's of 2021",
+    blurb: "The secret cabal of skateboarding luminaries over at Quartersnacks ever continues to issue forth their weekly hierarchical selections.",
+    img: "images/qs2021.jpg", href: "/2021qstop10",
+    date: "2022-01-26", author: "Pete Glover & Harrison Lisewski", favorite: false
+  },
+  {
+    num: 9, title: "Digging Into the 2021 Quartersnacks Readers Poll Ballots",
+    blurb: "It is with great honor and promises of adequate compensation in apparel that the 4Ply team has been tasked with tallying the ballots.",
+    img: "images/QSvoting.jpg", href: "/QSpoll2021",
+    date: "2021-12-24", author: "Pete Glover", favorite: false
+  },
+  {
+    num: 8, title: "The Logos of the Tampa Pro Semi-Finals",
+    blurb: "An article analyzing the logos skaters wore during the Tampa Pro Semi-Finals.",
+    img: "images/nike_dudes.jpg", href: "/Tampa2021",
+    date: "2021-11-03", author: "Pete Glover", favorite: false
+  },
+  {
+    num: 7, title: "The Jordan Taylor Interview",
+    blurb: '"Everyone thinks they are purple pants, but they are maroon." — Gordo',
+    img: "images/jordan_index.jpg", href: "/jordantaylor",
+    date: "2021-09-14", author: "Pete Glover", favorite: true
+  },
+  {
+    num: 6, title: "Frank Gerwer",
+    blurb: '"It\'s the ultimate argument through skate history, who\'s your favourite and why?" — Frank',
+    img: "images/frankindex.jpeg", href: "/frankgerwer",
+    date: "2021-08-12", author: "Harrison Lisewski", favorite: true
+  },
+  {
+    num: 5, title: "Marisa Del Santo Interview",
+    blurb: '"I don\'t fully not skate but I kinda don\'t care about it. I\'m also like terrified." — Mar',
+    img: "images/babymar.png", href: "/marisa2",
+    date: "2021-05-19", author: "Richard Bay", favorite: true
+  },
+  {
+    num: 4, title: "Rotten Gorditas: The Skits of Jordan Taylor",
+    blurb: "Ladies and gentlemen, feast your eyes upon the acting skills of Gordo.",
+    img: "images/gordita.png", href: "/gorditas",
+    date: "2021-05-03", author: "Pete Glover", favorite: false
+  },
+  {
+    num: 3, title: "Skate After School: An Interview with Tim Ward",
+    blurb: '"A version of what SAS would become started happening as far back as 2012."',
+    img: "images/sasindex.png", href: "/SAS",
+    date: "2021-04-03", author: "Richard Bay", favorite: false
+  },
+  {
+    num: 2, title: "Blake Carpenter Interview",
+    blurb: '"Don\'t make it a highlight but you can put it in there." — 100% of tricks done stoned.',
+    img: "images/blakepro.jpg", href: "/blakecarpenter",
+    date: "2021-03-25", author: "Harrison Lisewski", favorite: true
+  },
+  {
+    num: 1, title: "Pat Gallaher Interview",
+    blurb: '"Skating is like a combination of art and stunts." — Pat G',
+    img: "images/pat g.jpg", href: "/patg",
+    date: "2021-02-19", author: "Harrison Lisewski", favorite: true
+  },
+  {
+    num: 0, title: "Crushing Numbers: Marisa Dal Santo in Strange World",
+    blurb: "No discussion of Strange World is complete without a reference to the most joyous up-stairs no comply heelflip ever.",
+    img: "images/marisa4ply.png", href: "/marisa",
+    date: "2021-02-02", author: "Pete Glover", favorite: false
+  },
+  {
+    num: -1, title: "Andrew Allen Interview",
+    blurb: '"Everythings gonna suck if you just fuckin, you know, if you make it suck." — AA',
+    img: "images/andrewindex.jpg", href: "/andrewallen",
+    date: "2021-01-18", author: "Harrison Lisewski", favorite: true
+  },
+  {
+    num: -2, title: "Run It Back Turbo: 4PLY Analyzes the Quartersnacks Top Ten",
+    blurb: "What does it take to get your clip noticed by the exalted sentinels of skateboarding?",
+    img: "images/qstop10index.jpg", href: "/qstop10",
+    date: "2021-01-05", author: "Pete Glover", favorite: true
+  },
+  {
+    num: -3, title: "Crushing Numbers: Mike Daher in A Visual Sound",
+    blurb: "A game changing skate part known for its aesthetic sensibility and emphasis on style... reduced to graphs and numbers.",
+    img: "images/daherindex.jpg", href: "/daher",
+    date: "2020-11-10", author: "Pete Glover", favorite: false
+  },
+  {
+    num: -4, title: "Living Legend: Fred Gall",
+    blurb: "Set down your bondo and crack a cold one if that's your thing... it's time to crunch the numbers on Fred Fuckin' Gall.",
+    img: "images/fredindex.jpg", href: "/fredgall",
+    date: "2020-08-25", author: "Pete Glover", favorite: true
+  },
+  {
+    num: -5, title: "The Networks of Skateboarding Filmmakers",
+    blurb: "Hover over each skater to see who they share connections with, and click-and-drag them around for a better view.",
+    img: "images/vxindex.jpg", href: "/filmers",
+    date: "2020-06-21", author: "Harrison Lisewski", favorite: true
+  },
+  {
+    num: -6, title: "A Survey of Skateboarding Data Visualization",
+    blurb: "Skateboarders are passionate people, and examples of skateboarding data visualization do exist. We've collected them here.",
+    img: "images/quartersnacksindex.jpg", href: "/skateboarding_dataviz",
+    date: "2020-04-28", author: "Jared Wilber", favorite: false
+  },
+  {
+    num: -7, title: "Eric Koston Has No Signature Trick",
+    blurb: "Rather than doing a few tricks many times, Koston does many tricks a few times.",
+    img: "images/kostonindex.jpg", href: "/koston",
+    date: "2020-04-13", author: "Jared Wilber", favorite: true
+  }
+];
 
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/covers.png" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/thrashercovers" align="right"><span>Thrasher Covers Analysis</span></a>
-                        <div class='preview_date'>March&nbsp;12.&nbsp;2024&nbsp;//&nbsp;By <a href="https://www.warmupzone.com" target="_blank">Harrison Lisewski</a> & <a href="https://www.instagram.com/fosterschild" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>A brief overview of Thrasher covers from 1981 to present.<br>
-                            "Nothing beats a good ollie. From Rodney Mullen’s cover of a stationary flat ground “ollie pop” in October of 1982 (he invented the world-changing trick earlier that summer) to present-day Tom Knox’s 2023 needle-threader, the ollie is king."</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/archive.png" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/thrashersearch" align="right"><span>Thrasher Cover Archive</span></a>
-                        <div class='preview_date'>March&nbsp;12.&nbsp;2024&nbsp;//&nbsp;By <a href="https://www.instagram.com/fosterschild" target="_blank">Harrison Lisewski</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>A searchable database of every Thrasher cover from 1981 to now. Enter a year, trick, skater, spot, and even a few surprise easter egg phrases to start exploring. The archive currently consists of 539 covers of Thrasher, from January 1981 to March of 2024, and we’ll be occasionally updating it with new issues (and any corrections you point out).</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/champion.jpg" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/bestof2023" align="right"><span>Which skater had the best year in 2023?<br>An Analysis of Qualitative Data
-                                (and other factors)</span></a>
-                        <div class='preview_date'>January&nbsp;20.&nbsp;2024&nbsp;//&nbsp;By <a href="https://www.warmupzone.com" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Of course, all this analysis is leading us inevitably towards every skateboarder’s favorite activity: arguing about who got SOTY.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/tomk.jpg" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/RumblePack" align="right"><span>Every Reference in<br>Tom K’s Rumble Pack part,<br>Real or Imagined</span></a>
-                        <div class='preview_date'>September&nbsp;5.&nbsp;2023&nbsp;//&nbsp;By <a href="https://www.warmupzone.com" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>I don’t think anybody quite anticipated the extent of easter eggs that would be delivered with the crane kick to the face of his extended intro.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/tomk2.jpg" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/TomKpart2" align="right"><span>The Tom Karangelov Guide to Success:<br>Part 2</span></a>
-                        <div class='preview_date'>July&nbsp;15.&nbsp;2023&nbsp;//&nbsp;By <a href="https://www.warmupzone.com" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>"This whole time I was traumatized by this small hoodie in high school."</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/tomk1.jpg" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/TomKpart1" align="right"><span>The Tom Karangelov Guide to Success:<br>Part 1</span></a>
-                        <div class='preview_date'>July&nbsp;3.&nbsp;2023&nbsp;//&nbsp;By <a href="https://www.warmupzone.com" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>"I think in my life of skating I will just hyper focus on what I'm into in that moment."</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/bpi.jpg" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/bobbypuleo" align="right"><span>Bobby Puleo Interview: <br>Skating, Art and International Commerce</span></a>
-                        <div class='preview_date'>May&nbsp;31.&nbsp;2023&nbsp;//&nbsp;By <a href="https://www.instagram.com/fosterschild/" target="_blank">Harrison Lisewski</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>We sat down with Bobby Puleo to discuss skating, art and his unique perspective on the world of international commerce.
-                                You might be left wondering things like "Why does the price of sunflower seeds fluctuate so much? Is it because of tariffs or just the weather? Will the price of sunflower seeds ever go back to 50 cents?” Only time will tell.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="cphopen/images/will1.jpg" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/cphopen" align="right"><span>William Frederiksen Interview: <br>CPH Open</span></a>
-                        <div class='preview_date'>March&nbsp;23.&nbsp;2023&nbsp;//&nbsp;By <a href="https://www.instagram.com/fosterschild/" target="_blank">Harrison Lisewski</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>William lays out the blueprint for anyone hoping to make their city anything like Copenhagen. Hopefully this inspires some people in the southern hemisphere to make a Copenhagen because those flights are getting mad spenny.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/qstop10_2022.jpg" width="150" height="auto">
-                        </div>
-                        <a class='article-title' href="/2022qstop10" align="right"><span>Who's Up? Digging Deep On The 2022 Quartersnacks Top 10</span></a>
-                        <div class='preview_date'>February&nbsp;6.&nbsp;2023&nbsp;//&nbsp;By <a href="https://www.warmupzone.com" target="_blank">Pete Glover</a> & <a href="https://www.instagram.com/fosterschild/" target="_blank">Harrison Lisewski</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Who's holding strong? Who's blowing up? Who's fading away? Gather around while we spin yarns of skateboarding derring-do based on over 11000 cells of neatly organized data derived from every QSTop10 of 2022.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/cphcharts.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/CPHcharts" align="right"><span>16 Years of the Copenhagen Open</span></a>
-                        <div class='preview_date'>January&nbsp;4.&nbsp;2023&nbsp;//&nbsp;By <a href="https://www.warmupzone.com" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>It took all of 15 minutes upon arrival before liquors drunkened us and in true CPH spirit we said “fuck it” and pivoted from the quest for content to the pursuit of good times.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div><br>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/thegeneral.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/thegeneral" align="right"><span>Crushing Numbers: Tyshawn Jones in The General</span></a>
-                        <div class='preview_date'>October&nbsp;24.&nbsp;2022&nbsp;//&nbsp;By <a href="https://www.warmupzone.com" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Tyshawn is coming at this edit with the strategy of some kind of military leader, like a Lieutenant Colonel or something.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/vidpreview (1).jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/thrashergenerator" align="right"><span>Thrasher Caption Generator</span></a>
-                        <div class='preview_date'>September&nbsp;1.&nbsp;2022&nbsp;//&nbsp;By <a href="https://www.instagram.com/warmupzone/" target="_blank">Pete Glover & Barry Wilson</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Utilizing a proprietary algorithm that is constantly scanning video descriptions for structure and content, our video caption generator learns and adapts with each new description you instruct it to create, eventually (in theory) achieving wordsmithing singularity as the ultimate Thrasher video caption attains conciousness.
-                            </span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/thrasherwords.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/ThrasherCaptions" align="right"><span>An Analysis of the
-                                Video Descriptions
-                                on Thrasher</span></a>
-                        <div class='preview_date'>August&nbsp;30.&nbsp;2022&nbsp;//&nbsp;By <a href="https://www.instagram.com/warmupzone/" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Describing the contents of a skate video in a compelling way is not easy. With very few exceptions, every skate video is pretty much the same. Aside from calling out spots, stunts, sponsors, and skaters, there isn’t too much left to talk about. And there are only so many synonyms for "gnarly" and "smooth" available.
-                            </span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/beagle.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/shrimpblunt" align="right"><span>Crushing Numbers: Shrimp Blunt Hijinx</span></a>
-                        <div class='preview_date'>April&nbsp;12.&nbsp;2022&nbsp;//&nbsp;By <a href="https://www.instagram.com/warmupzone/" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>4PLY diligently tracked all the non-skate clip footage in Shake Junt’s recent Shrimp Blunt video. From the first slap-slap-dap to the final toke of reefer.
-                            </span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/qs2021.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/2021qstop10" align="right"><span>4Ply Analyzes Quartersnacks' Top 10's of 2021</span></a>
-                        <div class='preview_date'>January&nbsp;26.&nbsp;2022&nbsp;//&nbsp;By <a href="https://www.instagram.com/warmupzone/" target="_blank">Pete Glover</a> & <a href="https://www.instagram.com/fosterschild/" target="_blank">Harrison Lisewski</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>As it has been for the past six or so years and always shall be, the secret cabal of skateboarding luminaries over at Quartersnacks ever continues to issue forth their weekly hierarchical selections of the dopest skate clips. Thus is decreed the Quartersnacks Top Ten.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/QSvoting.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/QSpoll2021" align="right"><span>Digging Into the<br>2021 Quartersnacks Readers Poll Ballots</span></a>
-                        <div class='preview_date'>December&nbsp;24.&nbsp;2021&nbsp;//&nbsp;By <a href="https://www.instagram.com/warmupzone/" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>It is with great honor and promises of adequate compensation in apparel that the 4Ply team has been tasked with tallying the 2021 Quartersnacks Readers Poll ballots</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="article-row">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/nike_dudes.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/Tampa2021" align="right"><span>The Logos of the<br>Tampa Pro Semi-Finals</span></a>
-                        <div class='preview_date'>November&nbsp;3.&nbsp;2021&nbsp;//&nbsp;By <a href="https://www.instagram.com/warmupzone/" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>4PLY presents an article analyzing the logos skaters wore during the Tampa Pro Semi-Finals that happened a couple weeks ago</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="interview">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/jordan_index.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/jordantaylor" align="right"><span>Spot hunter. Mirth maker. Studded belt manufacturer.<br>The Jordan Taylor Interview</span></a>
-                        <div class='preview_date'>September&nbsp;14.&nbsp;2021&nbsp;//&nbsp;By <a href="https://www.instagram.com/warmupzone/" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>"It’s that same pair of maroon pants that I’ve been stoked on for a while. Everyone thinks they are purple pants, but they are maroon." - Gordo</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="interview">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/frankindex.jpeg" width="150">
-                        </div>
-                        <a class='article-title' href="/frankgerwer" align="right"><span>Frank Gerwer</span></a>
-                        <div class='preview_date'>August&nbsp;12.&nbsp;2021&nbsp;//&nbsp;By <a href="https://www.instagram.com/fosterschild/" target="_blank">Harrison Lisewski</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>"It’s the ultimate argument through skate history, who’s your favourite and why? Always trying to persuade your friend and make him think that your dude’s the best." - Frank</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="interview">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/babymar.png" width="150">
-                        </div>
-                        <a class='article-title' href="/marisa2" align="right"><span>Marisa Del Santo Interview</span></a>
-                        <div class='preview_date'>May&nbsp;19.&nbsp;2021&nbsp;//&nbsp;By <a href="https://www.instagram.com/rich_ard_bay/" target="_blank">Richard Bay</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>"I don’t fully not skate but I kinda don’t care about it. I’m also like terrified. I’m like very scared of it. I’ve been playing music and I need these wrists." - Mar</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="analysis">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/gordita.png" width="150">
-                        </div>
-                        <a class='article-title' href="/gorditas" align="right"><span>Rotten Gorditas: The Skits of Jordan Taylor</span></a>
-                        <div class='preview_date'>May&nbsp;3.&nbsp;2021&nbsp;//&nbsp;By <a href="https://www.instagram.com/warmupzone/" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Ladies and gentlemen, feast your eyes upon the acting skills of Gordo.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="interview">
-                    <div class='preview_text'>
-                        <a class='article-title' href="/SAS">Skate After School<br>An interview with Tim Ward</a>
-                        <div class='preview_image'>
-                            <img src="images/sasindex.png" width="150">
-                        </div>
-                        <div class='preview_date'>April&nbsp;3.&nbsp;2021&nbsp;//&nbsp;By <a href="https://www.instagram.com/rich_ard_bay/" target="_blank">Richard Bay</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>"A version of what SAS would become started happening as far back as 2012, when I started collecting spare parts from friends and made a donation bin at the indoor skatepark I was working at at the time."</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="interview">
-                    <div class='preview_text'>
-                        <a class='article-title' href="/blakecarpenter">Blake Carpenter <br>Interview</a>
-                        <div class='preview_image'>
-                            <img src="images/blakepro.jpg" width="150">
-                        </div>
-                        <div class='preview_date'>March&nbsp;25.&nbsp;2021&nbsp;//&nbsp;By <a href="https://www.instagram.com/fosterschild/" target="_blank">Harrison Lisewski</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>"Don’t make it a highlight but you can put it in there."
-                                <br>- 100% of tricks done stoned.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="interview">
-                    <div class='preview_text'>
-                        <a class='article-title' href="/patg">Pat Gallaher Interview</a>
-                        <div class='preview_image'>
-                            <img src="images/pat g.jpg" width="150">
-                        </div>
-                        <div class='preview_date'>February&nbsp;19.&nbsp;2021&nbsp;//&nbsp;By <a href="http://instagram.com/fosterschild/" target="_blank">Harrison Lisewski</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>"I mean skating is like a combination of art and stunts. So like yeah you kinda have to be to be a skater, unless you want to just not skate gaps at all. That’s the thing about skating. You choose your own course." - Pat G</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="analysis">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/marisa4ply.png" width="150">
-                        </div>
-                        <a class='article-title' href="/marisa" align="right"><span>Crushing Numbers: Marisa Dal Santo in Strange World</span></a>
-                        <div class='preview_date'>February&nbsp;2.&nbsp;2021&nbsp;//&nbsp;By <a href="https://www.instagram.com/warmupzone/" target="_blank">Pete Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>No discussion of Strange World is complete without a reference to the most joyous up-stairs no comply heelflip ever.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="interview">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/andrewindex.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/andrewallen">Andrew Allen Interview</a>
-                        <div class='preview_date'>January&nbsp;18.&nbsp;2021&nbsp;//&nbsp;By <a href="http://instagram.com/fosterschild/" target="_blank">Harrison Lisewski</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>"Everythings gonna suck if you just fuckin, you know, if you make it suck, so.. I’m just tryin' to fuckin, be alright with it you know." - AA</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="analysis">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/qstop10index.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/qstop10">Run It Back Turbo: 4PLY Analyzes the Quartersnacks Top Ten</a>
-                        <div class='preview_date'>January&nbsp;5.&nbsp;2021&nbsp;//&nbsp;By <a href="http://warmupzone.com/" target="_blank">Pete
-                                Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>What does it take to get your clip noticed by the exalted sentinels of skateboarding? Let’s find out.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="analysis">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/daherindex.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/daher">Crushing Numbers: Mike Daher in A Visual Sound</a>
-                        <div class='preview_date'>November&nbsp;10.&nbsp;2020&nbsp;//&nbsp;By <a href="http://warmupzone.com/" target="_blank">Pete
-                                Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>A game changing skate part known for its aesthetic sensibility and emphasis on style… reduced to a couple of graphs and a pile of numbers.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="analysis">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/fredindex.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/fredgall">Living Legend: Fred Gall</a>
-                        <div class='preview_date'>August&nbsp;25.&nbsp;2020&nbsp;//&nbsp;By <a href="http://warmupzone.com/" target="_blank">Pete
-                                Glover</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Set down your bondo and crack a cold one if that’s your thing… it’s time to crunch the numbers on Fred Fuckin’ Gall.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="resources">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/vxindex.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/filmers">The Networks of Skateboarding Filmmakers</a>
-                        <div class='preview_date'>June&nbsp;21.&nbsp;2020&nbsp;//&nbsp;By <a href="http://instagram.com/fosterschild/" target="_blank">Harrison Lisewski</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Hover over each skater to see who they share connections with, and click-and-drag them around for a better view.</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="analysis">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/quartersnacksindex.jpg" width="150">
-                        </div>
-                        <a class='article-title' href="/skateboarding_dataviz">A SURVEY OF SKATEBOARDING Data
-                            Visualization</a>
-                        <div class='preview_date'>April&nbsp;28.&nbsp;2020&nbsp;//&nbsp;By <a href="https://www.twitter.com/jdwlbr" target="_blank">Jared Wilber</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Skateboarders are passionate people (no matter what you say, Elizabeth), and examples of skateboarding data visualization do exist. We've done our best to collect them here...</span>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="analysis">
-                    <div class='preview_text'>
-                        <div class='preview_image'>
-                            <img src="images/kostonindex.jpg" width="150">
-                        </div>
-                        <a class='article-title' href='/koston'>Eric Koston Has No Signature Trick</a>
-                        <div class='preview_date'>April&nbsp;13.&nbsp;2020&nbsp;//&nbsp;By <a href="https://www.twitter.com/jdwlbr" target="_blank">Jared Wilber</a></div>
-                        <div class='preview_author'>
-                            <span class='author'>Rather than doing a few tricks many times, Koston does many tricks a few times. This reflects at least two things. First: Koston is very good at skateboarding...</span>
-                        </div>
-                        <hr>
-                    </div>
-                    <!-- <img class="preview_image" src="images/koston_preview.png"/> -->
-                </div> <!-- article-row-->
-                <!-- 
-			<div class="divider"></div>
-			<hr>
+// Assign proper numbers (1-indexed, by date ascending)
+const sorted = [...ARTICLES].sort((a,b) => new Date(a.date) - new Date(b.date));
+sorted.forEach((a, i) => { a.num = i + 1; });
 
-			<div class="article-row">
-			    <div class="article-text-container">
-			        <div class='preview_text'>
-					  		<a class='article-title'>Jim Greco did more hammers after sobriety.</a>
-				  		 <div class='preview_date'>DEC.&nbsp;20.&nbsp;2018</div>
-				  	  	<div class='preview_author'>
-				  	  		<span class='author'>By <a href="https://www.twitter.com/jdwlbr">Jared Wilber</a></span> 
-				  	  	</div>
-				  	</div>
-			    </div>
-			     <img class="preview_image" src="greco1.png"/>
-			</div> -->
-                <!-- add some space below list -->
-                <!-- <br> -->
-            </div> <!-- div main -->
-            <div class='side'>
-                <div class='newsletter'>
-                    <p>Want more <span style='font-family: Bungee'>4PLY?</span><br>Follow us on social media and see everything
-                        the moment it comes out. Feel free to reach out with ideas or datasets or even just to tell us you love us.
-                    </p>
-                    <div>
-                        <ul>
-                            <li><a class="fa fa-twitter" href="https://twitter.com/4PLYMAG" style="font-size:1.4rem;"></a></li>
-                            <li><a class="fa fa-instagram" color="black" href="http://instagram.com/4PLYMAG" style="font-size:1.4rem;"></a></li>
-                            <li><a class="fa fa-envelope" href="mailto:4plymagazine@gmail.com" style="font-size:1.4rem;"></a></li>
-                        </ul>
-                    </div>
-                    <br>
-                    <!-- <img src="images/ad2.png" width="100%"> -->
-                    <p>
-                        Support 4PLY<br><i>Think of it as an investment...</i><br><br>
-                    </p>
-                    <form action="https://www.paypal.com/donate" method="post" target="_top">
-                        <input type="hidden" name="business" value="GRWTSSSTV8S3S" />
-                        <input type="hidden" name="no_recurring" value="0" />
-                        <input type="hidden" name="currency_code" value="USD" />
-                        <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                        <img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1" />
-                    </form>
+const grid = document.getElementById('cardGrid');
+const searchInput = document.getElementById('searchInput');
+const resultCount = document.getElementById('resultCount');
+const articleCount = document.getElementById('articleCount');
+const sortBtns = document.querySelectorAll('.sort-btn');
+
+articleCount.textContent = ARTICLES.length + ' articles and counting';
+
+let currentSort = 'favorites';
+
+function formatDate(d) {
+    const dt = new Date(d + 'T00:00:00');
+    const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    return months[dt.getMonth()] + ' ' + dt.getDate() + ', ' + dt.getFullYear();
+}
+
+function render() {
+    const query = searchInput.value.toLowerCase().trim();
+    let items = ARTICLES.filter(a => {
+        if (!query) return true;
+        return a.title.toLowerCase().includes(query)
+            || a.blurb.toLowerCase().includes(query)
+            || a.author.toLowerCase().includes(query);
+    });
+
+    const favOrder = ['/fredgall','/andrewallen','/koston','/yuto','/buntnetwork','/marisa2','/TomKpart1','/filmers','/frankgerwer','/thrashercovers','/jordantaylor','/patg','/blakecarpenter','/qstop10'];
+    if (currentSort === 'date') {
+        items.sort((a, b) => new Date(b.date) - new Date(a.date));
+    } else {
+        // Favorites in explicit order, then rest by date desc
+        items.sort((a, b) => {
+            const ai = favOrder.indexOf(a.href);
+            const bi = favOrder.indexOf(b.href);
+            if (ai !== -1 && bi !== -1) return ai - bi;
+            if (ai !== -1) return -1;
+            if (bi !== -1) return 1;
+            return new Date(b.date) - new Date(a.date);
+        });
+    }
+
+    resultCount.textContent = query ? items.length + ' result' + (items.length !== 1 ? 's' : '') : '';
+
+    if (items.length === 0) {
+        grid.innerHTML = '<div class="no-results">No articles found. Try a different search.</div>';
+        return;
+    }
+
+    const pastels = ['#e05c8a','#5ca8e0','#3dba7a','#9b6ec5','#e8a33c','#45c4c4','#d45d5d','#6b80d4'];
+    grid.innerHTML = items.map((a, i) => `
+        <a class="card" href="${a.href}" style="--card-color:${pastels[i % pastels.length]}">
+            <img class="card-img" src="${a.img}" alt="${a.title}" loading="lazy" />
+            <div class="card-body">
+                <div class="card-number">#${a.num}</div>
+                <div class="card-title">${a.title}</div>
+                <div class="card-blurb">${a.blurb}</div>
+                <div class="card-meta">
+                    <div class="card-date">${formatDate(a.date)}</div>
+                    <div class="card-author">${a.author}</div>
                 </div>
             </div>
-        </div>
-        <div class="footer">
-            <div class='footer-side'>
-                <div class='newsletter'>
-                    <br>
-                    <p>
-                        Support <span style='font-family: Bungee'>4PLY</span> <br>
-                        <i>Think of it as an investment...</i><br><br>
-                    </p>
-                    <form action="https://www.paypal.com/donate" method="post" target="_top">
-                        <input type="hidden" name="business" value="GRWTSSSTV8S3S" />
-                        <input type="hidden" name="no_recurring" value="0" />
-                        <input type="hidden" name="currency_code" value="USD" />
-                        <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-                        <img alt="" border="0" src="https://www.paypal.com/en_AU/i/scr/pixel.gif" width="1" height="1" />
-                    </form>
-                    <div>
-                        <ul>
-                            <li><a class="fa fa-twitter" href="https://twitter.com/4PLYMAG" style='font-size:1.4rem;'></a>
-                            </li>
-                            </li><a class="fa fa-instagram" href="http://instagram.com/4PLYMAG" style='font-size:1.4rem;'></a></li>
-                            </li><a class="fa fa-envelope" href="mailto:4plymagazine@gmail.com" style='font-size:1.4rem;'></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-            <p>©&nbsp;2024 4PLY Magazine<br></p>
-        </div>
+        </a>
+    `).join('');
+}
+
+searchInput.addEventListener('input', render);
+
+sortBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        sortBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentSort = btn.dataset.sort;
+        render();
+    });
+});
+
+render();
+</script>
+
 </body>
-
 </html>

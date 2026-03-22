@@ -867,7 +867,7 @@ td {
 }
 
 b {
-    font-family: Changa;
+    font-family: Roboto;
     font-weight: bolder !important;
 }
 
@@ -920,7 +920,7 @@ ul.a {
 p,
 ul,
 li {
-    font-family: Changa;
+    font-family: Roboto;
     padding-top: 0.5rem;
     /*font-size:1.5rem;*/
 }

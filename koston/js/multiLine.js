@@ -1,5 +1,5 @@
 // set the dimensions and lineMargins of the graph
-let lineMargin = { top: 10, right: 30, bottom: 60, left: 100 },
+let lineMargin = { top: 50, right: 30, bottom: 60, left: 100 },
   chartWidth = 800 - lineMargin.left - lineMargin.right,
   chartHeight = 500 - lineMargin.top - lineMargin.bottom;
 
@@ -14,22 +14,33 @@ const obstaclesChart = d3.select("#obstacles")
   .attr("transform",
     "translate(" + lineMargin.left + "," + lineMargin.top + ")");
 
+// title — left-aligned
 d3.select('#lineSvg')
   .append('text')
-  .attr('x', (chartWidth + lineMargin.right) / 2.5)
-  .attr('y', lineMargin.top *2)
-  .html("# Tricks Filmed By Obstacle")
-  .style('font-family', "Bungee Inline")
+  .attr('x', lineMargin.left)
+  .attr('y', 20)
+  .text("Tricks Filmed By Obstacle")
+  .style('font-family', "Bungee")
   .style('font-size', '1rem')
 
-// add x-axis
+// subtitle
 d3.select('#lineSvg')
-  .append("text")    
-  .attr('x', (chartWidth + lineMargin.right + lineMargin.left) / 2)  
-  .attr('y', chartHeight + lineMargin.top + 50)       
-  .style("text-anchor", "left")
+  .append('text')
+  .attr('x', lineMargin.left)
+  .attr('y', 38)
+  .text("Annual count of ledge, handrail, and stair/gap tricks")
   .style('font-family', "Bungee")
-  .style('font-size', '.2rem')
+  .style('font-size', '.5rem')
+  .style('fill', '#888')
+
+// x-axis label
+d3.select('#lineSvg')
+  .append("text")
+  .attr('x', (chartWidth + lineMargin.right + lineMargin.left) / 2)
+  .attr('y', chartHeight + lineMargin.top + 50)
+  .style("text-anchor", "middle")
+  .style('font-family', "Bungee")
+  .style('font-size', '.6rem')
   .text("Year");
 
 // text label for the y axis
