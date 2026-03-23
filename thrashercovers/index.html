@@ -47,13 +47,9 @@
         </script>
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <header>
-            <section class='section-intro'>
-                <center>
-                    <h1>
-                        <a href="/" class="homepage">4PLY MAG</a>
-                    </h1>
-                </center>
-            </section>
+            <div style="text-align:left; padding-left:2%; padding-top:1%;">
+                <a href="https://4plymag.com" class="homepage">4PLY</a>
+            </div>
         </header>
 
 <body>
@@ -203,9 +199,9 @@
 </div>
 
 
-<div id="cover-popup">
-    <img id="cover-popup-image" src="" alt="Cover Image">
-    <span id="popup-close-btn">Close</span>
+<div id="cover-popup" onclick="this.style.display='none'">
+    <img id="cover-popup-image" src="" alt="Cover Image" onclick="event.stopPropagation()">
+    <span id="popup-close-btn">close</span>
 </div>
     <div class="qna"><p>
         <br><hr><br><br>

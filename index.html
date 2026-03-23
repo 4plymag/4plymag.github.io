@@ -396,8 +396,8 @@
         <input type="text" id="searchInput" placeholder="Search articles..." />
     </div>
     <div class="sort-btns">
-        <button class="sort-btn active" data-sort="favorites">Favorites</button>
-        <button class="sort-btn" data-sort="date">Latest</button>
+        <button class="sort-btn active" data-sort="date">Latest</button>
+        <button class="sort-btn" data-sort="favorites">Favorites</button>
     </div>
     <div class="result-count" id="resultCount"></div>
 </div>
@@ -645,7 +645,7 @@ const sortBtns = document.querySelectorAll('.sort-btn');
 
 articleCount.textContent = ARTICLES.length + ' articles and counting';
 
-let currentSort = 'favorites';
+let currentSort = 'date';
 
 function formatDate(d) {
     const dt = new Date(d + 'T00:00:00');
