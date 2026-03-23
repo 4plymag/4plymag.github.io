@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4ply Thrasher Cover Similarity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        .visualization-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+        }
+
+        .header {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .title {
+            font-family: 'Bungee', cursive;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #fff;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .info-btn {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #ffcc00;
+            border: 2px solid #000;
+            color: #000;
+            font-family: 'Bungee', cursive;
+            font-size: 11px;
+            font-weight: 400;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .info-btn:hover {
+            background: #fff;
+            transform: scale(1.1);
+        }
+
+        .controls {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 100;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .controls-divider {
+            width: 2px;
+            height: 20px;
+            background: #333;
+            margin: 0 0.25rem;
+        }
+
+        .control-btn {
+            padding: 0.4rem 0.8rem;
+            background: #000;
+            border: 2px solid #333;
+            color: #fff;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            transition: all 0.15s;
+            border-radius: 0;
+        }
+
+        .control-btn:hover {
+            border-color: #ffcc00;
+            color: #ffcc00;
+        }
+
+        .control-btn.active {
+            background: #ffcc00;
+            border-color: #ffcc00;
+            color: #000;
+        }
+
+        .filters {
+            position: absolute;
+            top: 3.5rem;
+            right: 1rem;
+            z-index: 100;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-select {
+            padding: 0.4rem 0.6rem;
+            background: #000;
+            border: 2px solid #333;
+            color: #fff;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            border-radius: 0;
+            cursor: pointer;
+            min-width: 120px;
+            max-width: 150px;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #ffcc00;
+        }
+
+        .filter-select option {
+            background: #0a0a0a;
+            color: #fff;
+            text-transform: none;
+        }
+
+        .decade-select {
+  display: none;          /* desktop keeps buttons */
+  min-width: 90px;        /* tighter than filter dropdowns */
+  max-width: 110px;
+}
+
+
+        .filter-search {
+            padding: 0.4rem 0.6rem;
+            background: #000;
+            border: 2px solid #333;
+            color: #fff;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            border-radius: 0;
+            width: 120px;
+        }
+
+        .filter-search:focus {
+            outline: none;
+            border-color: #ffcc00;
+        }
+
+        .filter-search::placeholder {
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        .filter-clear {
+            padding: 0.4rem 0.6rem;
+            background: #000;
+            border: 2px solid #333;
+            color: #666;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .filter-clear:hover {
+            border-color: #ff3333;
+            color: #ff3333;
+        }
+
+        .instructions {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            z-index: 100;
+            font-size: 0.65rem;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        #canvas {
+            display: block;
+            cursor: grab;
+        }
+
+        #canvas:active {
+            cursor: grabbing;
+        }
+
+        .tooltip {
+  position: fixed;
+  pointer-events: none;
+  z-index: 1000;
+  background: #000;
+  border: 3px solid #ffcc00;
+  padding: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.1s;
+  box-shadow: 4px 4px 0 #ffcc00;
+
+  /* center content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* sizing + wrapping */
+  max-width: 250px;
+}
+
+.tooltip.visible {
+  opacity: 1;
+}
+
+.tooltip img {
+  display: block;
+  max-width: 180px;
+  max-height: 250px;
+}
+
+.tooltip-info {
+  margin-top: 0.5rem;
+  font-family: 'Bungee', cursive;
+  font-size: 0.75rem;
+  color: #fff;
+  text-align: center;
+
+  /* wrap nicely within max-width */
+  width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.tooltip-meta {
+  font-size: 0.65rem;
+  color: #888;
+  text-align: center;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  /* wrap nicely within max-width */
+  width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.tooltip-meta strong {
+  color: #ffcc00;
+}
+
+
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Bungee', cursive;
+            color: #ffcc00;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .modal-overlay.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: #000;
+            border: 3px solid #ffcc00;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.2s;
+            box-shadow: 6px 6px 0 #ffcc00;
+        }
+
+        .modal-overlay.visible .modal {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 32px;
+            height: 32px;
+            background: #ffcc00;
+            border: 2px solid #000;
+            color: #000;
+            font-family: 'Bungee', cursive;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+        }
+
+        .modal-close:hover {
+            background: #fff;
+            transform: scale(1.1);
+        }
+
+        .modal h2 {
+            font-family: 'Bungee', cursive;
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #ffcc00;
+            text-transform: uppercase;
+        }
+
+        .modal h3 {
+            font-family: 'Bungee', cursive;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .modal p {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-bottom: 0.75rem;
+        }
+
+        .modal a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        .modal a:hover {
+            text-decoration: underline;
+        }
+
+        .modal-footer {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid #333;
+            font-size: 0.75rem;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 900px) {
+            .filters {
+                top: auto;
+                bottom: 1rem;
+                right: 0.5rem;
+                left: 0.5rem;
+                justify-content: center;
+            }
+            .filter-select {
+                min-width: 100px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .controls {
+                top: auto;
+                bottom: 6rem;
+                right: 0.5rem;
+                left: 0.5rem;
+                justify-content: center;
+            }
+            .filters {
+                bottom: 0.5rem;
+            }
+            .instructions {
+                display: none;
+            }
+            .controls-divider {
+                display: none;
+            }
+
+            .decade-btn {
+  display: none;
+}
+
+.decade-select {
+  display: block;
+}
+
+
+/* Mobile: pinned tooltip = centered, bigger, vertically centered */
+.tooltip.mobile-centered {
+  left: 50% !important;
+  top: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+
+  /* make it bigger but never overflow the screen */
+  width: min(360px, calc(100vw - 14px));
+  max-width: min(360px, calc(100vw - 14px));
+  max-height: calc(100vh - 14px);
+
+  /* if content is taller than viewport, allow scrolling inside tooltip */
+  overflow: auto;
+}
+
+.tooltip img{
+
+    max-width: 300px !important;
+    max-height:550px !important;
+}
+
+
+
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="visualization-container">
+        <div class="header">
+            <span class="title">4ply Thrasher Cover Similarity</span>
+            <button class="info-btn" id="info-btn">i</button>
+        </div>
+        <div class="controls">
+            <button class="control-btn active" data-mode="content">By Content</button>
+            <button class="control-btn" data-mode="color">By Color</button>
+            <span class="controls-divider"></span>
+
+            <select id="decade-select" class="filter-select decade-select" aria-label="Decade">
+  <option value="all">All Years</option>
+  <option value="80s">80s</option>
+  <option value="90s">90s</option>
+  <option value="00s">00s</option>
+  <option value="10s">10s</option>
+  <option value="20s">20s</option>
+</select>
+
+            <button class="control-btn decade-btn active" data-decade="all">All</button>
+            <button class="control-btn decade-btn" data-decade="80s">80s</button>
+            <button class="control-btn decade-btn" data-decade="90s">90s</button>
+            <button class="control-btn decade-btn" data-decade="00s">00s</button>
+            <button class="control-btn decade-btn" data-decade="10s">10s</button>
+            <button class="control-btn decade-btn" data-decade="20s">20s</button>
+            <span class="controls-divider"></span>
+            <button class="control-btn" data-action="reset">Reset</button>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <select id="filter-skater" class="filter-select">
+                    <option value="">All Skaters</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <select id="filter-trick" class="filter-select">
+                    <option value="">All Tricks</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <select id="filter-obstacle" class="filter-select">
+                    <option value="">All Obstacles</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <input type="text" id="filter-search" class="filter-search" placeholder="Search...">
+            </div>
+            <button class="filter-clear" id="filter-clear">Clear</button>
+        </div>
+        <div class="instructions">
+            Drag to pan | Scroll to zoom | Hover for details
+        </div>
+        <canvas id="canvas"></canvas>
+        <div class="tooltip" id="tooltip">
+            <img id="tooltip-img" src="" alt="Cover">
+            <div class="tooltip-info" id="tooltip-info"></div>
+            <div class="tooltip-meta" id="tooltip-meta"></div>
+        </div>
+        <div class="loading" id="loading">Loading covers...</div>
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <h2>About This Visualization</h2>
+            <p>
+                Explore 506 Thrasher Magazine covers from 1981 to 2021, arranged by visual similarity using machine learning.
+            </p>
+
+            <h3>By Content</h3>
+            <p>
+                Covers are positioned using CLIP embeddings, a neural network that understands image content.
+                Similar covers cluster together: vert ramp shots, street skating, portraits, and contest coverage
+                naturally form groups.
+            </p>
+
+            <h3>By Color</h3>
+            <p>
+                Covers are arranged by their color palette. See how the magazine's visual style evolved
+                from high-contrast photography in the 80s to the vibrant, saturated imagery of today.
+            </p>
+
+            <h3>Controls</h3>
+            <p>
+                <strong>Pan:</strong> Click and drag<br>
+                <strong>Zoom:</strong> Scroll or pinch<br>
+                <strong>Details:</strong> Hover over any cover
+            </p>
+
+            <h3>Filters</h3>
+            <p>
+                <strong>Decades:</strong> Highlight covers from specific eras<br>
+                <strong>Skater:</strong> Filter by featured skater (315 unique)<br>
+                <strong>Trick:</strong> Filter by trick type (202 unique)<br>
+                <strong>Obstacle:</strong> Filter by terrain type<br>
+                <strong>Search:</strong> Search across all metadata
+            </p>
+
+            <div class="modal-footer">
+                Data from <a href="https://github.com/jwilber/4PLY" target="_blank">4PLY</a> |
+                Built with CLIP & UMAP
+            </div>
+        </div>
+    </div>
+
+ <script>
+        // Load cover data and create visualization
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const tooltip = document.getElementById('tooltip');
+        const tooltipImg = document.getElementById('tooltip-img');
+        const tooltipInfo = document.getElementById('tooltip-info');
+        const loading = document.getElementById('loading');
+
+        let covers = [];
+        let filters = {};
+        let images = {};
+        let loadedCount = 0;
+        let currentMode = 'content';
+        let currentDecade = 'all';
+
+        // decade dropdown reference + initial sync
+        const decadeSelect = document.getElementById('decade-select');
+        if (decadeSelect) decadeSelect.value = currentDecade;
+
+        // Filter state
+        let filterSkater = '';
+        let filterTrick = '';
+        let filterObstacle = '';
+        let filterSearch = '';
+
+        // Transform state - start zoomed out to see full layout
+        let scale = 0.45;
+        let offsetX = 0;
+        let offsetY = 0;
+        let isDragging = false;
+        let lastX, lastY;
+
+        // Animation state for smooth transitions
+        let animationProgress = 1;
+        let animationStartTime = 0;
+        const ANIMATION_DURATION = 800;
+        let previousMode = 'content';
+
+        // Image size in visualization - smaller images with more spread
+        const IMG_SIZE = 38;
+        const PADDING = 60;
+        const SPREAD = 3.2; // Multiplier to spread covers apart
+
+        // Touch support
+        let lastTouchDist = 0;
+
+        // Tap-to-tooltip support (mobile)
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchMoved = false;
+        const TAP_MOVE_THRESHOLD = 10; // px
+
+        // ---- Mobile tooltip debug + stability ----
+        let ignoreMouseUntil = 0;              // timestamp in ms
+        let tooltipPinnedByTouch = false;      // if true, mousemove won't hide it
+        let pinnedCoverKey = null;             // to toggle same cover tap
+
+        function now() { return Date.now(); }
+
+        // Performance: throttle rendering
+        let renderScheduled = false;
+        function scheduleRender() {
+            if (!renderScheduled) {
+                renderScheduled = true;
+                requestAnimationFrame(() => {
+                    renderScheduled = false;
+                    render();
+                });
+            }
+        }
+
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            canvas.width = container.clientWidth;
+            canvas.height = container.clientHeight;
+            render();
+        }
+
+        function applySpread(x, y) {
+            const cx = (x - 0.5) * SPREAD + 0.5;
+            const cy = (y - 0.5) * SPREAD + 0.5;
+            return { x: cx, y: cy };
+        }
+
+        function getCoords(cover, progress = 1) {
+            let x, y;
+
+            if (progress >= 1) {
+                if (currentMode === 'content') {
+                    x = cover.umap_x;
+                    y = cover.umap_y;
+                } else {
+                    x = cover.color_x;
+                    y = cover.color_y;
+                }
+            } else {
+                const fromX = previousMode === 'content' ? cover.umap_x : cover.color_x;
+                const fromY = previousMode === 'content' ? cover.umap_y : cover.color_y;
+                const toX = currentMode === 'content' ? cover.umap_x : cover.color_x;
+                const toY = currentMode === 'content' ? cover.umap_y : cover.color_y;
+                const eased = easeInOutCubic(progress);
+                x = fromX + (toX - fromX) * eased;
+                y = fromY + (toY - fromY) * eased;
+            }
+
+            return applySpread(x, y);
+        }
+
+        function easeInOutCubic(t) {
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        function worldToScreen(wx, wy) {
+            const size = Math.min(canvas.width, canvas.height) - PADDING * 2;
+            const xOffset = (canvas.width - size) / 2;
+            const yOffset = (canvas.height - size) / 2;
+
+            const x = xOffset + wx * size;
+            const y = yOffset + wy * size;
+            return {
+                x: (x - canvas.width / 2) * scale + canvas.width / 2 + offsetX,
+                y: (y - canvas.height / 2) * scale + canvas.height / 2 + offsetY
+            };
+        }
+
+        function getYear(filename) {
+            const match = filename.match(/(\d{4})/);
+            return match ? parseInt(match[1]) : 2000;
+        }
+
+        function getDecade(year) {
+            if (year < 1990) return '80s';
+            if (year < 2000) return '90s';
+            if (year < 2010) return '00s';
+            if (year < 2020) return '10s';
+            return '20s';
+        }
+
+        function isInDecade(filename) {
+            if (currentDecade === 'all') return true;
+            const year = getYear(filename);
+            return getDecade(year) === currentDecade;
+        }
+
+        function matchesFilters(cover) {
+            if (!isInDecade(cover.filename)) return false;
+
+            if (filterSkater && (!cover.skater || !cover.skater.toLowerCase().includes(filterSkater.toLowerCase()))) {
+                return false;
+            }
+
+            if (filterTrick && (!cover.trick || !cover.trick.toLowerCase().includes(filterTrick.toLowerCase()))) {
+                return false;
+            }
+
+            if (filterObstacle && cover.obstacle !== filterObstacle) {
+                return false;
+            }
+
+            if (filterSearch) {
+                const search = filterSearch.toLowerCase();
+                const searchable = [
+                    cover.skater || '',
+                    cover.trick || '',
+                    cover.obstacle || '',
+                    cover.location || '',
+                    cover.spot || ''
+                ].join(' ').toLowerCase();
+                if (!searchable.includes(search)) return false;
+            }
+
+            return true;
+        }
+
+        function render() {
+            if (animationProgress < 1) {
+                const elapsed = performance.now() - animationStartTime;
+                animationProgress = Math.min(elapsed / ANIMATION_DURATION, 1);
+                requestAnimationFrame(render);
+            }
+
+            ctx.fillStyle = '#0a0a0a';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            const imgSize = IMG_SIZE * scale;
+            const imgHeight = imgSize * 1.4;
+
+            const sortedCovers = [...covers].sort((a, b) => {
+                const coordsA = getCoords(a, animationProgress);
+                const coordsB = getCoords(b, animationProgress);
+                return coordsA.y - coordsB.y;
+            });
+
+            sortedCovers.forEach(cover => {
+                const coords = getCoords(cover, animationProgress);
+                const pos = worldToScreen(coords.x, coords.y);
+
+                if (pos.x + imgSize < 0 || pos.x > canvas.width ||
+                    pos.y + imgHeight < 0 || pos.y > canvas.height) {
+                    return;
+                }
+
+                const matches = matchesFilters(cover);
+                const alpha = matches ? 1 : 0.12;
+
+                const img = images[cover.filename];
+                if (img && img.complete && img.naturalWidth > 0) {
+                    if (alpha < 1) ctx.globalAlpha = alpha;
+                    ctx.drawImage(img, pos.x - imgSize / 2, pos.y - imgHeight / 2, imgSize, imgHeight);
+                    if (alpha < 1) ctx.globalAlpha = 1;
+                } else {
+                    ctx.fillStyle = alpha < 1 ? '#1a1a1a' : '#2a2a2a';
+                    ctx.fillRect(pos.x - imgSize / 2, pos.y - imgHeight / 2, imgSize, imgHeight);
+                }
+            });
+        }
+
+        function getHoveredCover(mx, my) {
+            const imgSize = IMG_SIZE * scale;
+            const imgHeight = imgSize * 1.4;
+
+            const sortedCovers = [...covers].sort((a, b) => {
+                const coordsA = getCoords(a);
+                const coordsB = getCoords(b);
+                return coordsB.y - coordsA.y;
+            });
+
+            for (const cover of sortedCovers) {
+                if (!matchesFilters(cover)) continue;
+
+                const coords = getCoords(cover);
+                const pos = worldToScreen(coords.x, coords.y);
+
+                if (mx >= pos.x - imgSize / 2 && mx <= pos.x + imgSize / 2 &&
+                    my >= pos.y - imgHeight / 2 && my <= pos.y + imgHeight / 2) {
+                    return cover;
+                }
+            }
+            return null;
+        }
+
+        function parseFilename(filename) {
+            const match = filename.match(/([A-Za-z]+)(\d{4})/);
+            if (match) return { month: match[1], year: match[2] };
+            return { month: '', year: '' };
+        }
+
+        function coverKey(cover) {
+            // stable-ish unique key for toggling
+            return cover.filename || cover.url || JSON.stringify(cover);
+        }
+
+        function showTooltipForCover(cover, clientX, clientY, { pin = false } = {}) {
+            tooltipImg.src = cover.url;
+
+            const info = parseFilename(cover.filename);
+            tooltipInfo.textContent = `${info.month} ${info.year}`;
+
+            const tooltipMeta = document.getElementById('tooltip-meta');
+            let metaParts = [];
+            if (cover.skater) metaParts.push(`<strong>${cover.skater}</strong>`);
+            if (cover.trick) metaParts.push(cover.trick);
+            if (cover.obstacle) metaParts.push(cover.obstacle);
+            if (cover.location) metaParts.push(cover.location);
+            tooltipMeta.innerHTML = metaParts.join(' · ');
+
+            const TIP_W = 250;
+            const TIP_H = 320;
+
+            const isMobile = window.matchMedia('(max-width: 600px)').matches;
+
+if (pin && isMobile) {
+    // Mobile pinned tooltip: center it (CSS handles exact placement)
+    tooltip.classList.add('mobile-centered');
+    tooltip.style.left = '';
+    tooltip.style.top = '';
+    tooltip.style.right = '';
+    tooltip.style.bottom = '';
+    tooltip.style.transform = ''; // CSS applies transform
+} else {
+    // Desktop (and non-pinned): keep existing cursor-follow logic
+    tooltip.classList.remove('mobile-centered');
+
+    let tx = clientX + 15;
+    let ty = clientY - 120;
+
+    if (tx + TIP_W > window.innerWidth) tx = clientX - (TIP_W + 15);
+    if (ty < 10) ty = clientY + 20;
+    if (ty + TIP_H > window.innerHeight) ty = window.innerHeight - TIP_H - 10;
+
+    tooltip.style.left = tx + 'px';
+    tooltip.style.top = ty + 'px';
+}
+
+            tooltip.classList.add('visible');
+
+            if (pin) {
+                tooltipPinnedByTouch = true;
+                pinnedCoverKey = coverKey(cover);
+                console.log('[tooltip] PIN show', pinnedCoverKey);
+            } else {
+                tooltipPinnedByTouch = false;
+                pinnedCoverKey = null;
+            }
+        }
+
+        function hideTooltip(reason = '') {
+            if (tooltip.classList.contains('visible')) {
+                console.log('[tooltip] hide', reason);
+            }
+            tooltip.classList.remove('visible');
+            tooltipPinnedByTouch = false;
+            pinnedCoverKey = null;
+            tooltip.classList.remove('mobile-centered');
+
+        }
+
+        // Close tooltip when it's tapped/clicked (only works when pointer-events is enabled)
+tooltip.addEventListener('pointerdown', (e) => {
+  if (!tooltip.classList.contains('visible')) return;
+  console.log('[tooltip] pointerdown -> close');
+  e.preventDefault();
+  e.stopPropagation();
+  hideTooltip('tap tooltip');
+});
+
+
+        function handleMouseMove(e) {
+            // Ignore synthetic mouse events right after touch (mobile)
+            if (now() < ignoreMouseUntil) {
+                console.log('[mouse] ignored (post-touch suppression)');
+                return;
+            }
+
+            // If tooltip is pinned by touch, don't let mousemove logic hide it
+            if (tooltipPinnedByTouch) {
+                console.log('[mouse] ignored (tooltip pinned by touch)');
+                return;
+            }
+
+            const rect = canvas.getBoundingClientRect();
+            const mx = e.clientX - rect.left;
+            const my = e.clientY - rect.top;
+
+            if (isDragging) {
+                offsetX += e.clientX - lastX;
+                offsetY += e.clientY - lastY;
+                lastX = e.clientX;
+                lastY = e.clientY;
+                scheduleRender();
+                hideTooltip('mouse drag');
+                return;
+            }
+
+            const cover = getHoveredCover(mx, my);
+            if (cover) {
+                showTooltipForCover(cover, e.clientX, e.clientY, { pin: false });
+                canvas.style.cursor = 'pointer';
+            } else {
+                hideTooltip('mouse leave cover');
+                canvas.style.cursor = isDragging ? 'grabbing' : 'grab';
+            }
+        }
+
+        function handleMouseDown(e) {
+            // desktop drag
+            isDragging = true;
+            lastX = e.clientX;
+            lastY = e.clientY;
+            canvas.style.cursor = 'grabbing';
+        }
+
+        function handleMouseUp() {
+            isDragging = false;
+            canvas.style.cursor = 'grab';
+        }
+
+        function handleWheel(e) {
+            e.preventDefault();
+            hideTooltip('wheel');
+
+            const rect = canvas.getBoundingClientRect();
+            const mx = e.clientX - rect.left;
+            const my = e.clientY - rect.top;
+
+            const delta = e.deltaY > 0 ? 0.92 : 1.08;
+            const newScale = Math.min(Math.max(scale * delta, 0.25), 8);
+
+            const cx = canvas.width / 2;
+            const cy = canvas.height / 2;
+
+            const px = (mx - cx - offsetX) / scale;
+            const py = (my - cy - offsetY) / scale;
+
+            offsetX = mx - px * newScale - cx;
+            offsetY = my - py * newScale - cy;
+
+            scale = newScale;
+            scheduleRender();
+        }
+
+        function resetViewOnly() {
+            scale = 0.45;
+            offsetX = 0;
+            offsetY = 0;
+        }
+
+        function resetAll() {
+            console.log('[reset] resetAll');
+            resetViewOnly();
+
+            // also reset decade (desktop buttons + mobile dropdown)
+            currentDecade = 'all';
+            if (decadeSelect) decadeSelect.value = currentDecade;
+            document.querySelectorAll('.decade-btn').forEach(b => {
+                b.classList.toggle('active', b.dataset.decade === 'all');
+            });
+
+            hideTooltip('reset');
+            render();
+        }
+
+        function setMode(mode) {
+            if (mode === currentMode) return;
+
+            previousMode = currentMode;
+            currentMode = mode;
+            animationProgress = 0;
+            animationStartTime = performance.now();
+
+            document.querySelectorAll('.control-btn[data-mode]').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.mode === mode);
+            });
+
+            render();
+        }
+
+        // Touch event handlers
+        function getTouchDist(e) {
+            const dx = e.touches[0].clientX - e.touches[1].clientX;
+            const dy = e.touches[0].clientY - e.touches[1].clientY;
+            return Math.sqrt(dx * dx + dy * dy);
+        }
+
+        function handleTouchStart(e) {
+            // suppress synthetic mouse events after touch
+            ignoreMouseUntil = now() + 900;
+
+            if (e.touches.length === 1) {
+                isDragging = true;
+                lastX = e.touches[0].clientX;
+                lastY = e.touches[0].clientY;
+
+                touchStartX = lastX;
+                touchStartY = lastY;
+                touchMoved = false;
+
+                console.log('[touch] start', touchStartX, touchStartY);
+            } else if (e.touches.length === 2) {
+                hideTooltip('pinch start');
+                lastTouchDist = getTouchDist(e);
+                console.log('[touch] pinch start');
+            }
+        }
+
+        function handleTouchMove(e) {
+            e.preventDefault();
+
+            // keep suppressing mouse as long as touch is active
+            ignoreMouseUntil = now() + 900;
+
+            if (e.touches.length === 1 && isDragging) {
+                const cx = e.touches[0].clientX;
+                const cy = e.touches[0].clientY;
+
+                const dx = cx - touchStartX;
+                const dy = cy - touchStartY;
+                if (!touchMoved && (Math.abs(dx) > TAP_MOVE_THRESHOLD || Math.abs(dy) > TAP_MOVE_THRESHOLD)) {
+                    touchMoved = true;
+                    // dragging -> tooltip should not be pinned
+                    hideTooltip('touch drag start');
+                    console.log('[touch] became drag');
+                }
+
+                offsetX += cx - lastX;
+                offsetY += cy - lastY;
+                lastX = cx;
+                lastY = cy;
+                scheduleRender();
+            } else if (e.touches.length === 2) {
+                hideTooltip('pinch move');
+                const dist = getTouchDist(e);
+                const delta = dist / lastTouchDist;
+                scale = Math.min(Math.max(scale * delta, 0.25), 8);
+                lastTouchDist = dist;
+                scheduleRender();
+            }
+        }
+
+        function handleTouchEnd(e) {
+            ignoreMouseUntil = now() + 900;
+
+            // Tap: open/pin tooltip. Tap another cover -> switch. Tap background -> close.
+            if (!touchMoved) {
+                const rect = canvas.getBoundingClientRect();
+                const mx = touchStartX - rect.left;
+                const my = touchStartY - rect.top;
+
+                const cover = getHoveredCover(mx, my);
+
+                if (cover) {
+                    const key = coverKey(cover);
+
+                    // toggle if tapping the same cover
+                    if (tooltipPinnedByTouch && pinnedCoverKey === key) {
+                        hideTooltip('tap same cover (toggle off)');
+                    } else {
+                        showTooltipForCover(cover, touchStartX, touchStartY, { pin: true });
+                    }
+                } else {
+                    hideTooltip('tap background');
+                }
+
+                console.log('[touch] end tap', { cover: !!cover });
+            } else {
+                console.log('[touch] end drag');
+            }
+
+            isDragging = false;
+        }
+
+        // Event listeners
+        canvas.addEventListener('mousemove', handleMouseMove);
+        canvas.addEventListener('mousedown', handleMouseDown);
+        canvas.addEventListener('mouseup', handleMouseUp);
+        canvas.addEventListener('mouseleave', () => {
+    isDragging = false;
+
+    // On mobile, iOS/Android can emit a mouseleave after touch.
+    // If the tooltip was opened via tap (pinned), do NOT close it.
+    if (tooltipPinnedByTouch) {
+        console.log('[mouseleave] ignored (tooltip pinned by touch)');
+        return;
+    }
+
+    // Also ignore stray mouseleave events right after touch.
+    if (now() < ignoreMouseUntil) {
+        console.log('[mouseleave] ignored (post-touch suppression)');
+        return;
+    }
+
+    hideTooltip('mouseleave');
+});
+
+        canvas.addEventListener('wheel', handleWheel, { passive: false });
+
+        canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+        canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+        canvas.addEventListener('touchend', handleTouchEnd);
+
+        document.querySelectorAll('.control-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // if a user taps UI controls after touching canvas, keep mouse suppression window
+                ignoreMouseUntil = Math.max(ignoreMouseUntil, now() + 200);
+
+                if (btn.dataset.mode) {
+                    setMode(btn.dataset.mode);
+                } else if (btn.dataset.decade) {
+                    currentDecade = btn.dataset.decade;
+                    if (decadeSelect) decadeSelect.value = currentDecade;
+
+                    document.querySelectorAll('.decade-btn').forEach(b => {
+                        b.classList.toggle('active', b.dataset.decade === currentDecade);
+                    });
+
+                    console.log('[decade] button', currentDecade);
+                    hideTooltip('decade change');
+                    render();
+                } else if (btn.dataset.action === 'reset') {
+                    resetAll();
+                }
+            });
+        });
+
+        window.addEventListener('resize', resizeCanvas);
+
+        // dropdown -> decade logic
+        if (decadeSelect) {
+            decadeSelect.addEventListener('change', (e) => {
+                currentDecade = e.target.value;
+
+                document.querySelectorAll('.decade-btn').forEach(b => {
+                    b.classList.toggle('active', b.dataset.decade === currentDecade);
+                });
+
+                console.log('[decade] dropdown', currentDecade);
+                hideTooltip('decade dropdown change');
+                render();
+            });
+        }
+
+        // Populate filter dropdowns
+        function populateFilters() {
+            const skaterSelect = document.getElementById('filter-skater');
+            const trickSelect = document.getElementById('filter-trick');
+            const obstacleSelect = document.getElementById('filter-obstacle');
+
+            filters.skaters.forEach(s => {
+                const opt = document.createElement('option');
+                opt.value = s;
+                opt.textContent = s;
+                skaterSelect.appendChild(opt);
+            });
+
+            filters.tricks.forEach(t => {
+                const opt = document.createElement('option');
+                opt.value = t;
+                opt.textContent = t;
+                trickSelect.appendChild(opt);
+            });
+
+            filters.obstacles.forEach(o => {
+                const opt = document.createElement('option');
+                opt.value = o;
+                opt.textContent = o;
+                obstacleSelect.appendChild(opt);
+            });
+        }
+
+        // Setup filter event listeners
+        function setupFilters() {
+            document.getElementById('filter-skater').addEventListener('change', (e) => {
+                filterSkater = e.target.value;
+                hideTooltip('filter skater');
+                render();
+            });
+
+            document.getElementById('filter-trick').addEventListener('change', (e) => {
+                filterTrick = e.target.value;
+                hideTooltip('filter trick');
+                render();
+            });
+
+            document.getElementById('filter-obstacle').addEventListener('change', (e) => {
+                filterObstacle = e.target.value;
+                hideTooltip('filter obstacle');
+                render();
+            });
+
+            document.getElementById('filter-search').addEventListener('input', (e) => {
+                filterSearch = e.target.value;
+                hideTooltip('filter search');
+                scheduleRender();
+            });
+
+            document.getElementById('filter-clear').addEventListener('click', () => {
+                filterSkater = '';
+                filterTrick = '';
+                filterObstacle = '';
+                filterSearch = '';
+                currentDecade = 'all';
+
+                if (decadeSelect) decadeSelect.value = currentDecade;
+
+                document.getElementById('filter-skater').value = '';
+                document.getElementById('filter-trick').value = '';
+                document.getElementById('filter-obstacle').value = '';
+                document.getElementById('filter-search').value = '';
+
+                document.querySelectorAll('.decade-btn').forEach(b => {
+                    b.classList.toggle('active', b.dataset.decade === 'all');
+                });
+
+                console.log('[filters] clear');
+                hideTooltip('clear');
+                render();
+            });
+        }
+
+        // Load data and images
+        async function init() {
+            try {
+                const response = await fetch('thrasher_data.json');
+                const data = await response.json();
+                covers = data.covers;
+                filters = data.filters;
+
+                populateFilters();
+                setupFilters();
+
+                covers.sort((a, b) => getYear(a.filename) - getYear(b.filename));
+
+                let loaded = 0;
+                const total = covers.length;
+
+                covers.forEach(cover => {
+                    const img = new Image();
+                    img.crossOrigin = 'anonymous';
+                    img.onload = () => {
+                        loaded++;
+                        loading.textContent = `Loading covers... ${Math.round(loaded / total * 100)}%`;
+                        if (loaded === total) loading.style.display = 'none';
+                        if (loaded % 20 === 0 || loaded === total) render();
+                    };
+                    img.onerror = () => {
+                        loaded++;
+                        loading.textContent = `Loading covers... ${Math.round(loaded / total * 100)}%`;
+                        if (loaded === total) loading.style.display = 'none';
+                    };
+                    img.src = cover.url;
+                    images[cover.filename] = img;
+                });
+
+                resizeCanvas();
+                render();
+
+            } catch (error) {
+                loading.textContent = 'Error loading data';
+                console.error(error);
+            }
+        }
+
+        init();
+
+        // Modal functionality
+        const modalOverlay = document.getElementById('modal-overlay');
+        const infoBtn = document.getElementById('info-btn');
+        const modalClose = document.getElementById('modal-close');
+
+        infoBtn.addEventListener('click', () => {
+            modalOverlay.classList.add('visible');
+        });
+
+        modalClose.addEventListener('click', () => {
+            modalOverlay.classList.remove('visible');
+        });
+
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('visible');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modalOverlay.classList.remove('visible');
+            }
+        });
+</script>
+
+
+
+</body>
+</html>
