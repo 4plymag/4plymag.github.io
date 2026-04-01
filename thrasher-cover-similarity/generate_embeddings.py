@@ -1,168 +1,291 @@
+"""
+Generate embeddings for Thrasher covers.
+
+Content embeddings: DINOv2 (pure vision, no text bias) on cropped images (masthead removed)
+Color embeddings: HSV histogram + RGB stats
+
+Usage:
+    pip install torch torchvision transformers pillow numpy scikit-learn umap-learn requests tqdm
+    python generate_embeddings.py
+
+    # To only re-embed new covers (skips existing):
+    python generate_embeddings.py --incremental
+"""
+
+import argparse
 import requests
-from bs4 import BeautifulSoup
 import numpy as np
 from PIL import Image
 import io
 import json
+from pathlib import Path
 from sklearn.preprocessing import normalize
 import umap
 from tqdm import tqdm
 
-# For content embeddings, we'll use CLIP
-# Install: pip install torch torchvision transformers pillow numpy scikit-learn umap-learn beautifulsoup4 requests tqdm
 import torch
-from transformers import CLIPProcessor, CLIPModel
+from transformers import AutoImageProcessor, AutoModel
 
-def get_image_urls(github_url):
-    """Fetch image URLs using GitHub API"""
-    # Use GitHub API for reliable file listing
-    api_url = "https://api.github.com/repos/jwilber/4PLY/contents/thrashercovers/covers"
-    response = requests.get(api_url)
+COVERS_DIR = Path("../thrashercovers/covers")
+DATA_FILE = Path("thrasher_data.json")
+COORDS_FILE = Path("thrasher_coordinates.json")
+CACHE_DIR = Path("_embedding_cache")
 
-    if response.status_code != 200:
-        raise Exception(f"GitHub API error: {response.status_code}")
 
-    files = response.json()
-    base_raw_url = "https://raw.githubusercontent.com/jwilber/4PLY/master/thrashercovers/covers/"
+def get_local_images():
+    """Get all cover images from local directory."""
     image_files = []
-
-    for file_info in files:
-        if file_info['name'].endswith('.jpg'):
-            image_files.append({
-                'filename': file_info['name'],
-                'url': base_raw_url + file_info['name']
-            })
-
+    for f in sorted(COVERS_DIR.glob("*.jpg")):
+        image_files.append({
+            "filename": f.name,
+            "url": f"/thrashercovers/covers/{f.name}",
+            "path": f,
+        })
     return image_files
 
-def download_image(url):
-    """Download and return PIL Image"""
-    response = requests.get(url)
-    return Image.open(io.BytesIO(response.content)).convert('RGB')
 
-def get_content_embedding(image, model, processor, device):
-    """Generate CLIP embedding for image content"""
+def load_image(path):
+    """Load a PIL Image from local path."""
+    return Image.open(path).convert("RGB")
+
+
+def crop_masthead(image, crop_fraction=0.18):
+    """
+    Crop the top portion of the image to remove the THRASHER masthead.
+    Default removes top 18% — enough to cut the logo without losing the action.
+    """
+    w, h = image.size
+    top = int(h * crop_fraction)
+    return image.crop((0, top, w, h))
+
+
+def get_content_embedding_dino(image, model, processor, device):
+    """
+    Generate content embedding using DINOv2.
+
+    DINOv2 is a pure vision model — no text encoder, no text training.
+    It understands visual structure, objects, poses, and composition
+    without being biased by text in the image.
+    """
     inputs = processor(images=image, return_tensors="pt").to(device)
     with torch.no_grad():
-        image_features = model.get_image_features(**inputs)
-    return image_features.cpu().numpy().flatten()
+        outputs = model(**inputs)
+        # Use the CLS token as the image-level embedding
+        embedding = outputs.last_hidden_state[:, 0, :]
+    return embedding.cpu().numpy().flatten()
 
-def get_color_embedding(image, n_colors=10):
-    """Generate color-based embedding using dominant colors and distribution"""
-    # Resize for faster processing
-    img = image.resize((100, 100))
-    pixels = np.array(img).reshape(-1, 3)
-    
-    # Create color histogram in HSV space (more perceptually uniform)
-    img_hsv = image.convert('HSV')
+
+def get_color_embedding(image, n_bins_h=16, n_bins_s=8, n_bins_v=8):
+    """
+    Generate color-based embedding using HSV histogram + RGB stats.
+
+    HSV is more perceptually uniform than RGB for color similarity.
+    We also add RGB channel means/stds for additional signal.
+    """
+    img = image.resize((128, 128))
+    pixels_rgb = np.array(img).reshape(-1, 3)
+
+    img_hsv = image.resize((128, 128)).convert("HSV")
     pixels_hsv = np.array(img_hsv).reshape(-1, 3)
-    
-    # Create histogram features
-    h_hist, _ = np.histogram(pixels_hsv[:, 0], bins=12, range=(0, 256))
-    s_hist, _ = np.histogram(pixels_hsv[:, 1], bins=8, range=(0, 256))
-    v_hist, _ = np.histogram(pixels_hsv[:, 2], bins=8, range=(0, 256))
-    
-    # Combine into feature vector
-    color_features = np.concatenate([h_hist, s_hist, v_hist])
-    
-    # Add RGB statistics
-    rgb_mean = pixels.mean(axis=0)
-    rgb_std = pixels.std(axis=0)
-    
-    # Combine all features
-    embedding = np.concatenate([color_features, rgb_mean, rgb_std])
-    
+
+    # HSV histograms
+    h_hist, _ = np.histogram(pixels_hsv[:, 0], bins=n_bins_h, range=(0, 256))
+    s_hist, _ = np.histogram(pixels_hsv[:, 1], bins=n_bins_s, range=(0, 256))
+    v_hist, _ = np.histogram(pixels_hsv[:, 2], bins=n_bins_v, range=(0, 256))
+
+    # Normalize histograms
+    h_hist = h_hist.astype(float) / (h_hist.sum() + 1e-8)
+    s_hist = s_hist.astype(float) / (s_hist.sum() + 1e-8)
+    v_hist = v_hist.astype(float) / (v_hist.sum() + 1e-8)
+
+    # RGB statistics
+    rgb_mean = pixels_rgb.mean(axis=0) / 255.0
+    rgb_std = pixels_rgb.std(axis=0) / 255.0
+
+    # Spatial color info: average color of each quadrant
+    h, w = 128, 128
+    quadrants = [
+        pixels_rgb[: h * w // 4],  # rough top-left quarter of flattened
+        pixels_rgb[h * w // 4 : h * w // 2],
+        pixels_rgb[h * w // 2 : 3 * h * w // 4],
+        pixels_rgb[3 * h * w // 4 :],
+    ]
+    quad_means = np.concatenate([q.mean(axis=0) / 255.0 for q in quadrants])
+
+    embedding = np.concatenate([h_hist, s_hist, v_hist, rgb_mean, rgb_std, quad_means])
+
+    # L2 normalize
     return embedding / (np.linalg.norm(embedding) + 1e-8)
 
+
 def main():
-    print("Loading CLIP model...")
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").to(device)
-    processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
-    
-    print("Fetching image URLs from GitHub...")
-    github_url = "https://github.com/jwilber/4PLY/tree/master/thrashercovers/covers"
-    image_files = get_image_urls(github_url)
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--incremental",
+        action="store_true",
+        help="Only process images not already in the cache",
+    )
+    parser.add_argument(
+        "--model",
+        default="facebook/dinov2-base",
+        help="HuggingFace model ID (default: facebook/dinov2-base)",
+    )
+    parser.add_argument(
+        "--crop",
+        type=float,
+        default=0.18,
+        help="Fraction of top to crop for masthead removal (default: 0.18)",
+    )
+    parser.add_argument(
+        "--umap-neighbors-content",
+        type=int,
+        default=30,
+        help="UMAP n_neighbors for content (default: 30)",
+    )
+    parser.add_argument(
+        "--umap-min-dist-content",
+        type=float,
+        default=0.03,
+        help="UMAP min_dist for content (default: 0.03)",
+    )
+    parser.add_argument(
+        "--umap-neighbors-color",
+        type=int,
+        default=25,
+        help="UMAP n_neighbors for color (default: 25)",
+    )
+    parser.add_argument(
+        "--umap-min-dist-color",
+        type=float,
+        default=0.05,
+        help="UMAP min_dist for color (default: 0.05)",
+    )
+    args = parser.parse_args()
+
+    # Setup cache
+    CACHE_DIR.mkdir(exist_ok=True)
+
+    print(f"Loading model: {args.model}")
+    device = "mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"Device: {device}")
+
+    processor = AutoImageProcessor.from_pretrained(args.model)
+    model = AutoModel.from_pretrained(args.model).to(device)
+    model.eval()
+
+    print("Scanning local covers...")
+    image_files = get_local_images()
     print(f"Found {len(image_files)} images")
-    
-    # Collect embeddings
+
+    # Load cached embeddings if incremental
+    cached_content = {}
+    cached_color = {}
+    if args.incremental:
+        for npy in CACHE_DIR.glob("content_*.npy"):
+            fname = npy.stem.replace("content_", "") + ".jpg"
+            cached_content[fname] = np.load(npy)
+        for npy in CACHE_DIR.glob("color_*.npy"):
+            fname = npy.stem.replace("color_", "") + ".jpg"
+            cached_color[fname] = np.load(npy)
+        print(f"Cached: {len(cached_content)} content, {len(cached_color)} color")
+
     content_embeddings = []
     color_embeddings = []
     filenames = []
-    
-    print("Processing images...")
+
+    print(f"Processing images (crop top {args.crop:.0%})...")
     for img_info in tqdm(image_files):
+        fname = img_info["filename"]
+
+        # Check cache
+        if args.incremental and fname in cached_content and fname in cached_color:
+            content_embeddings.append(cached_content[fname])
+            color_embeddings.append(cached_color[fname])
+            filenames.append(fname)
+            continue
+
         try:
-            image = download_image(img_info['url'])
-            
-            # Get embeddings
-            content_emb = get_content_embedding(image, model, processor, device)
+            image = load_image(img_info["path"])
+
+            # Crop masthead for content embedding
+            cropped = crop_masthead(image, args.crop)
+            content_emb = get_content_embedding_dino(cropped, model, processor, device)
+
+            # Full image for color embedding (color of the whole cover matters)
             color_emb = get_color_embedding(image)
-            
+
+            # Cache
+            stem = fname.replace(".jpg", "")
+            np.save(CACHE_DIR / f"content_{stem}.npy", content_emb)
+            np.save(CACHE_DIR / f"color_{stem}.npy", color_emb)
+
             content_embeddings.append(content_emb)
             color_embeddings.append(color_emb)
-            filenames.append(img_info['filename'])
-            
+            filenames.append(fname)
+
         except Exception as e:
-            print(f"Error processing {img_info['filename']}: {e}")
-    
-    # Convert to numpy arrays
+            print(f"\nError processing {fname}: {e}")
+
     content_embeddings = np.array(content_embeddings)
     color_embeddings = np.array(color_embeddings)
-    
-    print(f"\nProcessed {len(filenames)} images successfully")
+
+    print(f"\nProcessed {len(filenames)} images")
     print(f"Content embedding shape: {content_embeddings.shape}")
     print(f"Color embedding shape: {color_embeddings.shape}")
-    
-    # Run UMAP for content - tuned for better clustering
-    print("\nRunning UMAP on content embeddings...")
+
+    # L2 normalize content embeddings (important for cosine metric)
+    content_embeddings = normalize(content_embeddings)
+
+    # ── UMAP: Content ──
+    print(f"\nRunning UMAP on content embeddings "
+          f"(n_neighbors={args.umap_neighbors_content}, min_dist={args.umap_min_dist_content})...")
     umap_content = umap.UMAP(
-        n_neighbors=10,        # Smaller = more local structure, tighter clusters
-        min_dist=0.02,         # Smaller = tighter clusters, more separation
-        spread=1.5,            # Larger = more space between clusters
-        metric='cosine',
-        n_epochs=500,          # More iterations for better convergence
-        random_state=42
+        n_neighbors=args.umap_neighbors_content,
+        min_dist=args.umap_min_dist_content,
+        spread=1.5,
+        metric="cosine",
+        n_epochs=500,
+        random_state=42,
     )
     content_coords = umap_content.fit_transform(content_embeddings)
 
-    # Run UMAP for color - tuned for better clustering
-    print("Running UMAP on color embeddings...")
+    # ── UMAP: Color ──
+    print(f"Running UMAP on color embeddings "
+          f"(n_neighbors={args.umap_neighbors_color}, min_dist={args.umap_min_dist_color})...")
     umap_color = umap.UMAP(
-        n_neighbors=12,        # Slightly more neighbors for color similarity
-        min_dist=0.02,         # Tight clusters
-        spread=1.5,            # Good separation
-        metric='euclidean',
+        n_neighbors=args.umap_neighbors_color,
+        min_dist=args.umap_min_dist_color,
+        spread=1.5,
+        metric="euclidean",
         n_epochs=500,
-        random_state=42
+        random_state=42,
     )
     color_coords = umap_color.fit_transform(color_embeddings)
-    
-    # Normalize coordinates to [0, 1] range
-    content_coords = (content_coords - content_coords.min(axis=0)) / (content_coords.max(axis=0) - content_coords.min(axis=0))
-    color_coords = (color_coords - color_coords.min(axis=0)) / (color_coords.max(axis=0) - color_coords.min(axis=0))
-    
-    # Prepare output data
+
+    # Normalize to [0, 1]
+    for coords in [content_coords, color_coords]:
+        mins = coords.min(axis=0)
+        maxs = coords.max(axis=0)
+        coords[:] = (coords - mins) / (maxs - mins + 1e-8)
+
+    # Build output
     output_data = []
     for i, filename in enumerate(filenames):
         output_data.append({
-            'filename': filename,
-            'url': f'https://raw.githubusercontent.com/jwilber/4PLY/master/thrashercovers/covers/{filename}',
-            'umap_x': float(content_coords[i, 0]),
-            'umap_y': float(content_coords[i, 1]),
-            'color_x': float(color_coords[i, 0]),
-            'color_y': float(color_coords[i, 1])
+            "filename": filename,
+            "url": f"/thrashercovers/covers/{filename}",
+            "umap_x": float(content_coords[i, 0]),
+            "umap_y": float(content_coords[i, 1]),
+            "color_x": float(color_coords[i, 0]),
+            "color_y": float(color_coords[i, 1]),
         })
-    
-    # Save to JSON
-    output_file = 'thrasher_coordinates.json'
-    with open(output_file, 'w') as f:
+
+    with open(COORDS_FILE, "w") as f:
         json.dump(output_data, f, indent=2)
-    
-    print(f"\n✓ Saved coordinates to {output_file}")
-    print(f"  Total images: {len(output_data)}")
-    print(f"\nSample output:")
-    print(json.dumps(output_data[0], indent=2))
+
+    print(f"\nSaved {len(output_data)} covers to {COORDS_FILE}")
+    print(f"Next step: python merge_metadata.py")
+
 
 if __name__ == "__main__":
     main()
