@@ -642,6 +642,21 @@
             }
         }
 
+        // Cached sorted order — recomputed only when mode/filters change
+        let cachedSorted = [];
+        let sortDirty = true;
+
+        function rebuildSortedCovers() {
+            cachedSorted = covers.slice();
+            // Sort by y-coord in current mode (static order, not animated)
+            cachedSorted.sort((a, b) => {
+                const ay = currentMode === 'content' ? a.umap_y : a.color_y;
+                const by = currentMode === 'content' ? b.umap_y : b.color_y;
+                return ay - by;
+            });
+            sortDirty = false;
+        }
+
         function resizeCanvas() {
             const container = canvas.parentElement;
             canvas.width = container.clientWidth;
@@ -752,26 +767,25 @@
                 requestAnimationFrame(render);
             }
 
+            if (sortDirty) rebuildSortedCovers();
+
             ctx.fillStyle = '#0a0a0a';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             const imgSize = IMG_SIZE * scale;
             const imgHeight = imgSize * 1.4;
+            const cw = canvas.width;
+            const ch = canvas.height;
 
-            const sortedCovers = [...covers].sort((a, b) => {
-                const coordsA = getCoords(a, animationProgress);
-                const coordsB = getCoords(b, animationProgress);
-                return coordsA.y - coordsB.y;
-            });
-
-            sortedCovers.forEach(cover => {
+            for (let i = 0, len = cachedSorted.length; i < len; i++) {
+                const cover = cachedSorted[i];
                 const coords = getCoords(cover, animationProgress);
                 const pos = worldToScreen(coords.x, coords.y);
 
-                if (pos.x + imgSize < 0 || pos.x > canvas.width ||
-                    pos.y + imgHeight < 0 || pos.y > canvas.height) {
-                    return;
-                }
+                // Frustum cull
+                const px = pos.x - imgSize / 2;
+                const py = pos.y - imgHeight / 2;
+                if (px + imgSize < 0 || px > cw || py + imgHeight < 0 || py > ch) continue;
 
                 const matches = matchesFilters(cover);
                 const alpha = matches ? 1 : 0.12;
@@ -779,33 +793,31 @@
                 const img = images[cover.filename];
                 if (img && img.complete && img.naturalWidth > 0) {
                     if (alpha < 1) ctx.globalAlpha = alpha;
-                    ctx.drawImage(img, pos.x - imgSize / 2, pos.y - imgHeight / 2, imgSize, imgHeight);
+                    ctx.drawImage(img, px, py, imgSize, imgHeight);
                     if (alpha < 1) ctx.globalAlpha = 1;
                 } else {
                     ctx.fillStyle = alpha < 1 ? '#1a1a1a' : '#2a2a2a';
-                    ctx.fillRect(pos.x - imgSize / 2, pos.y - imgHeight / 2, imgSize, imgHeight);
+                    ctx.fillRect(px, py, imgSize, imgHeight);
                 }
-            });
+            }
         }
 
         function getHoveredCover(mx, my) {
             const imgSize = IMG_SIZE * scale;
             const imgHeight = imgSize * 1.4;
+            const halfW = imgSize / 2;
+            const halfH = imgHeight / 2;
 
-            const sortedCovers = [...covers].sort((a, b) => {
-                const coordsA = getCoords(a);
-                const coordsB = getCoords(b);
-                return coordsB.y - coordsA.y;
-            });
-
-            for (const cover of sortedCovers) {
+            // Iterate in reverse draw order (topmost first)
+            for (let i = cachedSorted.length - 1; i >= 0; i--) {
+                const cover = cachedSorted[i];
                 if (!matchesFilters(cover)) continue;
 
                 const coords = getCoords(cover);
                 const pos = worldToScreen(coords.x, coords.y);
 
-                if (mx >= pos.x - imgSize / 2 && mx <= pos.x + imgSize / 2 &&
-                    my >= pos.y - imgHeight / 2 && my <= pos.y + imgHeight / 2) {
+                if (mx >= pos.x - halfW && mx <= pos.x + halfW &&
+                    my >= pos.y - halfH && my <= pos.y + halfH) {
                     return cover;
                 }
             }
@@ -1000,6 +1012,7 @@ tooltip.addEventListener('pointerdown', (e) => {
             currentMode = mode;
             animationProgress = 0;
             animationStartTime = performance.now();
+            sortDirty = true;
 
             document.querySelectorAll('.control-btn[data-mode]').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.mode === mode);
@@ -1262,10 +1275,12 @@ tooltip.addEventListener('pointerdown', (e) => {
                 setupFilters();
 
                 covers.sort((a, b) => getYear(a.filename) - getYear(b.filename));
+                sortDirty = true;
 
                 let loaded = 0;
                 const total = covers.length;
 
+                // Load thumbnails for canvas rendering (tiny, fast)
                 covers.forEach(cover => {
                     const img = new Image();
                     img.crossOrigin = 'anonymous';
@@ -1273,14 +1288,15 @@ tooltip.addEventListener('pointerdown', (e) => {
                         loaded++;
                         loading.textContent = `Loading covers... ${Math.round(loaded / total * 100)}%`;
                         if (loaded === total) loading.style.display = 'none';
-                        if (loaded % 20 === 0 || loaded === total) render();
+                        if (loaded % 30 === 0 || loaded === total) render();
                     };
                     img.onerror = () => {
                         loaded++;
                         loading.textContent = `Loading covers... ${Math.round(loaded / total * 100)}%`;
                         if (loaded === total) loading.style.display = 'none';
                     };
-                    img.src = cover.url;
+                    // Use thumbnail for canvas (120px vs 1080px)
+                    img.src = cover.url.replace('covers/', 'covers/thumbs/');
                     images[cover.filename] = img;
                 });
 
